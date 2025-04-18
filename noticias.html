@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Notícias - IPRESAL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .noticias-pagina {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .noticias-pagina h1 {
+      font-size: 2em;
+      color: #004080;
+      margin-bottom: 20px;
+    }
+    .noticias-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .news-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      flex: 1 1 300px;
+    }
+    .news-image {
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+    }
+    .news-content {
+      padding: 15px;
+    }
+    .news-content h3 {
+      color: #004080;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .news-content p {
+      font-size: 0.95em;
+      margin-bottom: 10px;
+    }
+    .card-button {
+      display: inline-block;
+      background-color: #ffcc00;
+      color: #004080;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .card-button:hover {
+      background-color: #ffd633;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topo -->
+  <div class="top-bar">
+    <div class="container">
+      <span>Telefone: (81) 3654-1156 | Horário: 08:00h às 13:00h, de segunda à sexta</span>
+    </div>
+  </div>
+
+  <!-- Cabeçalho -->
+  <header class="header-main">
+    <div class="container header-flex">
+      <div class="logo-area" style="text-align: center; width: 100%;">
+        <img src="Logo Salgadinho.jpg" alt="Logo do IPRESAL">
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu -->
+  <nav class="menu-bar">
+    <div class="container nav-container">
+      <ul class="menu-list">
+        <li><a href="index.html">Página Inicial</a></li>
+        <li><a href="portal-transparencia.html">Portal de Transparência</a></li>
+        <li><a href="documentos.html">Publicações Oficiais</a></li>
+        <li><a href="#">Ouvidoria</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Conteúdo -->
+  <section class="noticias-pagina">
+    <h1>Mais Notícias do IPRESAL</h1>
+    <div class="noticias-grid">
+      <div class="news-card">
+        <div class="news-image" style="background-image: url('noticia-extra1.jpg');"></div>
+        <div class="news-content">
+          <h3>Reunião com Conselheiros Previdenciários</h3>
+          <p>O IPRESAL realizou uma reunião para apresentar os novos dados atuariais aos conselheiros municipais.</p>
+          <a href="noticia1.html" class="card-button">Leia mais</a>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-image" style="background-image: url('noticia-extra2.jpg');"></div>
+        <div class="news-content">
+          <h3>Campanha de Educação Previdenciária</h3>
+          <p>Servidores participaram de palestra sobre planejamento da aposentadoria promovida pelo IPRESAL.</p>
+          <a href="#" class="card-button">Leia mais</a>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-image" style="background-image: url('noticia-extra3.jpg');"></div>
+        <div class="news-content">
+          <h3>Certificação do CRP Renovada</h3>
+          <p>IPRESAL teve sua Certidão de Regularidade Previdenciária renovada pelo Ministério da Previdência.</p>
+          <a href="#" class="card-button">Leia mais</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-content container">
+      <p>&copy; 2025 IPRESAL - Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

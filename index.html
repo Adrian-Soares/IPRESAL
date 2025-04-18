@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>IPRESAL - Instituto de Previdência</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <!-- Topo com horário e telefone -->
+  <div class="top-bar">
+    <div class="container">
+      <span>Telefone: (81) 3654-1156 | Horário: 08:00h às 13:00h, de segunda à sexta</span>
+    </div>
+  </div>
+
+  <!-- Cabeçalho com logo centralizada -->
+  <header class="header-main">
+    <div class="container header-flex">
+      <div class="logo-area" style="text-align: center; width: 100%;">
+        <img src="Logo Salgadinho.jpg" alt="Logo do IPRESAL">
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu de navegação -->
+  <nav class="menu-bar">
+    <div class="container nav-container">
+      <ul class="menu-list">
+        <li><a href="#">Página Inicial</a></li>
+        <li class="menu-dropdown">
+          <a href="#">Institucional <i class="fas fa-chevron-down"></i></a>
+          <ul class="submenu">
+            <li><a href="conheca-cidade.html">Conheça a Cidade</a></li>
+            <li><a href="conheca-rpps.html">Conheça o RPPS</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+          </ul>
+        </li>
+        <li class="menu-dropdown">
+          <a href="#">Publicações Oficiais <i class="fas fa-chevron-down"></i></a>
+          <ul class="submenu">
+            <li><a href="#">Avaliação Atuarial</a></li>
+            <li><a href="#">Portarias</a></li>
+            <li><a href="#">Contratos</a></li>
+            <li><a href="#">Atas de Reuniões</a></li>
+            <li><a href="#">Investimentos</a></li>
+            <li><a href="#">Legislação</a></li>
+          </ul>
+        </li>        
+        <li><a href="#">Educação Previdenciária</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="portal-transparencia.html">Portal de Transparência</a></li>
+        <li><a href="#">Ouvidoria</a></li>
+      </ul>
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar..." />
+        <button><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner de boas-vindas -->
+  <section class="hero-banner">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Seja Bem-vindo ao IPRESAL</h1>
+      <p>Informações sobre previdência, benefícios e serviços.</p>
+      <a href="#noticias" class="hero-button">Saiba Mais</a>
+    </div>
+  </section>
+
+  <!-- Seção de Links Úteis -->
+  <section class="links-uteis">
+    <div class="container">
+      <div class="links-uteis-content">
+        <div class="links-icon-grid">
+          <a href="https://www.salgadinho.pe.gov.br" target="_blank">
+            <i class="fas fa-university"></i>
+            <span>Prefeitura</span>
+          </a>
+          <a href="portal-transparencia.html">
+            <i class="fas fa-file-invoice-dollar"></i>
+            <span>Portal Transparência</span>
+          </a>
+          <a href="#"><i class="fas fa-user-shield"></i><span>Privacidade</span></a>
+          <a href="#"><i class="fas fa-file-contract"></i><span>Termos</span></a>
+          <a href="#"><i class="fas fa-headset"></i><span>Ouvidoria</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Notícias Recentes -->
+  <section class="noticias-section" id="noticias">
+    <div class="container">
+      <h2>Notícias Recentes</h2>
+      <p>Fique por dentro das últimas atualizações e comunicados do IPRESAL.</p>
+      <div class="noticias-grid">
+        <!-- Notícia 1 -->
+        <div class="news-card">
+          <div class="news-image" style="background-image: url('Noticias 02.jpg');"></div>
+          <div class="news-content">
+            <h3>Calendário de Pagamentos</h3>
+            <p>Confira as datas de pagamento dos benefícios referentes ao semestre.</p>
+            <a href="#" class="card-button">Leia mais</a>
+          </div>
+        </div>
+        <!-- Notícia 2 -->
+        <div class="news-card">
+          <div class="news-image" style="background-image: url('Noticias 02.jpg');"></div>
+          <div class="news-content">
+            <h3>Nova Portaria</h3>
+            <p>Saiba mais sobre a nova portaria que regulamenta os procedimentos de aposentadoria.</p>
+            <a href="#" class="card-button">Leia mais</a>
+          </div>
+        </div>
+        <!-- Notícia 3 -->
+        <div class="news-card">
+          <div class="news-image" style="background-image: url('Noticias 02.jpg');"></div>
+          <div class="news-content">
+            <h3>Evento de Conscientização</h3>
+            <p>Participe do nosso evento anual sobre educação previdenciária. Vagas limitadas!</p>
+            <a href="#" class="card-button">Leia mais</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Localização -->
+  <section class="mapa-section">
+    <div class="container">
+      <h2>Localização do IPRESAL</h2>
+      <p>Rua Antônio Gomes de Moura, nº Centro - Salgadinho, PE</p>
+      <div class="mapa-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.426837234246!2d-35.64830102402212!3d-7.93626207992562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1bbab1c8c2b9%3A0xf18f6795f44282aa!2sRua%20Ant%C3%B4nio%20Gomes%20de%20Moura%2C%20Salgadinho%20-%20PE!5e0!3m2!1spt-BR!2sbr!4v1713254170000!5m2!1spt-BR!2sbr"
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-content container">
+      <p>&copy; 2025 IPRESAL - Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
