@@ -2,13 +2,13 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Contratos - IPRESAL</title>
+  <title>Legislação - IPRESAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
     .tabela-container {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 40px auto;
       padding: 0 20px;
     }
@@ -66,7 +66,7 @@
   <header class="header-main">
     <div class="container header-flex">
       <div class="logo-area" style="text-align: center; width: 100%;">
-        <img src="Logo Salgadinho.jpg" alt="Logo do IPRESAL">
+        <img src="IPRESAL.jpg" alt="Logo do IPRESAL">
       </div>
     </div>
   </header>
@@ -79,54 +79,64 @@
         <li class="menu-dropdown">
           <a href="#">Publicações Oficiais <i class="fas fa-chevron-down"></i></a>
           <ul class="submenu">
-            <li><a href="avaliacao-aturial.html">Avaliação Atuarial</a></li>
+            <li><a href="avaliação-aturial.html">Avaliação Atuarial</a></li>
             <li><a href="portarias.html">Portarias</a></li>
             <li><a href="contratos.html">Contratos</a></li>
-            <li><a href="atas-de-reunioes.html">Atas de Reuniões</a></li>
+            <li><a href="atas-de-reuniões.html">Atas de Reuniões</a></li>
             <li><a href="investimentos.html">Investimentos</a></li>
-            <li><a href="legislacao.html">Legislação</a></li>
+            <li><a href="legislação.html">Legislação</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Conteúdo -->
   <section class="tabela-container">
-    <h1>Contratos</h1>
-    <input type="text" id="filtro" placeholder="Buscar por número, ano ou descrição...">
+    <h1>Legislação</h1>
+    <input type="text" id="filtro" placeholder="Buscar por ano, tipo ou número...">
 
     <table>
       <thead>
         <tr>
           <th>Ano</th>
           <th>Núm.</th>
+          <th>Tipo</th>
           <th>Descrição</th>
           <th>Visualizar</th>
         </tr>
       </thead>
-      <tbody id="tabela-contratos">
+      <tbody id="tabela-legislacao">
         <tr>
-          <td>2024</td>
-          <td>006</td>
+          <td>2025</td>
+          <td>013</td>
+          <td>Portaria</td>
           <td>Descrição</td>
-          <td><a href="pdfs/contratos/contrato-2024-006.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+          <td><a href="pdfs/legislacao/portaria-2025-013.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
         </tr>
         <tr>
           <td>2024</td>
-          <td>005</td>
+          <td>116</td>
+          <td>Decreto</td>
           <td>Descrição</td>
-          <td><a href="pdfs/contratos/contrato-2024-005.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+          <td><a href="pdfs/legislacao/decreto-2024-116.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
         </tr>
         <tr>
           <td>2023</td>
-          <td>002</td>
+          <td>958</td>
+          <td>Lei</td>
           <td>Descrição</td>
-          <td><a href="pdfs/contratos/contrato-2023-002.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+          <td><a href="pdfs/legislacao/lei-2023-958.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+        </tr>
+        <tr>
+          <td>2023</td>
+          <td>957</td>
+          <td>Lei</td>
+          <td>Descrição</td>
+          <td><a href="pdfs/legislacao/lei-2023-957.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
         </tr>
       </tbody>
     </table>
   </section>
 
-  <!-- Rodapé -->
   <!-- Rodapé -->
 <footer>
   <div class="footer-content container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 20px 0;">
@@ -147,11 +157,10 @@
   </p>
 </footer>
 
-
-  <!-- Filtro -->
+  <!-- Script de filtro -->
   <script>
     const filtro = document.getElementById('filtro');
-    const tabela = document.getElementById('tabela-contratos');
+    const tabela = document.getElementById('tabela-legislacao');
 
     filtro.addEventListener('keyup', function () {
       const valor = filtro.value.toLowerCase();

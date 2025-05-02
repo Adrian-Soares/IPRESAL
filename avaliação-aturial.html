@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Política de Investimentos - IPRESAL</title>
+  <title>Avaliação Atuarial - IPRESAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -66,7 +66,7 @@
   <header class="header-main">
     <div class="container header-flex">
       <div class="logo-area" style="text-align: center; width: 100%;">
-        <img src="Logo Salgadinho.jpg" alt="Logo do IPRESAL">
+        <img src="IPRESAL.jpg" alt="Logo do IPRESAL">
       </div>
     </div>
   </header>
@@ -79,19 +79,19 @@
         <li class="menu-dropdown">
           <a href="#">Publicações Oficiais <i class="fas fa-chevron-down"></i></a>
           <ul class="submenu">
-            <li><a href="avaliacao-aturial.html">Avaliação Atuarial</a></li>
+            <li><a href="avaliação-aturial.html">Avaliação Atuarial</a></li>
             <li><a href="portarias.html">Portarias</a></li>
             <li><a href="contratos.html">Contratos</a></li>
-            <li><a href="atas-de-reunioes.html">Atas de Reuniões</a></li>
+            <li><a href="atas-de-reuniões.html">Atas de Reuniões</a></li>
             <li><a href="investimentos.html">Investimentos</a></li>
-            <li><a href="legislacao.html">Legislação</a></li>
+            <li><a href="legislação.html">Legislação</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Conteúdo -->
   <section class="tabela-container">
-    <h1>Política de Investimentos</h1>
+    <h1>Avaliação Atuarial</h1>
     <input type="text" id="filtro" placeholder="Buscar por ano ou termo...">
 
     <table>
@@ -102,21 +102,31 @@
           <th>Visualizar</th>
         </tr>
       </thead>
-      <tbody id="tabela-investimentos">
+      <tbody id="tabela-atuarial">
         <tr>
           <td>2024</td>
           <td>Descrição</td>
-          <td><a href="pdfs/investimentos/investimento-2024.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+          <td><a href="pdfs/avaliacoes/atuarial-2024.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
         </tr>
         <tr>
           <td>2023</td>
-          <td>DescriçãoL</td>
-          <td><a href="pdfs/investimentos/investimento-2023.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+          <td>Descrição</td>
+          <td><a href="pdfs/avaliacoes/nta-2023.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
         </tr>
         <tr>
           <td>2022</td>
           <td>Descrição</td>
-          <td><a href="pdfs/investimentos/investimento-2022.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+          <td><a href="pdfs/avaliacoes/atuarial-2022.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+        </tr>
+        <tr>
+          <td>2021</td>
+          <td>Descriçãol</td>
+          <td><a href="pdfs/avaliacoes/atuarial-2021.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+        </tr>
+        <tr>
+          <td>2020</td>
+          <td>Descrição</td>
+          <td><a href="pdfs/avaliacoes/nta-2020.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
         </tr>
       </tbody>
     </table>
@@ -142,10 +152,11 @@
   </p>
 </footer>
 
+
   <!-- Filtro -->
   <script>
     const filtro = document.getElementById('filtro');
-    const tabela = document.getElementById('tabela-investimentos');
+    const tabela = document.getElementById('tabela-atuarial');
 
     filtro.addEventListener('keyup', function () {
       const valor = filtro.value.toLowerCase();
