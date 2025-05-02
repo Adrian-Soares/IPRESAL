@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Legislação - IPRESAL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    .tabela-container {
+      max-width: 1150px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .tabela-container h1 {
+      color: #004080;
+      margin-bottom: 20px;
+    }
+    .tabela-container input {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    thead {
+      background-color: #001f4d;
+      color: white;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    .visualizar-link {
+      color: #004080;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .visualizar-link i {
+      margin-right: 5px;
+      color: #e74c3c;
+    }
+    .visualizar-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topo -->
+  <div class="top-bar">
+    <div class="container">
+      <span>Telefone: (81) 3654-1156 | Horário: 08:00h às 13:00h</span>
+    </div>
+  </div>
+
+  <!-- Cabeçalho -->
+  <header class="header-main">
+    <div class="container header-flex">
+      <div class="logo-area" style="text-align: center; width: 100%;">
+        <img src="Logo Salgadinho.jpg" alt="Logo do IPRESAL">
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu -->
+  <nav class="menu-bar">
+    <div class="container nav-container">
+      <ul class="menu-list">
+        <li><a href="index.html">Página Inicial</a></li>
+        <li class="menu-dropdown">
+          <a href="#">Publicações Oficiais <i class="fas fa-chevron-down"></i></a>
+          <ul class="submenu">
+            <li><a href="avaliacao-aturial.html">Avaliação Atuarial</a></li>
+            <li><a href="portarias.html">Portarias</a></li>
+            <li><a href="contratos.html">Contratos</a></li>
+            <li><a href="atas-de-reunioes.html">Atas de Reuniões</a></li>
+            <li><a href="investimentos.html">Investimentos</a></li>
+            <li><a href="legislacao.html">Legislação</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Conteúdo -->
+  <section class="tabela-container">
+    <h1>Legislação</h1>
+    <input type="text" id="filtro" placeholder="Buscar por ano, tipo ou número...">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Ano</th>
+          <th>Núm.</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+          <th>Visualizar</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-legislacao">
+        <tr>
+          <td>2025</td>
+          <td>013</td>
+          <td>Portaria</td>
+          <td>Descrição</td>
+          <td><a href="pdfs/legislacao/portaria-2025-013.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+        </tr>
+        <tr>
+          <td>2024</td>
+          <td>116</td>
+          <td>Decreto</td>
+          <td>Descrição</td>
+          <td><a href="pdfs/legislacao/decreto-2024-116.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+        </tr>
+        <tr>
+          <td>2023</td>
+          <td>958</td>
+          <td>Lei</td>
+          <td>Descrição</td>
+          <td><a href="pdfs/legislacao/lei-2023-958.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+        </tr>
+        <tr>
+          <td>2023</td>
+          <td>957</td>
+          <td>Lei</td>
+          <td>Descrição</td>
+          <td><a href="pdfs/legislacao/lei-2023-957.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Rodapé -->
+<footer>
+  <div class="footer-content container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 20px 0;">
+    <div class="footer-info" style="flex: 1 1 300px;">
+      <p><strong>Instituto de Previdência Social</strong></p>
+      <p><strong>CNPJ:</strong> XX.XXX.XXX/XXXX-XX</p>
+      <p><strong>Endereço:</strong> Rua Antônio Gomes de Moura, nº Centro - CEP: 55675-000 Salgadinho-PE</p>
+      <p><strong>Email:</strong> ouvidoria@ipresal.pe.gov.br</p>
+      <p><strong>Telefone:</strong> (81) 3654-1156</p>
+      <p><strong>Horário de funcionamento:</strong> 08:00h às 13:00h, de segunda à sexta-feira</p>
+    </div>
+    <div class="footer-logo" style="flex: 1 1 200px; text-align: center;">
+      <img src="logo_sua_empresa.png" alt="Logo" style="max-width: 150px;">
+    </div>
+  </div>
+  <p style="text-align: center; background-color: #002050; color: white; padding: 10px 0; margin: 0;">
+    &copy; 2025 IPRESAL - Todos os direitos reservados.
+  </p>
+</footer>
+
+  <!-- Script de filtro -->
+  <script>
+    const filtro = document.getElementById('filtro');
+    const tabela = document.getElementById('tabela-legislacao');
+
+    filtro.addEventListener('keyup', function () {
+      const valor = filtro.value.toLowerCase();
+      const linhas = tabela.getElementsByTagName('tr');
+      for (let i = 0; i < linhas.length; i++) {
+        const textoLinha = linhas[i].innerText.toLowerCase();
+        linhas[i].style.display = textoLinha.includes(valor) ? '' : 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

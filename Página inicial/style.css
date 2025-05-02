@@ -276,9 +276,6 @@ footer {
   }
 }
 
-/* (Começa com o mesmo conteúdo anterior que te enviei) */
-/* ... até o final ... */
-
 /* Seção de Notícias Recentes */
 .noticias-section {
   background-color: #f4f4f4;
@@ -383,3 +380,14 @@ footer {
   margin-left: 5px;
   font-size: 0.8em;
 }
+
+.site-aviso {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+  padding: 12px 20px;
+  text-align: center;
+  font-size: 0.95em;
+  margin: 0;
+}
+

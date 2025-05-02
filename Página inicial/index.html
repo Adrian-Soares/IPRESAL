@@ -11,7 +11,7 @@
   <!-- Topo com horário e telefone -->
   <div class="top-bar">
     <div class="container">
-      <span>Telefone: (81) 3654-1156 | Horário: 08:00h às 13:00h, de segunda à sexta</span>
+      <span>Telefone: (81) 3654-1156 | Horário: 08:00h às 13:00h</span>
     </div>
   </div>
 
@@ -40,18 +40,16 @@
         <li class="menu-dropdown">
           <a href="#">Publicações Oficiais <i class="fas fa-chevron-down"></i></a>
           <ul class="submenu">
-            <li><a href="#">Avaliação Atuarial</a></li>
-            <li><a href="#">Portarias</a></li>
-            <li><a href="#">Contratos</a></li>
-            <li><a href="#">Atas de Reuniões</a></li>
-            <li><a href="#">Investimentos</a></li>
-            <li><a href="#">Legislação</a></li>
+            <li><a href="avaliacao-aturial.html">Avaliação Atuarial</a></li>
+            <li><a href="portarias.html">Portarias</a></li>
+            <li><a href="contratos.html">Contratos</a></li>
+            <li><a href="atas-de-reunioes.html">Atas de Reuniões</a></li>
+            <li><a href="investimentos.html">Investimentos</a></li>
+            <li><a href="legislacao.html">Legislação</a></li>
           </ul>
-        </li>        
-        <li><a href="#">Educação Previdenciária</a></li>
-        <li><a href="#">Serviços</a></li>
-        <li><a href="portal-transparencia.html">Portal de Transparência</a></li>
-        <li><a href="#">Ouvidoria</a></li>
+        </li>
+        <li><a href="transparencia.html">Transparência</a></li>
+        <li><a href="ouvidoria.html">Ouvidoria</a></li>
       </ul>
       <div class="search-bar">
         <input type="text" placeholder="Buscar..." />
@@ -59,6 +57,11 @@
       </div>
     </div>
   </nav>
+
+  <!-- AVISO DE SITE EM DESENVOLVIMENTO -->
+  <div class="site-aviso">
+    <p>⚠️ Atenção: este site ainda não está finalizado e algumas funcionalidades podem não estar disponíveis.</p>
+  </div>
 
   <!-- Banner de boas-vindas -->
   <section class="hero-banner">
@@ -84,8 +87,8 @@
             <span>Portal Transparência</span>
           </a>
           <a href="#"><i class="fas fa-user-shield"></i><span>Privacidade</span></a>
-          <a href="#"><i class="fas fa-file-contract"></i><span>Termos</span></a>
-          <a href="#"><i class="fas fa-headset"></i><span>Ouvidoria</span></a>
+          <a href="termos-uso-privacidade.html"><i class="fas fa-file-contract"></i><span>Termos</span></a>
+          <a href="ouvidoria.html"><i class="fas fa-headset"></i><span>Ouvidoria</span></a>
         </div>
       </div>
     </div>
@@ -145,9 +148,22 @@
 
   <!-- Rodapé -->
   <footer>
-    <div class="footer-content container">
-      <p>&copy; 2025 IPRESAL - Todos os direitos reservados.</p>
+    <div class="footer-content container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 20px 0;">
+      <div class="footer-info" style="flex: 1 1 300px;">
+        <p><strong>Instituto de Previdência Social</strong></p>
+        <p><strong>CNPJ:</strong> XX.XXX.XXX/XXXX-XX</p>
+        <p><strong>Endereço:</strong> Rua Antônio Gomes de Moura, nº Centro - CEP: 55675-000 Salgadinho-PE</p>
+        <p><strong>Email:</strong> ouvidoria@ipresal.pe.gov.br</p>
+        <p><strong>Telefone:</strong> (81) 3654-1156</p>
+        <p><strong>Horário de funcionamento:</strong> 08:00h às 13:00h, de segunda à sexta-feira</p>
+      </div>
+      <div class="footer-logo" style="flex: 1 1 200px; text-align: center;">
+        <img src="logo_sua_empresa.png" alt="Logo" style="max-width: 150px;">
+      </div>
     </div>
+    <p style="text-align: center; background-color: #002050; color: white; padding: 10px 0; margin: 0;">
+      &copy; 2025 IPRESAL - Todos os direitos reservados.
+    </p>
   </footer>
 
   <!-- JavaScript -->

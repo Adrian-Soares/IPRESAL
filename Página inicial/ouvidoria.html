@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ouvidoria – IPRESAL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- seu CSS principal -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --primary: #002050;
+      --secondary: #004080;
+      --accent: #ffcc00;
+      --bg: #f9fafb;
+      --card-bg: #fff;
+      --text: #333;
+      --text-light: #555;
+      --radius: 8px;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+    }
+    .ouvidoria-hero {
+      background: linear-gradient(135deg, rgba(230,240,255,1) 0%, rgba(255,255,255,1) 100%);
+      text-align: center;
+      padding: 60px 20px;
+      margin-bottom: 40px;
+    }
+    .ouvidoria-hero h1 {
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .ouvidoria-hero p {
+      font-size: 1.1rem;
+      color: var(--secondary);
+    }
+    .ouvidoria-section {
+      max-width: 960px;
+      margin: auto;
+      padding: 0 20px 60px;
+    }
+    .ouvidoria-section p.intro {
+      font-size: 1.05rem;
+      margin-bottom: 30px;
+      text-align: center;
+      color: var(--text-light);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .contact-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.5s forwards;
+    }
+    .contact-card:nth-child(1) { animation-delay: 0.1s; }
+    .contact-card:nth-child(2) { animation-delay: 0.2s; }
+    .contact-card:nth-child(3) { animation-delay: 0.3s; }
+    .contact-card:nth-child(4) { animation-delay: 0.4s; }
+    .contact-card i {
+      font-size: 2.2rem;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .contact-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--secondary);
+    }
+    .contact-card p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+    .contact-card .btn {
+      display: inline-block;
+      padding: 10px 24px;
+      background: var(--accent);
+      color: var(--primary);
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .contact-card .btn:hover {
+      background: #ffd633;
+    }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Responsivo */
+    @media (max-width: 600px) {
+      .ouvidoria-hero h1 { font-size: 2.2rem; }
+      .contact-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topo -->
+  <div class="top-bar">
+    <div class="container">
+      <span>Telefone: (81) 3654-1156 | Horário: 08:00h às 13:00h</span>
+    </div>
+  </div>
+
+  <!-- Cabeçalho -->
+  <header class="header-main">
+    <div class="container header-flex">
+      <div class="logo-area">
+        <img src="Logo Salgadinho.jpg" alt="Logo do IPRESAL">
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu -->
+  <nav class="menu-bar">
+    <div class="container nav-container">
+      <ul class="menu-list">
+        <li><a href="index.html">Página Inicial</a></li>
+        <li><a href="transparencia.html">Transparência</a></li>
+        <li><a href="ouvidoria.html" class="active">Ouvidoria</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero da Ouvidoria -->
+  <section class="ouvidoria-hero">
+    <div class="container">
+      <h1>Ouvidoria IPRESAL</h1>
+      <p>Nosso canal oficial para sugestões, elogios, denúncias e reclamações.</p>
+    </div>
+  </section>
+
+  <!-- Cartões -->
+  <section class="ouvidoria-section">
+    <p class="intro">Escolha a forma mais conveniente para registrar sua manifestação:</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fas fa-exclamation-circle"></i>
+        <h3>Reclame Aqui</h3>
+        <p>Registre sua reclamação publicamente e acompanhe em tempo real.</p>
+        <a href="https://www.reclameaqui.com.br/empresa/ipresal" target="_blank" class="btn">Ir ao Reclame Aqui</a>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h3>E-mail</h3>
+        <p>Envie sua mensagem de forma sigilosa diretamente à Ouvidoria.</p>
+        <a href="mailto:ouvidoria@ipresal.pe.gov.br" class="btn">Enviar E-mail</a>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-phone"></i>
+        <h3>Telefone</h3>
+        <p>Atendimento via chamada ou presencial:</p>
+        <p><strong>(81) 3654-1156</strong><br>08:00h – 13:00h (Seg–Sex)</p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Presencial</h3>
+        <p>Visite-nos em nosso endereço para atendimento personalizado.</p>
+        <p>Rua Antônio Gomes de Moura, Centro – Salgadinho-PE</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seu Rodapé Atual -->
+  <footer>
+    <div class="footer-content container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 20px 0;">
+      <div class="footer-info" style="flex: 1 1 300px;">
+        <p><strong>Instituto de Previdência Social</strong></p>
+        <p><strong>CNPJ:</strong> XX.XXX.XXX/XXXX-XX</p>
+        <p><strong>Endereço:</strong> Rua Antônio Gomes de Moura, nº Centro - CEP: 55675-000 Salgadinho-PE</p>
+        <p><strong>Email:</strong> ouvidoria@ipresal.pe.gov.br</p>
+        <p><strong>Telefone:</strong> (81) 3654-1156</p>
+        <p><strong>Horário de funcionamento:</strong> 08:00h às 13:00h, de segunda à sexta-feira</p>
+      </div>
+      <div class="footer-logo" style="flex: 1 1 200px; text-align: center;">
+        <img src="logo_sua_empresa.png" alt="Logo" style="max-width: 150px;">
+      </div>
+    </div>
+    <p style="text-align: center; background-color: #002050; color: white; padding: 10px 0; margin: 0;">
+      &copy; 2025 IPRESAL - Todos os direitos reservados.
+    </p>
+  </footer>
+  
+
+</body>
+</html>
