@@ -391,3 +391,98 @@
     margin: 0;
   }
   
+  /* ===== Menu Mobile ===== */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.6em;
+    color: #fff;
+    cursor: pointer;
+  }
+  .menu-list.open {
+    display: flex !important;
+    flex-direction: column;
+  }
+  @media (max-width: 768px) {
+    /* mostra o botão e esconde o menu */
+    .menu-toggle {
+      display: block;
+    }
+    .menu-list {
+      display: none;
+      flex-direction: column;
+      background: var(--primary);
+      position: absolute;
+      top: 60px; /* ajuste conforme altura do header */
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .menu-list li {
+      margin: 0;
+    }
+    .menu-list li a {
+      display: block;
+      padding: 12px 20px;
+    }
+    .menu-dropdown .submenu {
+      position: static;
+      background: var(--secondary);
+      display: none;
+    }
+    .menu-dropdown.open .submenu {
+      display: block;
+    }
+    .menu-dropdown > a::after {
+      content: "\f078";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      float: right;
+    }
+    .menu-dropdown > a {
+      cursor: pointer;
+    }
+    /* ao clicar no item dropdown */
+    .menu-list li.menu-dropdown > a {
+      width: 100%;
+    }
+  }
+  
+  /* ===== Grids Mobile ===== */
+  @media (max-width: 600px) {
+    .noticias-grid,
+    .transparencia-grid,
+    .contact-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 20px !important;
+    }
+  
+    .hero-banner {
+      height: 250px;
+    }
+  
+    .hero-content h1 {
+      font-size: 1.8em;
+    }
+    .hero-content p {
+      font-size: 1em;
+    }
+  
+    .btn,
+    .card-button {
+      width: 100%;
+      text-align: center;
+      padding: 12px 0;
+      font-size: 1em;
+    }
+  }
+  
+  /* ===== Ajuste geral de fontes ===== */
+  @media (max-width: 600px) {
+    body {
+      font-size: 1em;
+    }
+  }
+  
