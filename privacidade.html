@@ -9,48 +9,6 @@
   <!-- Font Awesome -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
-  <style>
-    .privacidade-container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      font-family: Arial, sans-serif;
-      color: #333;
-      line-height: 1.8;
-    }
-    .privacidade-container h1 {
-      font-size: 2.2em;
-      color: #002050;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .privacidade-container h2 {
-      font-size: 1.6em;
-      color: #004080;
-      margin-top: 30px;
-      margin-bottom: 12px;
-      border-left: 6px solid #ffcc00;
-      padding-left: 12px;
-    }
-    .privacidade-container p {
-      margin-bottom: 16px;
-      text-align: justify;
-    }
-    .privacidade-container ul {
-      margin-left: 30px;
-      list-style: disc;
-      margin-bottom: 16px;
-    }
-    .privacidade-container ul li {
-      margin-bottom: 8px;
-    }
-    .privacidade-container em {
-      display: block;
-      margin-top: 30px;
-      text-align: right;
-      color: #666;
-    }
-  </style>
 </head>
 <body>
 
@@ -64,7 +22,7 @@
   <!-- Cabeçalho -->
   <header class="header-main">
     <div class="container header-flex">
-      <div class="logo-area" style="text-align: center; width: 100%;">
+      <div class="logo-area">
         <img src="IPRESAL.jpg" alt="Logo do IPRESAL">
       </div>
     </div>
@@ -92,16 +50,16 @@
             <li><a href="contratos.html">Contratos</a></li>
             <li><a href="atas-de-reuniões.html">Atas de Reuniões</a></li>
             <li><a href="investimentos.html">Investimentos</a></li>
-            <li><a href="legislação.html">Legislação</a></li>
+            <li><a href="legislacao.html">Legislação</a></li>
           </ul>
         </li>
-        <li><a href="transparência.html">Transparência</a></li>
+        <li><a href="transparencia.html">Transparência</a></li>
         <li><a href="privacidade.html" class="active">Privacidade</a></li>
       </ul>
       <div class="search-bar">
-        <form action="search.html" method="get" style="display:flex;">
-          <input name="q" type="text" placeholder="Buscar…" style="flex:1;padding:8px;">
-          <button type="submit"><i class="fas fa-search"></i></button>
+        <form action="search.html" method="get">
+          <input id="navSearch" name="q" type="text" placeholder="Buscar…">
+          <button id="navSearchBtn" type="button"><i class="fas fa-search"></i></button>
         </form>
       </div>
     </div>
@@ -112,91 +70,65 @@
     <h1>Política de Privacidade</h1>
 
     <h2>1. Compromisso com sua Privacidade</h2>
-    <p>
-      A sua privacidade é importante para nós. O IPRESAL respeita e protege qualquer informação pessoal que possamos coletar em nosso site. Solicitamos dados apenas quando estritamente necessários para fornecer nossos serviços, sempre de forma justa, legal e transparente, com seu conhecimento e consentimento.
-    </p>
+    <p>A sua privacidade é importante para nós. O IPRESAL respeita e protege qualquer informação pessoal que possamos coletar em nosso site...</p>
 
     <h2>2. Coleta e Uso de Dados</h2>
-    <p>
-      Retemos os dados coletados pelo tempo necessário ao atendimento da finalidade informada. Utilizamos medidas técnicas e organizacionais para prevenir perda, uso indevido, acesso não autorizado, divulgação ou alteração de suas informações.
-    </p>
+    <p>Retemos os dados coletados pelo tempo necessário ao atendimento da finalidade informada...</p>
     <ul>
-      <li><strong>Dados Pessoais:</strong> nome, e-mail, telefone, quando fornecidos em formulários;</li>
-      <li><strong>Dados de Navegação:</strong> cookies, endereço IP, tipo de navegador;</li>
-      <li><strong>Formulários de Contato:</strong> informações adicionais que você desejar compartilhar.</li>
+      <li><strong>Dados Pessoais:</strong> nome, e-mail, telefone, quando fornecidos;</li>
+      <li><strong>Dados de Navegação:</strong> cookies, IP, tipo de navegador;</li>
+      <li><strong>Formulários de Contato:</strong> informações adicionais que você compartilhar.</li>
     </ul>
 
     <h2>3. Compartilhamento de Informações</h2>
-    <p>
-      Não compartilhamos seus dados pessoais com terceiros para fins comerciais. Podemos divulgar informações apenas se exigido por lei ou ordem judicial.
-    </p>
+    <p>Não compartilhamos seus dados pessoais com terceiros para fins comerciais...</p>
 
     <h2>4. Links Externos</h2>
-    <p>
-      Nosso site pode conter links para sites de terceiros. Não temos controle sobre o conteúdo e as práticas de privacidade desses sites e não nos responsabilizamos por eles.
-    </p>
+    <p>Nosso site pode conter links para terceiros. Não controlamos o conteúdo ou práticas de privacidade deles...</p>
 
     <h2>5. Cookies e Publicidade</h2>
-    <p>
-      Utilizamos cookies para melhorar sua experiência e, eventualmente, publicidade comportamental anônima. Isso inclui:
-    </p>
+    <p>Utilizamos cookies para melhorar sua experiência e, eventualmente, publicidade comportamental anônima...</p>
     <ul>
-      <li>Google AdSense (cookie DoubleClick) para veicular anúncios mais relevantes e limitar repetições;</li>
-      <li>Cookies de rastreamento de afiliados para identificar acessos via parceiros e creditar promoções.</li>
+      <li>Google AdSense (cookie DoubleClick);</li>
+      <li>Cookies de rastreamento de afiliados.</li>
     </ul>
 
     <h2>6. Recusa de Dados</h2>
-    <p>
-      Você pode recusar fornecer dados pessoais, ciente de que isso pode impedir o acesso a algumas funcionalidades.
-    </p>
+    <p>Você pode recusar fornecer dados, ciente de que isso pode impedir o acesso a algumas funcionalidades.</p>
 
     <h2>7. Compromisso do Usuário</h2>
     <ul>
-      <li>A) Não se envolver em atividades ilegais, contrárias à ordem pública ou à boa-fé;</li>
-      <li>B) Não divulgar conteúdo discriminatório, pornográfico ilegal, apologia ao terrorismo ou violação de direitos humanos;</li>
-      <li>C) Não danificar sistemas (hardwares ou softwares) do IPRESAL ou de terceiros, nem disseminar vírus ou malwares.</li>
+      <li>A) Não praticar atividades ilegais ou contrárias à boa-fé;</li>
+      <li>B) Não divulgar conteúdo discriminatório, pornográfico ilegal, apologia ao terrorismo;</li>
+      <li>C) Não danificar sistemas ou disseminar malwares.</li>
     </ul>
 
     <h2>8. Mais Informações</h2>
-    <p>
-      Se tiver dúvidas ou quiser saber mais sobre como lidamos com seus dados, entre em contato conosco. Esta política está em vigor desde:
-    </p>
+    <p>Se tiver dúvidas sobre nossos procedimentos de privacidade, entre em contato.</p>
     <em>05 de maio de 2025</em>
   </section>
 
   <!-- Rodapé -->
   <footer>
-    <div class="footer-content container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 20px 0;">
-      <div class="footer-info" style="flex: 1 1 300px;">
+    <div class="footer-content container">
+      <div class="footer-info">
         <p><strong>Instituto de Previdência Social</strong></p>
         <p><strong>CNPJ:</strong> XX.XXX.XXX/XXXX-XX</p>
-        <p><strong>Endereço:</strong> Rua Antônio Gomes de Moura, nº Centro - CEP: 55675-000 Salgadinho-PE</p>
-        <p><strong>Email:</strong> ouvidoria@ipresal.pe.gov.br</p>
+        <p><strong>Endereço:</strong> Rua Antônio Gomes de Moura, nº Centro – CEP: 55675-000</p>
+        <p><strong>E-mail:</strong> ouvidoria@ipresal.pe.gov.br</p>
         <p><strong>Telefone:</strong> (81) 3654-1156</p>
-        <p><strong>Horário de funcionamento:</strong> 08:00h às 13:00h, de segunda à sexta-feira</p>
+        <p><strong>Horário:</strong> 08:00h–13:00h, seg.–sex.</p>
       </div>
-      <div class="footer-logo" style="flex: 1 1 200px; text-align: center;">
-        <img src="logo_sua_empresa.png" alt="Logo" style="max-width: 150px;">
+      <div class="footer-logo">
+        <img src="logo_sua_empresa.png" alt="Logo IPRESAL">
       </div>
     </div>
-    <p style="text-align: center; background-color: #002050; color: white; padding: 10px 0; margin: 0;">
-      &copy; 2025 IPRESAL - Todos os direitos reservados.
-    </p>
+    <p class="footer-bottom">&copy; 2025 IPRESAL – Todos os direitos reservados.</p>
   </footer>
 
+  <!-- FontAwesome JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-  
-  <script>
-    const btn = document.getElementById('navSearchBtn');
-    const inp = document.getElementById('navSearch');
-    btn.addEventListener('click', () => {
-      const q = inp.value.trim();
-      if (q) window.location.href = 'search.html?q=' + encodeURIComponent(q);
-    });
-    inp.addEventListener('keypress', e => {
-      if (e.key === 'Enter') btn.click();
-    });
-  </script>
-  
+  <!-- Script global -->
+  <script src="scripts.js"></script>
 </body>
 </html>

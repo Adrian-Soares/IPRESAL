@@ -167,7 +167,17 @@
     </p>
   </footer>
 
-  
+  <script>
+    const btn = document.getElementById('navSearchBtn');
+    const inp = document.getElementById('navSearch');
+    btn.addEventListener('click', () => {
+      const q = inp.value.trim();
+      if (q) window.location.href = 'search.html?q=' + encodeURIComponent(q);
+    });
+    inp.addEventListener('keypress', e => {
+      if (e.key === 'Enter') btn.click();
+    });
+  </script>  
 
 </body>
 </html>

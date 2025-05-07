@@ -216,35 +216,6 @@
     color: #004080;
   }
   
-  /* Relatórios */
-  .relatorio-lista {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    max-width: 700px;
-    margin: 30px auto 0;
-  }
-  .relatorio-lista li {
-    background-color: #fff;
-    border-left: 5px solid #004080;
-    padding: 15px 20px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  }
-  .relatorio-lista li a {
-    text-decoration: none;
-    color: #004080;
-    font-weight: bold;
-  }
-  .relatorio-lista li a:hover {
-    text-decoration: underline;
-  }
-  .relatorio-lista i {
-    margin-right: 10px;
-    color: #cc0000;
-  }
-  
   /* Rodapé */
   footer {
     background-color: #002050;
@@ -390,3 +361,156 @@
     font-size: 0.95em;
     margin: 0;
   }
+
+  /* ================================
+   Estilos para privacidade.html
+   (movidos do <style> inline)
+   ================================ */
+
+.privacidade-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.8;
+}
+
+.privacidade-container h1 {
+  font-size: 2.2em;
+  color: #002050;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.privacidade-container h2 {
+  font-size: 1.6em;
+  color: #004080;
+  margin-top: 30px;
+  margin-bottom: 12px;
+  border-left: 6px solid #ffcc00;
+  padding-left: 12px;
+}
+
+.privacidade-container p {
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.privacidade-container ul {
+  margin-left: 30px;
+  list-style: disc;
+  margin-bottom: 16px;
+}
+
+.privacidade-container ul li {
+  margin-bottom: 8px;
+}
+
+.privacidade-container em {
+  display: block;
+  margin-top: 30px;
+  text-align: right;
+  color: #666;
+}
+
+/* ================================
+   Ajuste no form de busca do nav
+   (para manter padding original)
+   ================================ */
+
+.search-bar form {
+  display: flex;
+}
+
+.search-bar input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+
+.search-bar button {
+  background: #ffcc00;
+  border: none;
+  padding: 0 12px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+    .tabela-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .tabela-container h1 {
+      color: #004080;
+      margin-bottom: 20px;
+    }
+    .tabela-container input#filtro {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    thead {
+      background-color: #001f4d;
+      color: white;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    .visualizar-link {
+      color: #004080;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .visualizar-link i {
+      margin-right: 5px;
+      color: #e74c3c;
+    }
+    .visualizar-link:hover {
+      text-decoration: underline;
+    }
+
+    /* --------------------------------------------------
+   Seções de texto (Conheça a Cidade, RPPS, Estrutura…)
+   -------------------------------------------------- */
+.container-texto {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.container-texto h1 {
+  font-size: 2em;
+  color: #004080;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container-texto h2 {
+  font-size: 1.5em;
+  color: #004080;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-left: 5px solid #ffcc00;
+  padding-left: 10px;
+}
+
+.container-texto p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
