@@ -1,0 +1,93 @@
+[
+    {
+      "id": "index",
+      "title": "Página Inicial",
+      "url": "index.html",
+      "content": "Seja bem-vindo ao IPRESAL. Aqui você encontra informações institucionais, serviços, links úteis (Prefeitura, Transparência, Privacidade, Termos, Ouvidoria), notícias recentes, localização e aviso de site em desenvolvimento."
+    },
+    {
+      "id": "conheca-cidade",
+      "title": "Conheça a Cidade",
+      "url": "conheça-cidade.html",
+      "content": "Informações sobre Salgadinho: história desde a fundação da capela de Nossa Senhora das Dores, geografia (relevo, solos, clima, bacia do Capibaribe), economia (agricultura, pecuária, turismo) e pontos turísticos como as fontes termais e a igreja-mirante."
+    },
+    {
+      "id": "conheca-rpps",
+      "title": "Conheça o RPPS",
+      "url": "conheça-rpps.html",
+      "content": "Descrição do Regime Próprio de Previdência Social do município, suas bases legais (Lei nº 348/2001), missão do IPRESAL, gestão de aposentadorias e pensões, fiscalização por órgãos competentes e ações de educação previdenciária."
+    },
+    {
+      "id": "estrutura-administrativa",
+      "title": "Estrutura Administrativa",
+      "url": "estrutura-administrativa.html",
+      "content": "Listagem da diretoria-presidente, coordenação, conselho administrativo e fiscal com nomes e cargos. Inclui tabela de portarias e ordenações para composição dos órgãos."
+    },
+    {
+      "id": "noticias",
+      "title": "Notícias",
+      "url": "noticias.html",
+      "content": "Comunicados e notícias sobre o IPRESAL, como calendário de pagamentos, novas portarias, eventos de conscientização e campanhas de educação previdenciária."
+    },
+    {
+      "id": "avaliacao-atuarial",
+      "title": "Avaliação Atuarial",
+      "url": "avaliação-autarial.html",
+      "content": "Relatórios anuais de avaliação atuarial do RPPS, com indicadores de equilíbrio financeiro, demonstrativos de contribuições e projeções de longo prazo para sustentabilidade do regime."
+    },
+    {
+      "id": "portarias",
+      "title": "Portarias",
+      "url": "portarias.html",
+      "content": "Listagem de portarias publicadas pelo IPRESAL: ano, número e breve descrição das nomeações, exonerações e demais atos administrativos de pessoal."
+    },
+    {
+      "id": "contratos",
+      "title": "Contratos",
+      "url": "contratos.html",
+      "content": "Registro dos contratos firmados pelo instituto: ano, número, objeto do contrato, valores envolvidos e período de vigência."
+    },
+    {
+      "id": "atas-de-reunioes",
+      "title": "Atas de Reuniões",
+      "url": "atas-de-reuniões.html",
+      "content": "Documentos das atas de reuniões dos conselhos e comissões do IPRESAL, com datas, participantes e deliberações registradas."
+    },
+    {
+      "id": "investimentos",
+      "title": "Investimentos",
+      "url": "investimentos.html",
+      "content": "Política e demonstrativos de investimentos do RPPS: diretrizes aprovadas, carteiras alocadas, rentabilidade e relatórios trimestrais."
+    },
+    {
+      "id": "legislacao",
+      "title": "Legislação",
+      "url": "legislacao.html",
+      "content": "Leis, decretos e normas municipais que regem o IPRESAL e o RPPS, incluindo ementas, números, datas e links para os textos completos."
+    },
+    {
+      "id": "transparencia",
+      "title": "Transparência",
+      "url": "transparencia.html",
+      "content": "Acesso rápido a portais oficiais: Consulta Pública do TCE, CADPREV, comprovante de repasse, CRP e demonstrativo previdenciário, garantindo visibilidade dos dados públicos."
+    },
+    {
+      "id": "ouvidoria",
+      "title": "Ouvidoria",
+      "url": "ouvidoria.html",
+      "content": "Formulário de manifestação (elogio, denúncia, reclamação, sugestão) com opção de envio normal ou anônimo e instruções para contato direto via e-mail."
+    },
+    {
+      "id": "termos-uso-privacidade",
+      "title": "Termos de Uso e Privacidade",
+      "url": "termos-uso-privacidade.html",
+      "content": "Regras de uso do site, direitos autorais, isenções de responsabilidade, coleta e tratamento de dados pessoais, políticas de cookies, compartilhamento, segurança, direitos dos usuários e legislação aplicável."
+    },
+    {
+      "id": "politica-privacidade",
+      "title": "Política de Privacidade",
+      "url": "privacidade.html",
+      "content": "Compromisso com a privacidade, tipos de dados coletados, finalidade, retenção, proteção, uso de cookies, links externos, responsabilidades e esclarecimentos sobre tratamento de informações pessoais."
+    }
+  ]
+    

@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
   <title>Termos de Uso e Política de Privacidade – IPRESAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- estilo global -->
   <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   <style>
     .termos-container {
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
-      line-height: 1.85;
+      line-height: 1.8;
       color: #333;
       font-family: Arial, sans-serif;
     }
     .termos-container h1 {
       font-size: 2.2em;
       color: #002050;
-      margin-bottom: 20px;
       text-align: center;
+      margin-bottom: 20px;
     }
     .termos-container h2 {
       font-size: 1.6em;
@@ -28,33 +32,53 @@
       border-left: 6px solid #ffcc00;
       padding-left: 12px;
     }
-    .termos-container p {
+    .termos-container p,
+    .termos-container ul {
       margin-bottom: 18px;
       text-align: justify;
     }
     .termos-container ul {
-      margin-bottom: 18px;
       margin-left: 30px;
-      list-style-type: disc;
+      list-style: disc;
     }
     .termos-container ul li {
       margin-bottom: 8px;
+    }
+    /* busca na nav */
+    .search-nav {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+    .search-nav input {
+      padding: 6px 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px 0 0 4px;
+      font-size: 0.9em;
+    }
+    .search-nav button {
+      background-color: #004080;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <!-- Topo -->
+  <!-- Top bar -->
   <div class="top-bar">
     <div class="container">
-      <span>Telefone: (81) 3654-1156 | Horário: 08:00h às 13:00h</span>
+      <span>Telefone: (81) 3654-1156 | Horário: 08:00h às 13:00h, de segunda à sexta</span>
     </div>
   </div>
 
-  <!-- Cabeçalho -->
+  <!-- Header -->
   <header class="header-main">
     <div class="container header-flex">
-      <div class="logo-area" style="text-align:center; width:100%;">
+      <div class="logo-area" style="text-align: center; width: 100%;">
         <img src="IPRESAL.jpg" alt="Logo do IPRESAL">
       </div>
     </div>
@@ -70,6 +94,7 @@
           <ul class="submenu">
             <li><a href="conheça-cidade.html">Conheça a Cidade</a></li>
             <li><a href="conheça-rpps.html">Conheça o RPPS</a></li>
+            <li><a href="estrutura-administrativa.html">Estrutura Administrativa</a></li>
             <li><a href="noticias.html">Notícias</a></li>
           </ul>
         </li>
@@ -79,26 +104,97 @@
             <li><a href="avaliacao-aturial.html">Avaliação Atuarial</a></li>
             <li><a href="portarias.html">Portarias</a></li>
             <li><a href="contratos.html">Contratos</a></li>
-            <li><a href="atas-de-reunioes.html">Atas de Reuniões</a></li>
+            <li><a href="atas-de-reuniões.html">Atas de Reuniões</a></li>
             <li><a href="investimentos.html">Investimentos</a></li>
             <li><a href="legislacao.html">Legislação</a></li>
           </ul>
         </li>
         <li><a href="transparencia.html">Transparência</a></li>
+        <li><a href="ouvidoria.html">Ouvidoria</a></li>
       </ul>
+      <div class="search-nav">
+        <input id="navSearch" type="text" placeholder="Pesquisar…">
+        <button id="navSearchBtn"><i class="fas fa-search"></i></button>
+      </div>
     </div>
   </nav>
 
-  <!-- Rodapé -->
+  <!-- Conteúdo dos Termos -->
+  <section class="termos-container">
+    <h1>Termos de Uso</h1>
+
+    <h2>1. Termos</h2>
+    <p>
+      Ao acessar o site do IPRESAL, você concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis, sendo responsável
+      pelo cumprimento das leis locais. Se não concordar com algum termo, está proibido de usar este site. Todos os materiais deste site são
+      protegidos por direitos autorais e marcas registradas.
+    </p>
+
+    <h2>2. Uso de Licença</h2>
+    <p>
+      O IPRESAL concede licença temporária para baixar uma cópia dos materiais (informações ou software) para visualização pessoal e não
+      comercial. Sob esta licença, você não pode:
+    </p>
+    <ul>
+      <li>Modificar ou copiar os materiais;</li>
+      <li>Usar os materiais para fins comerciais ou exibição pública;</li>
+      <li>Tentar descompilar ou engenharia reversa de qualquer software;</li>
+      <li>Remover direitos autorais ou notificações de propriedade;</li>
+      <li>Transferir materiais para terceiros ou espelhar em outro servidor.</li>
+    </ul>
+    <p>
+      Esta licença será rescindida automaticamente se violar qualquer restrição. Ao encerrar a visualização, exclua todas as cópias dos materiais,
+      eletrônicas ou impressas.
+    </p>
+
+    <h2>3. Isenção de responsabilidade</h2>
+    <p>
+      Os materiais deste site são fornecidos "como estão". O IPRESAL não oferece garantias expressas ou implícitas, incluindo garantias de
+      comercialização, adequação a um propósito específico ou não infração de direitos.
+    </p>
+    <p>
+      O IPRESAL não garante precisão, resultados prováveis ou confiabilidade do uso dos materiais neste site ou em sites vinculados.
+    </p>
+
+    <h2>4. Limitações</h2>
+    <p>
+      Em nenhuma hipótese o IPRESAL ou seus fornecedores serão responsáveis por danos (incluindo perda de dados, lucros ou interrupção de
+      negócios) decorrentes do uso ou incapacidade de usar os materiais, mesmo se notificados da possibilidade desses danos.
+    </p>
+
+    <h2>5. Precisão dos materiais</h2>
+    <p>
+      Os materiais podem conter erros técnicos ou tipográficos. O IPRESAL não garante que sejam precisos, completos ou atuais e reserva-se o
+      direito de alterá-los sem aviso prévio.
+    </p>
+
+    <h2>6. Links</h2>
+    <p>
+      O IPRESAL não revisou todos os sites vinculados e não se responsabiliza pelo conteúdo de sites externos. A inclusão de links não implica
+      endosso.
+    </p>
+
+    <h2>7. Modificações</h2>
+    <p>
+      O IPRESAL pode revisar estes termos a qualquer momento, sem aviso. Ao usar o site, você concorda em ficar vinculado à versão atual.
+    </p>
+
+    <h2>8. Lei aplicável</h2>
+    <p>
+      Estes termos são regidos pelas leis do Brasil, com jurisdição exclusiva dos tribunais de Pernambuco.
+    </p>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <div class="footer-content container" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:20px 0;">
       <div class="footer-info" style="flex:1 1 300px;">
         <p><strong>Instituto de Previdência Social</strong></p>
         <p><strong>CNPJ:</strong> XX.XXX.XXX/XXXX-XX</p>
-        <p><strong>Endereço:</strong> Rua Antônio Gomes de Moura, nº Centro – CEP: 55675-000 Salgadinho-PE</p>
+        <p><strong>Endereço:</strong> Rua Antônio Gomes de Moura, nº Centro – CEP 55675-000 Salgadinho-PE</p>
         <p><strong>E-mail:</strong> ouvidoria@ipresal.pe.gov.br</p>
         <p><strong>Telefone:</strong> (81) 3654-1156</p>
-        <p><strong>Horário:</strong> 08:00h às 13:00h, seg. a sex.</p>
+        <p><strong>Horário:</strong> 08:00h–13:00h, seg.–sex.</p>
       </div>
       <div class="footer-logo" style="flex:1 1 200px;text-align:center;">
         <img src="logo_sua_empresa.png" alt="Logo IPRESAL" style="max-width:150px;">
@@ -109,5 +205,15 @@
     </p>
   </footer>
 
+  <script>
+    // captura navegação e redireciona para search.html?q=
+    document.getElementById('navSearchBtn').addEventListener('click', () => {
+      const q = document.getElementById('navSearch').value.trim();
+      if (q) window.location.href = 'search.html?q=' + encodeURIComponent(q);
+    });
+    document.getElementById('navSearch').addEventListener('keypress', e => {
+      if (e.key === 'Enter') document.getElementById('navSearchBtn').click();
+    });
+  </script>
 </body>
 </html>

@@ -2,11 +2,12 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Avaliação Atuarial - IPRESAL</title>
+  <title>Avaliação Atuarial – IPRESAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
+    /* Container geral */
     .tabela-container {
       max-width: 1100px;
       margin: 40px auto;
@@ -16,13 +17,15 @@
       color: #004080;
       margin-bottom: 20px;
     }
-    .tabela-container input {
+    /* Filtro para a tabela */
+    .tabela-container input#filtro {
       padding: 10px;
       width: 100%;
       margin-bottom: 20px;
       border: 1px solid #ccc;
       border-radius: 8px;
     }
+    /* Estilização da tabela */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -39,6 +42,7 @@
     tr:nth-child(even) {
       background-color: #f9f9f9;
     }
+    /* Links de visualização */
     .visualizar-link {
       color: #004080;
       font-weight: bold;
@@ -58,7 +62,7 @@
   <!-- Topo -->
   <div class="top-bar">
     <div class="container">
-      <span>Telefone: (81) 3654-1156 | Horário: 08:00h às 13:00h</span>
+      <span>Telefone: (81) 3654-1156 | Horário: 08:00h às 13:00h, de segunda à sexta</span>
     </div>
   </div>
 
@@ -71,11 +75,20 @@
     </div>
   </header>
 
-  <!-- Menu -->
+  <!-- Menu de navegação -->
   <nav class="menu-bar">
     <div class="container nav-container">
       <ul class="menu-list">
         <li><a href="index.html">Página Inicial</a></li>
+        <li class="menu-dropdown">
+          <a href="#">Institucional <i class="fas fa-chevron-down"></i></a>
+          <ul class="submenu">
+            <li><a href="conheça-cidade.html">Conheça a Cidade</a></li>
+            <li><a href="conheça-rpps.html">Conheça o RPPS</a></li>
+            <li><a href="estrutura-administrativa.html">Estrutura Administrativa</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+          </ul>
+        </li>
         <li class="menu-dropdown">
           <a href="#">Publicações Oficiais <i class="fas fa-chevron-down"></i></a>
           <ul class="submenu">
@@ -85,14 +98,24 @@
             <li><a href="atas-de-reuniões.html">Atas de Reuniões</a></li>
             <li><a href="investimentos.html">Investimentos</a></li>
             <li><a href="legislação.html">Legislação</a></li>
+          </ul>
+        </li>
+        <li><a href="transparência.html">Transparência</a></li>
+        <li><a href="ouvidoria.html">Ouvidoria</a></li>
       </ul>
+      <div class="search-bar">
+        <form action="search.html" method="get" style="display:flex;">
+          <input name="q" type="text" placeholder="Buscar…" style="flex:1;padding:8px;">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
     </div>
   </nav>
 
-  <!-- Conteúdo -->
+  <!-- Conteúdo principal -->
   <section class="tabela-container">
     <h1>Avaliação Atuarial</h1>
-    <input type="text" id="filtro" placeholder="Buscar por ano ou termo...">
+    <input type="text" id="filtro" placeholder="Buscar por ano ou descrição...">
 
     <table>
       <thead>
@@ -104,69 +127,97 @@
       </thead>
       <tbody id="tabela-atuarial">
         <tr>
-          <td>2024</td>
-          <td>Descrição</td>
-          <td><a href="pdfs/avaliacoes/atuarial-2024.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+          <td>2023</td>
+          <td>Parecer Técnico nº 003/2023/BM sobre Equilíbrio Financeiro e Atuarial (EC 103/19)</td>
+          <td>
+            <a href="pdfs/avaliacoes/003-2023-BM-equilibrio-atuarial.pdf" target="_blank" class="visualizar-link">
+              <i class="fas fa-file-pdf"></i>Visualizar
+            </a>
+          </td>
         </tr>
         <tr>
           <td>2023</td>
-          <td>Descrição</td>
-          <td><a href="pdfs/avaliacoes/nta-2023.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+          <td>Nota Técnica Atuarial – NTA 2023</td>
+          <td>
+            <a href="pdfs/avaliacoes/nta-2023.pdf" target="_blank" class="visualizar-link">
+              <i class="fas fa-file-pdf"></i>Visualizar
+            </a>
+          </td>
         </tr>
         <tr>
           <td>2022</td>
-          <td>Descrição</td>
-          <td><a href="pdfs/avaliacoes/atuarial-2022.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+          <td>Avaliação Atuarial 2022</td>
+          <td>
+            <a href="pdfs/avaliacoes/atuarial-2022.pdf" target="_blank" class="visualizar-link">
+              <i class="fas fa-file-pdf"></i>Visualizar
+            </a>
+          </td>
         </tr>
         <tr>
           <td>2021</td>
-          <td>Descriçãol</td>
-          <td><a href="pdfs/avaliacoes/atuarial-2021.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+          <td>Nota Técnica Atuarial – NTA 2021</td>
+          <td>
+            <a href="pdfs/avaliacoes/nta-2021.pdf" target="_blank" class="visualizar-link">
+              <i class="fas fa-file-pdf"></i>Visualizar
+            </a>
+          </td>
         </tr>
         <tr>
           <td>2020</td>
-          <td>Descrição</td>
-          <td><a href="pdfs/avaliacoes/nta-2020.pdf" target="_blank" class="visualizar-link"><i class="fas fa-file-pdf"></i>Visualizar</a></td>
+          <td>Avaliação Atuarial 2020</td>
+          <td>
+            <a href="pdfs/avaliacoes/atuarial-2020.pdf" target="_blank" class="visualizar-link">
+              <i class="fas fa-file-pdf"></i>Visualizar
+            </a>
+          </td>
         </tr>
       </tbody>
     </table>
   </section>
 
   <!-- Rodapé -->
-<footer>
-  <div class="footer-content container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 20px 0;">
-    <div class="footer-info" style="flex: 1 1 300px;">
-      <p><strong>Instituto de Previdência Social</strong></p>
-      <p><strong>CNPJ:</strong> XX.XXX.XXX/XXXX-XX</p>
-      <p><strong>Endereço:</strong> Rua Antônio Gomes de Moura, nº Centro - CEP: 55675-000 Salgadinho-PE</p>
-      <p><strong>Email:</strong> ouvidoria@ipresal.pe.gov.br</p>
-      <p><strong>Telefone:</strong> (81) 3654-1156</p>
-      <p><strong>Horário de funcionamento:</strong> 08:00h às 13:00h, de segunda à sexta-feira</p>
+  <footer>
+    <div class="footer-content container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 20px 0;">
+      <div class="footer-info" style="flex: 1 1 300px;">
+        <p><strong>Instituto de Previdência Social</strong></p>
+        <p><strong>CNPJ:</strong> XX.XXX.XXX/XXXX-XX</p>
+        <p><strong>Endereço:</strong> Rua Antônio Gomes de Moura, nº Centro - CEP: 55675-000 Salgadinho-PE</p>
+        <p><strong>Email:</strong> ouvidoria@ipresal.pe.gov.br</p>
+        <p><strong>Telefone:</strong> (81) 3654-1156</p>
+        <p><strong>Horário de funcionamento:</strong> 08:00h às 13:00h, de segunda à sexta-feira</p>
+      </div>
+      <div class="footer-logo" style="flex: 1 1 200px; text-align: center;">
+        <img src="logo_sua_empresa.png" alt="Logo" style="max-width: 150px;">
+      </div>
     </div>
-    <div class="footer-logo" style="flex: 1 1 200px; text-align: center;">
-      <img src="logo_sua_empresa.png" alt="Logo" style="max-width: 150px;">
-    </div>
-  </div>
-  <p style="text-align: center; background-color: #002050; color: white; padding: 10px 0; margin: 0;">
-    &copy; 2025 IPRESAL - Todos os direitos reservados.
-  </p>
-</footer>
+    <p style="text-align: center; background-color: #002050; color: white; padding: 10px 0; margin: 0;">
+      &copy; 2025 IPRESAL - Todos os direitos reservados.
+    </p>
+  </footer>
 
-
-  <!-- Filtro -->
+  <!-- Script do filtro -->
   <script>
     const filtro = document.getElementById('filtro');
     const tabela = document.getElementById('tabela-atuarial');
-
-    filtro.addEventListener('keyup', function () {
-      const valor = filtro.value.toLowerCase();
-      const linhas = tabela.getElementsByTagName('tr');
-      for (let i = 0; i < linhas.length; i++) {
-        const textoLinha = linhas[i].innerText.toLowerCase();
-        linhas[i].style.display = textoLinha.includes(valor) ? '' : 'none';
-      }
+    filtro.addEventListener('keyup', () => {
+      const termo = filtro.value.toLowerCase();
+      tabela.querySelectorAll('tr').forEach(row => {
+        row.style.display = row.innerText.toLowerCase().includes(termo) ? '' : 'none';
+      });
     });
   </script>
+  <script>
 
+    const btn = document.getElementById('navSearchBtn');
+    const inp = document.getElementById('navSearch');
+    btn.addEventListener('click', () => {
+      const q = inp.value.trim();
+      if (q) window.location.href = 'search.html?q=' + encodeURIComponent(q);
+    });
+    inp.addEventListener('keypress', e => {
+      if (e.key === 'Enter') btn.click();
+    });
+  </script>
+  
 </body>
 </html>

@@ -11,7 +11,7 @@
   <!-- Topo com horário e telefone -->
   <div class="top-bar">
     <div class="container">
-      <span>Telefone: (81) 3654-1156 | Horário: 08:00h às 13:00h</span>
+      <span>Telefone: (81) 3654-1156 | Horário: 08:00h às 13:00h, de segunda à sexta</span>
     </div>
   </div>
 
@@ -34,6 +34,7 @@
           <ul class="submenu">
             <li><a href="conheça-cidade.html">Conheça a Cidade</a></li>
             <li><a href="conheça-rpps.html">Conheça o RPPS</a></li>
+            <li><a href="estrutura-administrativa.html">Estrutura Administrativa</a></li>
             <li><a href="noticias.html">Notícias</a></li>
           </ul>
         </li>
@@ -52,15 +53,16 @@
         <li><a href="ouvidoria.html">Ouvidoria</a></li>
       </ul>
       <div class="search-bar">
-        <input type="text" placeholder="Buscar..." />
-        <button><i class="fas fa-search"></i></button>
-      </div>
-    </div>
+        <form action="search.html" method="get" style="display:flex;">
+          <input name="q" type="text" placeholder="Buscar…" style="flex:1;padding:8px;">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>      
   </nav>
 
   <!-- AVISO DE SITE EM DESENVOLVIMENTO -->
   <div class="site-aviso">
-    <p>⚠ Atenção: este site ainda não está finalizado e algumas funcionalidades podem não estar disponíveis.</p>
+    <p>⚠️ Atenção: este site ainda não está finalizado e algumas funcionalidades podem não estar disponíveis.</p>
   </div>
 
   <!-- Banner de boas-vindas -->
@@ -86,7 +88,7 @@
             <i class="fas fa-file-invoice-dollar"></i>
             <span>Transparência</span>
           </a>
-          <a href="#"><i class="fas fa-user-shield"></i><span>Privacidade</span></a>
+          <a href="privacidade.html"><i class="fas fa-user-shield"></i><span>Privacidade</span></a>
           <a href="termos-uso-privacidade.html"><i class="fas fa-file-contract"></i><span>Termos</span></a>
           <a href="ouvidoria.html"><i class="fas fa-headset"></i><span>Ouvidoria</span></a>
         </div>
@@ -102,7 +104,7 @@
       <div class="noticias-grid">
         <!-- Notícia 1 -->
         <div class="news-card">
-          <div class="news-image" style="background-image: url('Noticias 02.jpg');"></div>
+          <div class="news-image" style="background-image: url('pagamento.jpeg');"></div>
           <div class="news-content">
             <h3>Calendário de Pagamentos</h3>
             <p>Confira as datas de pagamento dos benefícios referentes ao semestre.</p>
@@ -166,7 +168,16 @@
     </p>
   </footer>
 
-  <!-- JavaScript -->
-  <script src="script.js"></script>
+  <script>
+    const btn = document.getElementById('navSearchBtn');
+    const inp = document.getElementById('navSearch');
+    btn.addEventListener('click', () => {
+      const q = inp.value.trim();
+      if (q) window.location.href = 'search.html?q=' + encodeURIComponent(q);
+    });
+    inp.addEventListener('keypress', e => {
+      if (e.key === 'Enter') btn.click();
+    });
+  </script>  
 </body>
 </html>
