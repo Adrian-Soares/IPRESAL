@@ -2,66 +2,36 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Notícias – IPRESAL</title>
+  <title>Conheça a Cidade – IPRESAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Estilo global -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <style>
-    .noticias-pagina {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .noticias-pagina h1 {
-      font-size: 2em;
-      color: #004080;
-      margin-bottom: 20px;
-    }
-    .noticias-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .news-card {
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-      flex: 1 1 300px;
-    }
-    .news-image {
-      height: 180px;
-      background-size: cover;
-      background-position: center;
-    }
-    .news-content {
-      padding: 15px;
-    }
-    .news-content h3 {
-      color: #004080;
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-    .news-content p {
-      font-size: 0.95em;
-      margin-bottom: 10px;
-    }
-    .card-button {
-      display: inline-block;
-      background-color: #ffcc00;
-      color: #004080;
-      padding: 8px 16px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-    .card-button:hover {
-      background-color: #ffd633;
-    }
-  </style>
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Scripts: menu, busca e filtro de tabela -->
+  <script defer src="scripts.js"></script>
 </head>
 <body>
+
+ <!-- WIDGET DE ACESSIBILIDADE -->
+ <div class="a11y-widget">
+  <button class="a11y-toggle" aria-label="Abrir menu de acessibilidade" aria-expanded="false">
+    <i class="fas fa-wheelchair"></i>
+  </button>
+  <div class="a11y-menu" aria-hidden="true">
+    <a href="sitemap.html"><i class="fas fa-sitemap"></i> Mapa do site</a>
+    <a href="glossario.html"><i class="fas fa-book"></i> Glossário</a>
+    <button id="a11y-contrast"><i class="fas fa-adjust"></i> Alto contraste</button>
+    <button id="a11y-bw"><i class="fas fa-circle"></i> Preto e branco</button>
+    <button id="a11y-invert"><i class="fas fa-exchange-alt"></i> Inverter cores</button>
+    <button id="a11y-highlight"><i class="fas fa-link"></i> Destacar links</button>
+    <button id="a11y-font-up"><i class="fas fa-plus"></i> Aumentar fonte</button>
+    <button id="a11y-font-down"><i class="fas fa-minus"></i> Diminuir fonte</button>
+    <button id="a11y-font-regular"><i class="fas fa-font"></i> Fonte regular</button>
+    <button id="a11y-reset"><i class="fas fa-redo"></i> Redefinir</button>
+  </div>
+</div>  
 
   <!-- Topo -->
   <div class="top-bar">

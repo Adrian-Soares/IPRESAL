@@ -2,57 +2,36 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Conheça o RPPS – IPRESAL</title>
+  <title>Conheça a Cidade – IPRESAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Estilo global -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <style>
-    .container-texto {
-      padding: 40px 20px;
-      line-height: 1.8;
-      max-width: 900px;
-      margin: auto;
-    }
-    .container-texto h1 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #004080;
-    }
-    .container-texto p {
-      margin-bottom: 15px;
-      text-align: justify;
-      color: #333;
-    }
-    .dados-rpps {
-      margin-top: 40px;
-      padding: 20px;
-      border-top: 1px solid #ccc;
-    }
-    .dados-rpps h2 {
-      background-color: #002050;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      font-size: 1.2em;
-    }
-    .dados-rpps .info-boxes {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      padding: 20px 0;
-    }
-    .dados-rpps .info-boxes div {
-      margin: 10px 20px;
-      text-align: center;
-    }
-    .dados-rpps .info-boxes strong {
-      display: block;
-      margin-bottom: 5px;
-      color: #004080;
-    }
-  </style>
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Scripts: menu, busca e filtro de tabela -->
+  <script defer src="scripts.js"></script>
 </head>
 <body>
+
+   <!-- WIDGET DE ACESSIBILIDADE -->
+   <div class="a11y-widget">
+    <button class="a11y-toggle" aria-label="Abrir menu de acessibilidade" aria-expanded="false">
+      <i class="fas fa-wheelchair"></i>
+    </button>
+    <div class="a11y-menu" aria-hidden="true">
+      <a href="sitemap.html"><i class="fas fa-sitemap"></i> Mapa do site</a>
+      <a href="glossario.html"><i class="fas fa-book"></i> Glossário</a>
+      <button id="a11y-contrast"><i class="fas fa-adjust"></i> Alto contraste</button>
+      <button id="a11y-bw"><i class="fas fa-circle"></i> Preto e branco</button>
+      <button id="a11y-invert"><i class="fas fa-exchange-alt"></i> Inverter cores</button>
+      <button id="a11y-highlight"><i class="fas fa-link"></i> Destacar links</button>
+      <button id="a11y-font-up"><i class="fas fa-plus"></i> Aumentar fonte</button>
+      <button id="a11y-font-down"><i class="fas fa-minus"></i> Diminuir fonte</button>
+      <button id="a11y-font-regular"><i class="fas fa-font"></i> Fonte regular</button>
+      <button id="a11y-reset"><i class="fas fa-redo"></i> Redefinir</button>
+    </div>
+  </div>  
 
   <!-- Topo -->
   <div class="top-bar">
