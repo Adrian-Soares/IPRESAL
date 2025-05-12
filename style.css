@@ -863,3 +863,59 @@
     border-radius: 0 4px 4px 0;
     cursor: pointer;
   }
+
+  /* ===== Cookie Banner ===== */
+.cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #002050;
+  color: #fff;
+  padding: 15px;
+  font-size: 0.95em;
+  z-index: 10000;
+  display: none;
+}
+.cookie-banner__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.cookie-banner__content p {
+  margin: 0;
+  flex: 1 1 auto;
+}
+.cookie-banner__link {
+  color: #ffcc00;
+  text-decoration: underline;
+}
+.cookie-banner__actions {
+  margin-top: 10px;
+  flex: 0 0 auto;
+}
+@media (min-width: 600px) {
+  .cookie-banner__actions {
+    margin-top: 0;
+    margin-left: 20px;
+  }
+}
+.btn {
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .2s;
+}
+.btn--primary {
+  background: #ffcc00;
+  color: #004080;
+  border-color: #ffcc00;
+}
+.btn:hover {
+  opacity: 0.8;
+}

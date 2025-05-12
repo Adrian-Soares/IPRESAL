@@ -92,3 +92,49 @@ document.addEventListener('DOMContentLoaded', () => {
   // resetar tudo
   widget.querySelector('#a11y-reset')?.addEventListener('click', clearAll);
 });
+
+// ==== Cookie Consent & Analytics Loader ====
+(function(){
+  const banner = document.getElementById('cookie-banner');
+  const btnAccept = document.getElementById('cookie-accept');
+  const btnDecline = document.getElementById('cookie-decline');
+  const STORAGE_KEY = 'cookie_consent';
+
+  // exibe banner se ainda não decidido
+  const consent = localStorage.getItem(STORAGE_KEY);
+  if (!consent) {
+    banner.style.display = 'block';
+  } else if (consent === 'accepted') {
+    loadAnalytics();
+  }
+
+  btnAccept.addEventListener('click', () => {
+    localStorage.setItem(STORAGE_KEY, 'accepted');
+    banner.style.display = 'none';
+    loadAnalytics();
+  });
+
+  btnDecline.addEventListener('click', () => {
+    localStorage.setItem(STORAGE_KEY, 'declined');
+    banner.style.display = 'none';
+  });
+
+  function loadAnalytics(){
+    // substitua G-XXXXXXXXXX pelo seu Measurement ID do GA4:
+    const GA_ID = 'G-XXXXXXXXXX';
+    // insere o script do Google Analytics
+    const tag1 = document.createElement('script');
+    tag1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    tag1.async = true;
+    document.head.appendChild(tag1);
+
+    const tag2 = document.createElement('script');
+    tag2.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${GA_ID}');
+    `;
+    document.head.appendChild(tag2);
+  }
+})();
