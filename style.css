@@ -920,10 +920,20 @@
   opacity: 0.8;
 }
 
-/* Exemplo: mover o botão VLibras para canto inferior direito */
-.enabled {
+/* ========== Ajuste de posicionamento do widget VLibras ========== */
+/* Centraliza o painel do widget horizontalmente */
+.vw-plugin-wrapper {
+  /* anula o posicionamento padrão */
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Opcional: reposiciona o botão flutuante se estiver em conflito */
+.vw-plugin-wrapper .vw-button {
+  /* ex.: canto inferior direito */
+  position: fixed !important;
   bottom: 1rem !important;
   right: 1rem !important;
-  top: auto !important;
   left: auto !important;
 }
