@@ -919,3 +919,11 @@
 .btn:hover {
   opacity: 0.8;
 }
+
+/* Exemplo: mover o botão VLibras para canto inferior direito */
+.enabled {
+  bottom: 1rem !important;
+  right: 1rem !important;
+  top: auto !important;
+  left: auto !important;
+}
