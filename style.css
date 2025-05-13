@@ -937,3 +937,61 @@
   right: 1rem !important;
   left: auto !important;
 }
+
+/* ====================
+   Sitemap (Mapa do Site)
+   ==================== */
+.sitemap-section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.sitemap-section h1 {
+  font-size: 2em;
+  color: #004080;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sitemap-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sitemap-list ul {
+  margin-left: 20px;
+  list-style: disc;
+}
+
+.sitemap-list li {
+  margin: 8px 0;
+}
+
+.sitemap-list li > a {
+  text-decoration: none;
+  color: #0066cc;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.sitemap-list li > a:hover {
+  color: #ffcc00;
+}
+
+/* Marcadores diferenciados */
+.sitemap-list li::marker {
+  color: #004080;
+  font-size: 1.2em;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .sitemap-section {
+    padding: 20px 10px;
+  }
+  .sitemap-section h1 {
+    font-size: 1.75em;
+  }
+}
+

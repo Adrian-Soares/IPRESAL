@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Glossário – IPRESAL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Estilo global -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script defer src="scripts.js"></script>
+</head>
+<body>
+
+  <!-- WIDGET DE ACESSIBILIDADE -->
+  <div class="a11y-widget">
+    <button class="a11y-toggle" aria-label="Abrir menu de acessibilidade" aria-expanded="false">
+      <i class="fas fa-wheelchair"></i>
+    </button>
+    <div class="a11y-menu" aria-hidden="true">
+      <a href="sitemap.html"><i class="fas fa-sitemap"></i> Mapa do site</a>
+      <a href="glossario.html"><i class="fas fa-book"></i> Glossário</a>
+      <button id="a11y-contrast"><i class="fas fa-adjust"></i> Alto contraste</button>
+      <button id="a11y-bw"><i class="fas fa-circle"></i> Preto e branco</button>
+      <button id="a11y-invert"><i class="fas fa-exchange-alt"></i> Inverter cores</button>
+      <button id="a11y-highlight"><i class="fas fa-link"></i> Destacar links</button>
+      <button id="a11y-font-up"><i class="fas fa-plus"></i> Aumentar fonte</button>
+      <button id="a11y-font-down"><i class="fas fa-minus"></i> Diminuir fonte</button>
+      <button id="a11y-font-regular"><i class="fas fa-font"></i> Fonte regular</button>
+      <button id="a11y-reset"><i class="fas fa-redo"></i> Redefinir</button>
+    </div>
+  </div>
+
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- Topo com horário e telefone -->
+  <header class="top-bar" role="banner">
+    <div class="container">
+      <span>Telefone: (81) 3654-1156 | Horário: 08:00h às 13:00h, de segunda à sexta</span>
+    </div>
+  </header>
+
+  <!-- Cabeçalho com logo centralizada -->
+  <header class="header-main" role="banner">
+    <div class="container header-flex">
+      <div class="logo-area" style="text-align: center; width: 100%;">
+        <img src="IPRESAL.jpg" alt="Logotipo do IPRESAL">
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu de navegação -->
+  <nav class="menu-bar" aria-label="Menu principal">
+    <div class="container nav-container">
+      <ul class="menu-list">
+        <li><a href="index.html">Página Inicial</a></li>
+        <li class="menu-dropdown">
+          <a href="#">Institucional <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+          <ul class="submenu" aria-label="Submenu Institucional">
+            <li><a href="conheça-cidade.html">Conheça a Cidade</a></li>
+            <li><a href="conheça-rpps.html">Conheça o RPPS</a></li>
+            <li><a href="estrutura-administrativa.html">Estrutura Administrativa</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+          </ul>
+        </li>
+        <li class="menu-dropdown">
+          <a href="#">Publicações Oficiais <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+          <ul class="submenu" aria-label="Submenu Publicações Oficiais">
+            <li><a href="avaliação-aturial.html">Avaliação Atuarial</a></li>
+            <li><a href="portarias.html">Portarias</a></li>
+            <li><a href="contratos.html">Contratos</a></li>
+            <li><a href="atas-de-reuniões.html">Atas de Reuniões</a></li>
+            <li><a href="investimentos.html">Investimentos</a></li>
+            <li><a href="legislação.html">Legislação</a></li>
+          </ul>
+        </li>
+        <li><a href="transparência.html">Transparência</a></li>
+        <li><a href="ouvidoria.html">Ouvidoria</a></li>
+      </ul>
+      <div class="search-bar" role="search">
+        <form action="search.html" method="get" aria-label="Busca no site" style="display:flex;">
+          <label for="navSearch" class="visually-hidden">Buscar no site</label>
+          <input id="navSearch" name="q" type="text" placeholder="Buscar…" aria-required="false" />
+          <button id="navSearchBtn" type="submit" aria-label="Iniciar busca">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <main id="main-content" role="main">
+
+    <!-- Glossário -->
+    <section class="glossario-section container-texto">
+      <h1>Glossário</h1>
+
+      <!-- Subtítulo 1 -->
+      <article class="glossario-item">
+        <h2>Acessibilidade</h2>
+        <p>Significa permitir o acesso por todos, independente do tipo de usuário, situação ou ferramenta.</p>
+      </article>
+
+      <!-- Subtítulo 2 -->
+      <article class="glossario-item">
+        <h2>Acessibilidade à Web</h2>
+        <p>Criar ou tornar as ferramentas e páginas Web acessíveis a um maior número de usuários, inclusive pessoas com deficiência.</p>
+      </article>
+
+      <article class="glossario-item">
+        <h2>Agente de Usuário</h2>
+        <p> Qualquer software que recupera e apresenta conteúdo Web para seus usuários, possibilitando que o usuário interaja com o conteúdo Web.</p>
+      </article>
+
+        <article class="glossario-item">
+        <h2>Atributo</h2>
+        <p> Os atributos servem para definir uma propriedade de um elemento (X)HTML.</p>
+      </article>
+
+        <article class="glossario-item">
+        <h2>CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Apart)</h2>
+        <p>Consiste em um meio automatizado de gerar desafios que, hipoteticamente, apenas seres humanos possam resolver. O tipo mais comum requer que o usuário identifique letras distorcidas em um arquivo de imagem.</p>
+      </article>
+
+        <article class="glossario-item">
+        <h2>CSS (Cascading Style Sheets – Folhas de estilo em cascata)</h2>
+        <p>Linguagem que descreve a apresentação, visual ou sonora, de um documento.</p>
+      </article>
+
+        <article class="glossario-item">
+        <h2>Leitor de tela</h2>
+        <p>Software que fornece informações através de síntese de voz sobre os elementos exibidos na tela do computador. Esses softwares interagem com o sistema operacional, capturando as informações apresentadas na forma de texto e transformando-as em resposta falada através de um sintetizador de voz. Para navegar utilizando um leitor de tela, o usuário faz uso de comandos pelo teclado. O leitor de tela também pode transformar o conteúdo em informação tátil, exibida dinamicamente em Braille por um hardware chamado de linha ou display Braille, servindo, em especial, a usuários com surdocegueira.</p>
+      </article>
+
+        <article class="glossario-item">
+        <h2>Navegador</h2>
+        <p>Programa que permite ao usuário consultar e interagir com o material publicado na Web.</p>
+      </article>
+
+        <article class="glossario-item">
+        <h2>Navegador textual</h2>
+        <p>Tipo de navegador baseado em texto, diferente dos navegadores com interface gráfica, onde as imagens são carregadas. O navegador textual pode ser utilizado com leitores de tela por pessoas com deficiência visual e, também, por pessoas que acessam a Internet com conexão lenta.</p>
+      </article>
+
+        <article class="glossario-item">
+        <h2>Padrões Web (Web Standards)</h2>
+        <p>Padrões Web são regras de tecnologia definidas pelo W3C e outros órgãos da área utilizados para criar e interpretar o conteúdo Web.</p>
+      </article>
+
+        <article class="glossario-item">
+        <h2>Podcast</h2>
+        <p>Arquivo ou uma série de arquivos de áudio digital, geralmente em formato MP3 ou AAC (este pode conter imagens estáticas e links), publicada através de podcasting (forma de publicação de arquivos de mídia digital pela Internet, através de um feed RSS).</p>
+      </article>
+
+        <article class="glossario-item">
+        <h2>Tag/Elemento</h2>
+        <p>Código usado para marcar o início e o fim de um elemento (X)HTML.</p>
+      </article>
+
+        <article class="glossario-item">
+        <h2>Tecnologia assistiva</h2>
+        <p>Refere-se ao conjunto de artefatos disponibilizados às pessoas com deficiência, que contribui para prover-lhes uma vida mais independente, com mais qualidade e possibilidades de inclusão social. O propósito das tecnologias assistivas reside em ampliar a comunicação, a mobilidade, o controle do ambiente, as possibilidades de aprendizado, trabalho e integração na vida familiar, com os amigos e na sociedade em geral.</p>
+      </article>
+
+        <article class="glossario-item">
+        <h2>W3C (World Wide Web Consortium)</h2>
+        <p>Consórcio de âmbito internacional com a finalidade de desenvolver especificações, guias e ferramentas para Web.</p>
+      </article>
+
+        <article class="glossario-item">
+        <h2>WAI</h2>
+        <p> (Accessibility Initiative – Iniciativa de Acessibilidade na Web): Tem como objetivo desenvolver protocolos que melhorem a interoperabilidade e promovam a evolução da WWW.</p>
+      </article>
+
+        <article class="glossario-item">
+        <h2>WCAG (Web Content Accessibility Guidelines)</h2>
+        <p>Recomendações de Acessibilidade para Conteúdo Web): Abrange diversas recomendações com a finalidade de tornar o conteúdo Web mais acessível.</p>
+      </article>
+
+        <article class="glossario-item">
+        <h2>Webcast</h2>
+        <p>Transmissão de áudio e vídeo por meio da Internet ou redes corporativas para um grupo de pessoas, simultaneamente.</p>
+      </article>
+
+        <article class="glossario-item">
+        <h2>XHTML (Extensible HyperText Markup Language)</h2>
+        <p>É a linguagem HTML reformulada para seguir as regras do XML.</p>
+      </article>
+
+      <article class="glossario-item">
+        <h2>XML (Extensible Markup Language)</h2>
+        <p>Uma linguagem de marcação semelhante à HTML, mas que permite a descrição de dados definidos por elementos de programação.</p>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer role="contentinfo">
+    <div class="footer-content container" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; padding:20px 0;">
+      <div class="footer-info" style="flex:1 1 300px;">
+        <p><strong>Instituto de Previdência Social</strong></p>
+        <p><strong>CNPJ:</strong> XX.XXX.XXX/XXXX-XX</p>
+        <p><strong>Endereço:</strong> Rua Antônio Gomes de Moura, nº Centro – CEP: 55675-000 Salgadinho-PE</p>
+        <p><strong>Email:</strong> ouvidoria@ipresal.pe.gov.br</p>
+        <p><strong>Telefone:</strong> (81) 3654-1156</p>
+        <p><strong>Horário:</strong> 08:00h–13:00h, seg.–sex.</p>
+      </div>
+      <div class="footer-logo" style="flex:1 1 200px; text-align:center;">
+        <img src="logo_sua_empresa.png" alt="Logo do IPRESAL" style="max-width:150px;">
+      </div>
+    </div>
+    <p style="text-align:center; background-color:#002050; color:white; padding:10px 0; margin:0;">
+      &copy; 2025 IPRESAL – Todos os direitos reservados.
+    </p>
+  </footer>
+
+</body>
+</html>
