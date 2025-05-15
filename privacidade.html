@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>IPRESAL - Privacidade</title>
+  <title>IPRESAL - Instituto de Previdência</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Estilo global -->
   <link rel="stylesheet" href="style.css">
@@ -13,42 +13,42 @@
 </head>
 <body>
 
-   <!-- WIDGET DE ACESSIBILIDADE -->
-   <div class="a11y-widget">
-    <button class="a11y-toggle" aria-label="Abrir menu de acessibilidade" aria-expanded="false">
-      <i class="fas fa-wheelchair"></i>
-    </button>
-    <div class="a11y-menu" aria-hidden="true">
-      <a href="sitemap.html"><i class="fas fa-sitemap"></i> Mapa do site</a>
-      <a href="glossario.html"><i class="fas fa-book"></i> Glossário</a>
-      <button id="a11y-contrast"><i class="fas fa-adjust"></i> Alto contraste</button>
-      <button id="a11y-bw"><i class="fas fa-circle"></i> Preto e branco</button>
-      <button id="a11y-invert"><i class="fas fa-exchange-alt"></i> Inverter cores</button>
-      <button id="a11y-highlight"><i class="fas fa-link"></i> Destacar links</button>
-      <button id="a11y-font-up"><i class="fas fa-plus"></i> Aumentar fonte</button>
-      <button id="a11y-font-down"><i class="fas fa-minus"></i> Diminuir fonte</button>
-      <button id="a11y-font-regular"><i class="fas fa-font"></i> Fonte regular</button>
-      <button id="a11y-reset"><i class="fas fa-redo"></i> Redefinir</button>
-    </div>
-  </div>  
+  <!-- WIDGET DE ACESSIBILIDADE -->
+    <div class="a11y-widget">
+      <button class="a11y-toggle" aria-label="Abrir menu de acessibilidade" aria-expanded="false">
+        <i class="fas fa-wheelchair"></i>
+      </button>
+      <div class="a11y-menu" aria-hidden="true">
+        <a href="mapa-site.html"><i class="fas fa-sitemap"></i> Mapa do site</a>
+        <a href="glossario.html"><i class="fas fa-book"></i> Glossário</a>
+        <button id="a11y-contrast"><i class="fas fa-adjust"></i> Alto contraste</button>
+        <button id="a11y-bw"><i class="fas fa-circle"></i> Preto e branco</button>
+        <button id="a11y-invert"><i class="fas fa-exchange-alt"></i> Inverter cores</button>
+        <button id="a11y-highlight"><i class="fas fa-link"></i> Destacar links</button>
+        <button id="a11y-font-up"><i class="fas fa-plus"></i> Aumentar fonte</button>
+        <button id="a11y-font-down"><i class="fas fa-minus"></i> Diminuir fonte</button>
+        <button id="a11y-font-regular"><i class="fas fa-font"></i> Fonte regular</button>
+        <button id="a11y-reset"><i class="fas fa-redo"></i> Redefinir</button>
+      </div>
+    </div>  
 
-  <!-- Topo -->
-  <div class="top-bar">
+    <!-- Topo com horário e telefone -->
+  <header class="top-bar" role="banner">
     <div class="container">
       <span>Telefone: (81) 3654-1156 | Horário: 08:00h às 13:00h, de segunda à sexta</span>
     </div>
-  </div>
+  </header>
 
-  <!-- Cabeçalho -->
-  <header class="header-main">
+  <!-- Cabeçalho com logo centralizada -->
+  <header class="header-main" role="banner">
     <div class="container header-flex">
-      <div class="logo-area">
-        <img src="IPRESAL.jpg" alt="Logo do IPRESAL">
+      <div class="logo-area" style="text-align: center; width: 100%;">
+        <img src="IPRESAL.jpg" alt="Logotipo do IPRESAL">
       </div>
     </div>
   </header>
 
-  <!-- Menu de navegação -->
+  <!-- Menu -->
   <nav class="menu-bar">
     <div class="container nav-container">
       <ul class="menu-list">
@@ -74,84 +74,216 @@
           </ul>
         </li>
         <li><a href="transparencia.html">Transparência</a></li>
-        <li><a href="privacidade.html" class="active">Privacidade</a></li>
+        <li><a href="ouvidoria.html">Ouvidoria</a></li>
       </ul>
-      <div class="search-bar">
-        <form action="search.html" method="get">
-          <input id="navSearch" name="q" type="text" placeholder="Buscar…">
-          <button id="navSearchBtn" type="button"><i class="fas fa-search"></i></button>
+     <div class="search-bar" role="search">
+        <form action="search.html" method="get" aria-label="Busca no site" style="display:flex;">
+          <label for="navSearch" class="visually-hidden"></label>
+          <input id="navSearch" name="q" type="text" placeholder="Buscar…" aria-required="false" />
+          <button id="navSearchBtn" type="submit" aria-label="Iniciar busca"><i class="fas fa-search" aria-hidden="true"></i></button>
         </form>
       </div>
     </div>
   </nav>
 
-  <!-- Conteúdo da Política de Privacidade -->
-  <section class="privacidade-container">
-    <h1>Política de Privacidade</h1>
+  <main class="termos-privacidade-container">
+    <!-- Seção 1: Termos de Uso -->
+    <section id="termos-de-uso">
+      <h1>Termos de Uso e Privacidade</h1>
+      <p>A seguir, apresentamos os Termos de Uso e a Política de Privacidade do IPRESAL – Instituto de Previdência dos Servidores Municipais de Salgadinho. Este documento reflete nosso compromisso com a transparência, o respeito aos seus dados pessoais e o cumprimento das normas legais aplicáveis.
 
-    <h2>1. Compromisso com sua Privacidade</h2>
-    <p>A sua privacidade é importante para nós. O IPRESAL respeita e protege qualquer informação pessoal que possamos coletar em nosso site...</p>
+Aqui você encontrará informações essenciais sobre como o nosso site funciona e de que forma coletamos, utilizamos e protegemos os dados sempre que você navega ou interage conosco.
 
-    <h2>2. Coleta e Uso de Dados</h2>
-    <p>Retemos os dados coletados pelo tempo necessário ao atendimento da finalidade informada...</p>
-    <ul>
-      <li><strong>Dados Pessoais:</strong> nome, e-mail, telefone, quando fornecidos;</li>
-      <li><strong>Dados de Navegação:</strong> cookies, IP, tipo de navegador;</li>
-      <li><strong>Formulários de Contato:</strong> informações adicionais que você compartilhar.</li>
-    </ul>
+Recomendamos a leitura atenta de todas as cláusulas. Ao acessar o site e utilizar qualquer de suas funcionalidades, você concorda automaticamente com estes termos e condições.</p>
 
-    <h2>3. Compartilhamento de Informações</h2>
-    <p>Não compartilhamos seus dados pessoais com terceiros para fins comerciais...</p>
+      <h2>1. Direitos Autorais e Marcas Registradas</h2>
+      <p>Todo o material disponível neste site é de titularidade exclusiva do Instituto de Previdência dos Servidores Municipais de Salgadinho, protegido pela legislação nacional de propriedade intelectual e por tratados internacionais. Quaisquer usos não autorizados expressamente por meio deste site estão proibidos, mantendo-se todos os direitos reservados ao Instituto.</p>
 
-    <h2>4. Links Externos</h2>
-    <p>Nosso site pode conter links para terceiros. Não controlamos o conteúdo ou práticas de privacidade deles...</p>
+      <h2>2. Usos Permitidos</h2>
+      <p>O Instituto de Previdência dos Servidores Municipais de Cumaru concede ao usuário uma licença limitada, não exclusiva e intransferível para acessar e utilizar os conteúdos e funcionalidades deste site em qualquer dispositivo, desde que observadas as seguintes condições:
 
-    <h2>5. Cookies e Publicidade</h2>
-    <p>Utilizamos cookies para melhorar sua experiência e, eventualmente, publicidade comportamental anônima...</p>
-    <ul>
-      <li>Google AdSense (cookie DoubleClick);</li>
-      <li>Cookies de rastreamento de afiliados.</li>
-    </ul>
+É proibida a reprodução, modificação, distribuição, transmissão, publicação ou divulgação de quaisquer materiais sem a autorização prévia e por escrito do Instituto, preservando-se os avisos de direitos autorais e de propriedade que acompanham esses conteúdos.
 
-    <h2>6. Recusa de Dados</h2>
-    <p>Você pode recusar fornecer dados, ciente de que isso pode impedir o acesso a algumas funcionalidades.</p>
+O uso autorizado do conteúdo deve se restringir a fins científicos, acadêmicos e jornalísticos, nos limites previstos pela legislação aplicável.</p>
 
-    <h2>7. Compromisso do Usuário</h2>
-    <ul>
-      <li>A) Não praticar atividades ilegais ou contrárias à boa-fé;</li>
-      <li>B) Não divulgar conteúdo discriminatório, pornográfico ilegal, apologia ao terrorismo;</li>
-      <li>C) Não danificar sistemas ou disseminar malwares.</li>
-    </ul>
+      <h2>3. Restrições de Uso</h2>
+      <p>Acesso e Engenharia Reversa
+É vedado a qualquer usuário:
 
-    <h2>8. Mais Informações</h2>
-    <p>Se tiver dúvidas sobre nossos procedimentos de privacidade, entre em contato.</p>
-    <em>05 de maio de 2025</em>
-  </section>
+Acessar diretórios, banco de dados ou áreas reservadas ao desenvolvimento e manutenção da plataforma (“webmastering”) sem autorização expressa.
 
-  <!-- Rodapé -->
+Realizar engenharia reversa, descompilar, traduzir ou modificar o código-fonte, scripts, arquivos executáveis ou qualquer componente do site.
+
+Cópia e Distribuição
+Não é permitido reproduzir, copiar, adaptar, sublicenciar, publicar, transmitir, distribuir ou disponibilizar o conteúdo e as funcionalidades deste site a terceiros, de forma total ou parcial, sem prévia e expressa autorização por escrito do Instituto de Previdência dos Servidores Municipais de Salgadinho.
+
+Mineração de Dados e Automação
+É proibido o uso de robôs, spiders, crawlers, scrapers ou qualquer ferramenta automatizada para coleta massiva de dados, quebra de mecanismos de segurança (como CAPTCHAs), senhas ou outras formas de extração automatizada de informações.
+
+Penalidades e Responsabilidade
+O descumprimento dessas restrições sujeita o infrator às sanções previstas na legislação brasileira, incluindo reparação dos danos materiais e morais causados ao Instituto de Previdência dos Servidores Municipais de Salgadinho.
+
+</p>
+
+      <h2>4. Isenções de Responsabilidade</h2>
+      <p>O conteúdo disponibilizado neste site tem caráter informativo e visa divulgar as ações e serviços do Instituto de Previdência dos Servidores Municipais de Salgadinho. Eventuais hiperlinks apontando para recursos externos são fornecidos apenas como referência, ficando ao usuário a responsabilidade pelo acesso a esses sites, cujo conteúdo escapa ao controle do Instituto de Previdência dos Servidores Municipais de Salgadinho.
+
+Dessa forma, o Instituto de Previdência dos Servidores Municipais de Salgadinho não se responsabiliza por quaisquer danos, perdas ou despesas — sejam eles diretos, indiretos, especiais, punitivos, incidentais ou consequenciais — que possam decorrer de:<p>
+
+<p>1. Uso do Conteúdo
+   a) Utilização do material disponibilizado neste site ou em qualquer site vinculado;
+   b) Incapacidade de acessar ou usar o conteúdo;
+   c) Qualquer falha de desempenho, erro, omissão, interrupção, defeito ou atraso na operação ou transmissão do conteúdo;</p>
+
+<p>2. Interferências Técnicas
+   – Vírus, malwares, falhas de linha, sistema ou equipamento que possam afetar dispositivos ou dados do usuário.
+
+Em nenhuma hipótese o Instituto de Previdência dos Servidores Municipais de Salgadinho será responsável por prejuízos resultantes dessas situações, nos termos da legislação aplicável.</p>
+
+      <h2>5.Política de Privacidade e Proteção de Dados Pessoais</h2>
+      <p>O Instituto de Previdência dos Servidores Municipais de Salgadinho valoriza a privacidade dos visitantes do seu site e está comprometido com a proteção dos dados pessoais que possam ser coletados durante a navegação.</p>
+
+<p>Esta seção descreve, de forma clara e acessível, como lidamos com os dados pessoais dos usuários, abrangendo os seguintes pontos:</p>
+
+<ul>
+  <li>a) De que forma coletamos suas informações;</li>
+  <li>b) Quais dados podem ser coletados sobre você;</li>
+  <li>c) Como esses dados são utilizados;</li>
+  <li>d) Com quem podemos compartilhar essas informações;</li>
+  <li>e) As medidas de segurança adotadas para proteger seus dados;</li>
+  <li>f) Como utilizamos cookies no site;</li>
+  <li>g) Quais são os seus direitos em relação à privacidade e ao uso de suas informações.</li>
+</ul>
+
+      <h2>1. Como Coletamos Seus Dados Pessoais</h2>
+
+<p>Os dados pessoais são coletados exclusivamente por meio do formulário disponível na página da Ouvidoria do site. O visitante pode optar por informar dados como nome, e-mail e telefone, ou ainda enviar sua mensagem de forma anônima, se preferir.</p>
+
+<p>É de responsabilidade do usuário garantir que as informações fornecidas sejam verdadeiras e completas. O Instituto de Previdência dos Servidores Municipais de Salgadinho não se responsabiliza por eventuais erros decorrentes do fornecimento de dados incorretos, incompletos ou falsos.</p>
+
+
+      <h2>2. Quais Dados Pessoais Coletamos</h2>
+
+<p>O Instituto de Previdência dos Servidores Municipais de Salgadinho pode coletar e tratar os seguintes dados pessoais:</p>
+
+<ul>
+  <li><strong>a) Informações fornecidas voluntariamente:</strong> ao preencher o formulário de Ouvidoria, você pode optar por informar seu nome, endereço de e-mail e número de telefone. Caso prefira, é possível enviar a mensagem de forma anônima.</li>
+  
+  <li><strong>b) Registros de comunicação:</strong> sempre que você entrar em contato conosco por meio do site, poderemos manter um registro da sua solicitação para fins de acompanhamento e melhoria do atendimento.</li>
+
+  <li><strong>c) Dados de navegação:</strong> ao visitar nosso site, informações técnicas como endereço IP, tipo de navegador e páginas acessadas podem ser coletadas automaticamente por meio de cookies com a finalidade de melhorar a experiência do usuário.</li>
+</ul>
+
+     <h2>3. Como Usamos Seus Dados Pessoais</h2>
+
+<p>Utilizamos os dados pessoais coletados com o objetivo de oferecer um atendimento eficiente, cumprir nossas obrigações legais e melhorar continuamente os serviços oferecidos no site. As finalidades incluem:</p>
+
+<ul>
+  <li><strong>a) Comunicação com o usuário:</strong> usamos os dados fornecidos para responder dúvidas, registrar manifestações na Ouvidoria e prestar os serviços solicitados. Esse tratamento pode ser feito com base em obrigações legais ou no legítimo interesse do Instituto de Previdência de Salgadinho.</li>
+  
+  <li><strong>b) Melhorias no site:</strong> informações técnicas coletadas, como dados de navegação, ajudam a garantir que os conteúdos e funcionalidades do site sejam exibidos corretamente e com qualidade, conforme o dispositivo utilizado pelo usuário.</li>
+  
+  <li><strong>c) Cumprimento de exigências legais:</strong> em situações que envolvam auditorias, fiscalizações ou obrigações regulatórias, os dados pessoais poderão ser utilizados conforme permitido por lei e respeitando sempre os princípios da boa-fé e da finalidade.</li>
+</ul>
+
+<p>Seus dados serão armazenados apenas pelo tempo necessário para atender às finalidades descritas acima, conforme previsto na legislação vigente. Após esse período, os dados serão anonimizados ou eliminados de forma segura.</p>
+
+<h2>4. Com Quem Compartilhamos Seus Dados Pessoais</h2>
+
+<p>O Instituto de Previdência dos Servidores Municipais de Salgadinho somente compartilha dados pessoais nos casos permitidos pela Lei Geral de Proteção de Dados (LGPD).</p>
+
+<p>Esse compartilhamento pode ocorrer nas seguintes situações:</p>
+
+<ul>
+  <li>Com o consentimento prévio do titular dos dados;</li>
+  <li>Quando exigido por lei ou por ordem de autoridade competente ou judicial;</li>
+  <li>Quando necessário para garantir a prestação adequada dos nossos serviços.</li>
+</ul>
+
+<p>Nos casos em que for necessário o consentimento do usuário, o compartilhamento só será feito após o devido aceite e com base em acordos que definem claramente a finalidade, os limites do uso e a responsabilidade das partes envolvidas.</p>
+
+<p>O Instituto também se compromete a informar de forma clara e antecipada qualquer situação em que seus dados possam ser compartilhados, buscando sempre a transparência e a segurança das informações tratadas.</p>
+
+<h2>5. Como Protegemos Seus Dados Pessoais</h2>
+
+<p>Embora nenhum sistema de transmissão de dados pela internet seja totalmente imune a riscos, o Instituto de Previdência dos Servidores Municipais de Salgadinho adota medidas de segurança robustas para proteger as informações pessoais tratadas em seu site.</p>
+
+<p>Utilizamos recursos técnicos, administrativos e operacionais adequados para impedir acessos não autorizados, bem como para evitar situações acidentais ou ilícitas de perda, alteração, divulgação ou qualquer outra forma de tratamento inadequado dos dados.</p>
+
+<p>Todas essas práticas seguem os padrões estabelecidos pela legislação brasileira, especialmente a Lei Geral de Proteção de Dados (LGPD), bem como as boas práticas reconhecidas no tratamento de informações sensíveis.</p>
+
+<h2>6. Como Usamos Cookies</h2>
+
+<p>Cookies são pequenos arquivos de texto armazenados no seu dispositivo quando você acessa nosso site. Eles servem para melhorar a sua experiência de navegação e garantir o funcionamento adequado das funcionalidades disponíveis.</p>
+
+<p>Atualmente, utilizamos apenas cookies essenciais, ou seja, aqueles necessários para que o site funcione corretamente. Esses cookies são ativados em resposta a ações realizadas por você, como preenchimento de formulários, escolha de preferências ou navegação entre páginas.</p>
+
+<p>Os tipos de cookies utilizados são:</p>
+
+<ul>
+  <li><strong>Cookies de Sessão:</strong> são temporários e permanecem no seu dispositivo apenas enquanto você estiver navegando no site. Eles são apagados assim que você encerra a sessão.</li>
+  <li><strong>Cookies Persistentes:</strong> permanecem armazenados no seu dispositivo mesmo após o encerramento da navegação. Eles são utilizados para lembrar preferências e podem ser removidos manualmente a qualquer momento nas configurações do navegador.</li>
+</ul>
+
+<h2>7. Seus Direitos em Relação aos Dados Pessoais</h2>
+
+<p>De acordo com a Lei Geral de Proteção de Dados Pessoais (LGPD), você, como titular dos dados, possui os seguintes direitos:</p>
+
+<ul>
+  <li><strong>Confirmação:</strong> saber se realizamos o tratamento dos seus dados pessoais;</li>
+  <li><strong>Acesso:</strong> ter acesso aos dados que mantemos sobre você;</li>
+  <li><strong>Correção:</strong> solicitar a atualização ou correção de dados incompletos, inexatos ou desatualizados;</li>
+  <li><strong>Anonimização, bloqueio ou eliminação:</strong> em casos de dados desnecessários, excessivos ou tratados em desconformidade com a legislação;</li>
+  <li><strong>Exclusão:</strong> solicitar a eliminação dos dados após o término da finalidade legal ou em caso de revogação do consentimento;</li>
+  <li><strong>Informações sobre compartilhamento:</strong> saber com quem seus dados foram compartilhados;</li>
+  <li><strong>Revogação do consentimento:</strong> quando o tratamento se basear nessa autorização;</li>
+  <li><strong>Oposição:</strong> contestar o tratamento realizado com base em hipóteses legais de dispensa de consentimento;</li>
+  <li><strong>Revisão de decisões automatizadas:</strong> solicitar revisão de decisões que afetem seus interesses e que tenham sido tomadas unicamente com base em tratamento automatizado.</li>
+</ul>
+
+<p>Para exercer qualquer um desses direitos ou esclarecer dúvidas sobre como seus dados são tratados, entre em contato conosco pelo e-mail informado neste site.</p>
+
+<p>Caso não esteja satisfeito com a forma como tratamos seus dados ou com nossa resposta, você tem o direito de apresentar uma reclamação diretamente à <strong>Autoridade Nacional de Proteção de Dados (ANPD)</strong> por meio do link:  
+<a href="https://www.gov.br/anpd/pt-br/canais_atendimento/cidadao-titular-de-dados/peticao-de-titular-contra-controlador-de-dados" target="_blank">https://www.gov.br/anpd/pt-br/canais_atendimento/cidadao-titular-de-dados/peticao-de-titular-contra-controlador-de-dados</a></p>
+
+<h2>8. Jurisdição e Legislação Aplicável</h2>
+
+<p>Os presentes Termos de Uso são regidos pelas leis da República Federativa do Brasil. Qualquer controvérsia relacionada à interpretação ou aplicação destas condições será solucionada de acordo com a legislação brasileira, sendo eleito o foro do Brasil como competente, salvo disposição legal em contrário.</p>
+
+<h2>9. Atualizações Deste Termo de Uso e Política de Privacidade</h2>
+
+<p>Este documento poderá ser atualizado periodicamente para refletir mudanças na legislação aplicável ou nas práticas de tratamento de dados do Instituto de Previdência dos Servidores Municipais de Salgadinho.</p>
+
+<p>Quando houver alterações relevantes, tomaremos medidas razoáveis para informar os usuários, seja por aviso no próprio site ou por outros meios apropriados. A versão atualizada será sempre disponibilizada nesta página, com a data da última modificação.</p>
+
+<p><em>Este Termo de Uso e Política de Privacidade foi atualizado pela última vez em 15 de Maio de 2025.</em></p>
+
+
+      <!-- continue com os itens restantes dos Termos -->
+    </section>
+  </main>
+
+  <!-- rodapé -->
   <footer>
-    <div class="footer-content container">
-      <div class="footer-info">
+    <div class="footer-content container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 20px 0;">
+      <div class="footer-info" style="flex: 1 1 300px;">
         <p><strong>Instituto de Previdência Social</strong></p>
-        <p><strong>CNPJ:</strong> XX.XXX.XXX/XXXX-XX</p>
-        <p><strong>Endereço:</strong> Rua Antônio Gomes de Moura, nº Centro – CEP: 55675-000</p>
-        <p><strong>E-mail:</strong> ouvidoria@ipresal.pe.gov.br</p>
+        <p><strong>CNPJ:</strong> 05.417.780/0001-93</p>
+        <p><strong>Endereço:</strong> Rua Antônio Gomes de Moura, nº Centro - CEP: 55675-000 Salgadinho-PE</p>
+        <p><strong>Email:</strong> ouvidoria@ipresal.pe.gov.br</p>
         <p><strong>Telefone:</strong> (81) 3654-1156</p>
-        <p><strong>Horário:</strong> 08:00h–13:00h, seg.–sex.</p>
+        <p><strong>Horário de funcionamento:</strong> 08:00h às 13:00h, de segunda à sexta-feira</p>
       </div>
-      <div class="footer-logo">
-        <img src="logo_sua_empresa.png" alt="Logo IPRESAL">
+      <div class="footer-logo" style="flex: 1 1 200px; text-align: center;">
+        <img src="Profissional_Certificado[1].png" alt="Logo do IPRESAL" />
       </div>
     </div>
-    <p class="footer-bottom">&copy; 2025 IPRESAL – Todos os direitos reservados.</p>
+    <p style="text-align: center; background-color: #002050; color: white; padding: 10px 0; margin: 0;">
+      &copy; 2025 IPRESAL – Todos os direitos reservados.
+    </p>
   </footer>
 
-  <!-- FontAwesome JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-  <!-- Script global -->
-  <script src="scripts.js"></script>
-
-<div vw class="enabled">
+  <div vw class="enabled">
   <!-- botão flutuante que aparece na tela -->
   <div vw-access-button class="active"></div>
   <!-- wrapper onde o widget vai renderizar o player -->
@@ -163,5 +295,6 @@
   new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
 
+  <script src="scripts.js"></script>
 </body>
 </html>

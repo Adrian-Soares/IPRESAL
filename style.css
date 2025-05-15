@@ -648,53 +648,6 @@
   }
   
   /* =========================
-     TERMOS E PRIVACIDADE
-     ========================= */
-  .privacidade-container,
-  .container-texto {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-    line-height: 1.8;
-    color: #333;
-  }
-  .privacidade-container h1,
-  .container-texto h1 {
-    font-size: 2.2em;
-    color: #002050;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .privacidade-container h2,
-  .container-texto h2 {
-    font-size: 1.6em;
-    color: #004080;
-    margin-top: 30px;
-    margin-bottom: 12px;
-    border-left: 6px solid #ffcc00;
-    padding-left: 12px;
-  }
-  .privacidade-container p,
-  .container-texto p {
-    margin-bottom: 16px;
-    text-align: justify;
-  }
-  .privacidade-container ul {
-    margin-left: 30px;
-    list-style: disc;
-    margin-bottom: 16px;
-  }
-  .privacidade-container ul li {
-    margin-bottom: 8px;
-  }
-  .privacidade-container em {
-    display: block;
-    margin-top: 30px;
-    text-align: right;
-    color: #666;
-  }
-  
-  /* =========================
      RODAPÉ
      ========================= */
   footer {
@@ -704,6 +657,15 @@
     padding: 15px 0;
     font-size: 0.9em;
   }
+
+  /* Logo do rodapé */
+.footer-logo img {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* centraliza */
+}
   
   /* =========================
      RESPONSIVO
@@ -806,43 +768,6 @@
     font-family: Arial, sans-serif !important;
   }
   
-  /* =========================
-  TEMOS DE USO
-   ========================= */
-  .termos-container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-    line-height: 1.8;
-    color: #333;
-    font-family: Arial, sans-serif;
-  }
-  .termos-container h1 {
-    font-size: 2.2em;
-    color: #002050;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .termos-container h2 {
-    font-size: 1.6em;
-    color: #004080;
-    margin-top: 40px;
-    margin-bottom: 15px;
-    border-left: 6px solid #ffcc00;
-    padding-left: 12px;
-  }
-  .termos-container p,
-  .termos-container ul {
-    margin-bottom: 18px;
-    text-align: justify;
-  }
-  .termos-container ul {
-    margin-left: 30px;
-    list-style: disc;
-  }
-  .termos-container ul li {
-    margin-bottom: 8px;
-  }
   /* busca na nav */
   .search-nav {
     display: flex;
@@ -994,4 +919,121 @@
     font-size: 1.75em;
   }
 }
+
+/* ================================
+   Termos de Uso & Política de Privacidade
+   ================================ */
+.termos-privacidade-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.8;
+}
+
+.termos-privacidade-container section {
+  margin-bottom: 60px;
+}
+
+.termos-privacidade-container h1 {
+  font-size: 2.2em;
+  color: #004080;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.termos-privacidade-container h2 {
+  font-size: 1.5em;
+  color: #004080;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-left: 5px solid #ffcc00;
+  padding-left: 10px;
+}
+
+.termos-privacidade-container p,
+.termos-privacidade-container ul li {
+  margin-bottom: 15px;
+  text-align: justify;
+  color: #333;
+}
+
+.termos-privacidade-container ul {
+  list-style: disc;
+  margin-left: 30px;
+}
+
+.termos-privacidade-container ul li {
+  margin-bottom: 8px;
+}
+
+/* links internos na seção */
+.termos-privacidade-container a {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.termos-privacidade-container a:hover {
+  color: #004080;
+}
+
+/* responsivo */
+@media (max-width: 768px) {
+  .termos-privacidade-container {
+    padding: 0 15px;
+  }
+  .termos-privacidade-container h1 {
+    font-size: 1.8em;
+  }
+  .termos-privacidade-container h2 {
+    font-size: 1.3em;
+  }
+}
+
+/* ===============================
+   Estilos para a página “Conheça a Cidade”
+   =============================== */
+.container-texto {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.container-texto h1 {
+  font-size: 2em;
+  color: #004080;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container-texto h2 {
+  font-size: 1.5em;
+  color: #004080;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-left: 5px solid #ffcc00;
+  padding-left: 10px;
+}
+
+.container-texto p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+  .container-texto {
+    padding: 0 10px;
+  }
+  .container-texto h1 {
+    font-size: 1.8em;
+  }
+  .container-texto h2 {
+    font-size: 1.3em;
+  }
+}
+
 

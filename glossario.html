@@ -19,7 +19,7 @@
       <i class="fas fa-wheelchair"></i>
     </button>
     <div class="a11y-menu" aria-hidden="true">
-      <a href="sitemap.html"><i class="fas fa-sitemap"></i> Mapa do site</a>
+      <a href="mapa-site.html"><i class="fas fa-sitemap"></i> Mapa do site</a>
       <a href="glossario.html"><i class="fas fa-book"></i> Glossário</a>
       <button id="a11y-contrast"><i class="fas fa-adjust"></i> Alto contraste</button>
       <button id="a11y-bw"><i class="fas fa-circle"></i> Preto e branco</button>
@@ -203,20 +203,32 @@
     <div class="footer-content container" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; padding:20px 0;">
       <div class="footer-info" style="flex:1 1 300px;">
         <p><strong>Instituto de Previdência Social</strong></p>
-        <p><strong>CNPJ:</strong> XX.XXX.XXX/XXXX-XX</p>
+        <p><strong>CNPJ:</strong> 05.417.780/0001-93</p>
         <p><strong>Endereço:</strong> Rua Antônio Gomes de Moura, nº Centro – CEP: 55675-000 Salgadinho-PE</p>
         <p><strong>Email:</strong> ouvidoria@ipresal.pe.gov.br</p>
         <p><strong>Telefone:</strong> (81) 3654-1156</p>
         <p><strong>Horário:</strong> 08:00h–13:00h, seg.–sex.</p>
       </div>
       <div class="footer-logo" style="flex:1 1 200px; text-align:center;">
-        <img src="logo_sua_empresa.png" alt="Logo do IPRESAL" style="max-width:150px;">
+        <img src="Profissional_Certificado[1].png" alt="Logo do IPRESAL" style="max-width:150px;">
       </div>
     </div>
     <p style="text-align:center; background-color:#002050; color:white; padding:10px 0; margin:0;">
       &copy; 2025 IPRESAL – Todos os direitos reservados.
     </p>
   </footer>
+
+  <div vw class="enabled">
+  <!-- botão flutuante que aparece na tela -->
+  <div vw-access-button class="active"></div>
+  <!-- wrapper onde o widget vai renderizar o player -->
+  <div vw-plugin-wrapper></div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
 
 </body>
 </html>
