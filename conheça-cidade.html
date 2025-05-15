@@ -10,7 +10,7 @@
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <!-- Scripts: menu, busca e filtro de tabela -->
-  <script defer src="scripts.js"></script>
+ <script defer src="scripts.js"></script>
 </head>
 <body>
 
@@ -83,6 +83,30 @@
           <button id="navSearchBtn" type="submit"><i class="fas fa-search"></i></button>
         </form>
       </div>
+     <!-- botão hamburger (aparece só no mobile) -->
+<button class="hamburger-toggle" aria-label="Abrir menu" aria-expanded="false">
+  <i class="fas fa-bars"></i>
+</button>
+
+<!-- menu móvel oculto por padrão -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul class="mobile-menu-list">
+    <li><a href="index.html">Página Inicial</a></li>
+    <li class="menu-dropdown">
+      <a href="#">Institucional <i class="fas fa-chevron-down"></i></a>
+      <ul class="submenu">
+        <li><a href="conheça-cidade.html">Conheça a Cidade</a></li>
+        <li><a href="conheça-rpps.html">Conheça o RPPS</a></li>
+        <li><a href="estrutura-administrativa.html">Estrutura Administrativa</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+      </ul>
+    </li>
+    <!-- ... resto dos itens ... -->
+    <li><a href="transparência.html">Transparência</a></li>
+    <li><a href="ouvidoria.html">Ouvidoria</a></li>
+  </ul>
+</div>
+
     </div>
   </nav>
 
