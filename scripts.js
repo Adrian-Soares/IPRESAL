@@ -139,42 +139,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })();
 
-document.addEventListener('DOMContentLoaded', () => {
-  const btnHamburger = document.getElementById('hamburger-btn');
-  const mobileMenu  = document.getElementById('mobile-menu');
+// drawer principal
+const hamb = document.querySelector('.hamburger');
+const menu = document.querySelector('.menu-list');
 
-  btnHamburger.addEventListener('click', () => {
-    const aberto = mobileMenu.classList.toggle('open');
-    mobileMenu.setAttribute('aria-hidden', !aberto);
-  });
+hamb.addEventListener('click', () => {
+  menu.classList.toggle('open');
 });
 
-// Toggle de cada submenu só em mobile
-document.querySelectorAll('.mobile-menu .submenu-toggle').forEach(toggle => {
-  const parentLi = toggle.parentElement;
-  const submenu  = parentLi.querySelector('.submenu');
+// fecha drawer ao clicar fora
+document.addEventListener('click', e => {
+  if (!menu.contains(e.target) && !hamb.contains(e.target)) {
+    menu.classList.remove('open');
+  }
+});
 
-  toggle.addEventListener('click', e => {
+// dropdowns profissionais
+document.querySelectorAll('.menu-dropdown').forEach(li => {
+  const anchor = li.querySelector('a');
+  anchor.addEventListener('click', e => {
     e.preventDefault();
-    const aberto = submenu.classList.toggle('open');
-    submenu.style.display = aberto ? 'block' : 'none';
-    toggle.querySelector('i')
-      .classList.toggle('fa-chevron-down', !aberto);
-    toggle.querySelector('i')
-      .classList.toggle('fa-chevron-up', aberto);
+    // fecha os outros dropdowns, se quiser exclusividade:
+    document.querySelectorAll('.menu-dropdown').forEach(other => {
+      if (other !== li) other.classList.remove('open');
+    });
+    // toggle deste dropdown
+    li.classList.toggle('open');
   });
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-  const btn  = document.querySelector('.hamburger-toggle');
-  const menu = document.getElementById('mobile-menu');
-
-  if (!btn || !menu) return;  // não faz nada se faltar em alguma página
-
-  btn.addEventListener('click', () => {
-    const isOpen = menu.classList.toggle('open');
-    btn.setAttribute('aria-expanded', isOpen);
-  });
-});
-
-

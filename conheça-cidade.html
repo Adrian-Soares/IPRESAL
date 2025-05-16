@@ -15,6 +15,7 @@
 <body>
 
   <!-- WIDGET DE ACESSIBILIDADE -->
+
   <div class="a11y-widget">
     <button class="a11y-toggle" aria-label="Abrir menu de acessibilidade" aria-expanded="false">
       <i class="fas fa-wheelchair"></i>
@@ -34,6 +35,7 @@
   </div>  
 
   <!-- Topo -->
+
   <div class="top-bar">
     <div class="container">
       <span>Telefone: (81) 3654-1156 | Horário: 08:00h às 13:00h, de segunda à sexta</span>
@@ -41,6 +43,7 @@
   </div>
 
   <!-- Cabeçalho -->
+
   <header class="header-main">
     <div class="container header-flex">
       <div class="logo-area">
@@ -49,14 +52,14 @@
     </div>
   </header>
 
-  <!-- Menu de navegação -->
-  <nav class="menu-bar">
+<!-- Menu de navegação -->
+  <nav class="menu-bar" aria-label="Menu principal">
     <div class="container nav-container">
       <ul class="menu-list">
         <li><a href="index.html">Página Inicial</a></li>
         <li class="menu-dropdown">
-          <a href="#">Institucional <i class="fas fa-chevron-down"></i></a>
-          <ul class="submenu">
+          <a href="#">Institucional <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+          <ul class="submenu" aria-label="Submenu Institucional">
             <li><a href="conheça-cidade.html">Conheça a Cidade</a></li>
             <li><a href="conheça-rpps.html">Conheça o RPPS</a></li>
             <li><a href="estrutura-administrativa.html">Estrutura Administrativa</a></li>
@@ -64,8 +67,8 @@
           </ul>
         </li>
         <li class="menu-dropdown">
-          <a href="#">Publicações Oficiais <i class="fas fa-chevron-down"></i></a>
-          <ul class="submenu">
+          <a href="#">Publicações Oficiais <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+          <ul class="submenu" aria-label="Submenu Publicações Oficiais">
             <li><a href="avaliação-aturial.html">Avaliação Atuarial</a></li>
             <li><a href="portarias.html">Portarias</a></li>
             <li><a href="contratos.html">Contratos</a></li>
@@ -77,64 +80,43 @@
         <li><a href="transparência.html">Transparência</a></li>
         <li><a href="ouvidoria.html">Ouvidoria</a></li>
       </ul>
-      <div class="search-bar">
-        <form action="search.html" method="get">
-          <input id="navSearch" name="q" type="text" placeholder="Buscar…">
-          <button id="navSearchBtn" type="submit"><i class="fas fa-search"></i></button>
+      <div class="search-bar" role="search">
+        <form action="search.html" method="get" aria-label="Busca no site" style="display:flex;">
+          <label for="navSearch" class="visually-hidden"></label>
+          <input id="navSearch" name="q" type="text" placeholder="Buscar…" aria-required="false" />
+          <button id="navSearchBtn" type="submit" aria-label="Iniciar busca"><i class="fas fa-search" aria-hidden="true"></i></button>
         </form>
       </div>
-     <!-- botão hamburger (aparece só no mobile) -->
-<button class="hamburger-toggle" aria-label="Abrir menu" aria-expanded="false">
-  <i class="fas fa-bars"></i>
-</button>
-
-<!-- menu móvel oculto por padrão -->
-<div class="mobile-menu" id="mobile-menu">
-  <ul class="mobile-menu-list">
-    <li><a href="index.html">Página Inicial</a></li>
-    <li class="menu-dropdown">
-      <a href="#">Institucional <i class="fas fa-chevron-down"></i></a>
-      <ul class="submenu">
-        <li><a href="conheça-cidade.html">Conheça a Cidade</a></li>
-        <li><a href="conheça-rpps.html">Conheça o RPPS</a></li>
-        <li><a href="estrutura-administrativa.html">Estrutura Administrativa</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-      </ul>
-    </li>
-    <!-- ... resto dos itens ... -->
-    <li><a href="transparência.html">Transparência</a></li>
-    <li><a href="ouvidoria.html">Ouvidoria</a></li>
-  </ul>
-</div>
-
-    </div>
-  </nav>
-
+      </div>
+    </nav>
   <!-- Conteúdo -->
+
   <section class="container-texto">
     <h1>Conheça Salgadinho</h1>
     <p><strong>Salgadinho</strong> é um município brasileiro do estado de Pernambuco, localizado na microrregião do Médio Capibaribe. O município é composto pelo distrito sede e pelo povoado de Picarreira.</p>
 
-    <h2>História</h2>
-    <p>Ao final do século XVIII, as terras do atual município de Salgadinho era uma fazenda pertencentes à família Alves Camelo, seus primeiros habitantes. Por volta de 1780, o patriarca João Idelfonso Alves Camelo construiu uma capela dedicada a Nossa Senhora das Dores, com uma imagem da pedra, medindo 1,5 m de altura sobre o altar. No entorno desta capela surgiu o povoado e a lenda sobre o sino da igreja. A lenda conta que ao final da construção, faltava o sino. Um grupo de tropeiros com os burros carregados parou no local para descansar, em frente à casa grande e à capela. Ao retomar a viagem, recarregavam os burros quando observaram que o sino que traziam estava muito pesado. Sem conseguir levantar o sino, os tropeiros decidiram vendê-lo à família Alves Camelo. Após a partida dos tropeiros, o sino foi erguido sem dificuldade e conduzido à capela, o que foi considerado um milagre.</p>
-    <p>O distrito de Salgadinho era parte do território de Bom Jardim. Com a criação do município de João Alfredo, Salgadinho passou a ser distrito da nova cidade. Foi elevado à categoria de município com a denominação de Salgadinho, pela lei estadual nº 4974,de 20 de dezembro de 1963.</p>
+<h2>História</h2>
+<p>Ao final do século XVIII, as terras do atual município de Salgadinho era uma fazenda pertencentes à família Alves Camelo, seus primeiros habitantes. Por volta de 1780, o patriarca João Idelfonso Alves Camelo construiu uma capela dedicada a Nossa Senhora das Dores, com uma imagem da pedra, medindo 1,5 m de altura sobre o altar. No entorno desta capela surgiu o povoado e a lenda sobre o sino da igreja. A lenda conta que ao final da construção, faltava o sino. Um grupo de tropeiros com os burros carregados parou no local para descansar, em frente à casa grande e à capela. Ao retomar a viagem, recarregavam os burros quando observaram que o sino que traziam estava muito pesado. Sem conseguir levantar o sino, os tropeiros decidiram vendê-lo à família Alves Camelo. Após a partida dos tropeiros, o sino foi erguido sem dificuldade e conduzido à capela, o que foi considerado um milagre.</p>
+<p>O distrito de Salgadinho era parte do território de Bom Jardim. Com a criação do município de João Alfredo, Salgadinho passou a ser distrito da nova cidade. Foi elevado à categoria de município com a denominação de Salgadinho, pela lei estadual nº 4974,de 20 de dezembro de 1963.</p>
 
-    <h2>Geografia</h2>
-    <p>O relevo de Salgadinho participa das Áreas Desgastadas da Província Borborema, formada por maciços altos e outeiros, com altitudes variando de 650 a 1.000 m, ou seja, superfícies onduladas com relevos residuais altos. O relevo é geralmente movimentado, com vales profundos e estreitos. Nas cristas residuais altas predominam os solos litólicos; nos topos e vertentes das ondulações observa-se os solos brunos não cálcicos e nas parte baixa das ondulações estão presentes os planossolos. Os solos são pouco profundos e de fertilidade entre média e alta.</p>
-    <p>A vegetação nativa consiste em caatinga hipoxerófila..</p>
-    <p>Dados da Sudene de precipitação registram uma média anual de 920,70 mm, com um máximo de 1.197,90 mm e um mínimo de 624,80 mm entre 1962-1985..</p>
-    <p>O município de Salgadinho encontra-se inserido na bacia hidrográfica do Rio Capibaribe.</p>
+<h2>Geografia</h2>
+<p>O relevo de Salgadinho participa das Áreas Desgastadas da Província Borborema, formada por maciços altos e outeiros, com altitudes variando de 650 a 1.000 m, ou seja, superfícies onduladas com relevos residuais altos. O relevo é geralmente movimentado, com vales profundos e estreitos. Nas cristas residuais altas predominam os solos litólicos; nos topos e vertentes das ondulações observa-se os solos brunos não cálcicos e nas parte baixa das ondulações estão presentes os planossolos. Os solos são pouco profundos e de fertilidade entre média e alta.</p>
+<p>A vegetação nativa consiste em caatinga hipoxerófila..</p>
+<p>Dados da Sudene de precipitação registram uma média anual de 920,70 mm, com um máximo de 1.197,90 mm e um mínimo de 624,80 mm entre 1962-1985..</p>
+<p>O município de Salgadinho encontra-se inserido na bacia hidrográfica do Rio Capibaribe.</p>
 
-    <h2>Economia</h2>
-    <p>A economia do município divide-se entre o comércio local, o turismo, a pecuária, a agricultura e atividades de extrativismo vegetal e silvicultura.</p>
-    <p>Na agricultura, destacam-se o tomate, o feijão e a mandioca. Na pecuária, o gado bovino e caprino, bem como a avicultura.</p>
-    
-    <h2>Turismo</h2>
-    <p>A cidade possui uma fonte termal, permitindo banhos com temperatura média de 38oC. Segundo os pesquisadores, as águas possuem cálcio, magnésio, potássio, sílica, sódio, sulfato etc. São bastante procuradas para banho nas piscinas formadas pela fonte. A água produz um efeito relaxante, sedativo, analgésico e anti-inflamatório, agindo também nos órgãos internos. Pesquisadores ingleses foram até o município e afirmaram conhecer uma água com as mesmas propriedades apenas na França e Inglaterra.</p>
-    <p>Outro ponto turístico é a Igreja de Nossa Senhora das Dores, que possui um mirante da região e uma Escultura da Santa que é Padroeira do município. Fonte: Wikipédia.</p>
+<h2>Economia</h2>
+<p>A economia do município divide-se entre o comércio local, o turismo, a pecuária, a agricultura e atividades de extrativismo vegetal e silvicultura.</p>
+<p>Na agricultura, destacam-se o tomate, o feijão e a mandioca. Na pecuária, o gado bovino e caprino, bem como a avicultura.</p>
+
+<h2>Turismo</h2>
+<p>A cidade possui uma fonte termal, permitindo banhos com temperatura média de 38oC. Segundo os pesquisadores, as águas possuem cálcio, magnésio, potássio, sílica, sódio, sulfato etc. São bastante procuradas para banho nas piscinas formadas pela fonte. A água produz um efeito relaxante, sedativo, analgésico e anti-inflamatório, agindo também nos órgãos internos. Pesquisadores ingleses foram até o município e afirmaram conhecer uma água com as mesmas propriedades apenas na França e Inglaterra.</p>
+<p>Outro ponto turístico é a Igreja de Nossa Senhora das Dores, que possui um mirante da região e uma Escultura da Santa que é Padroeira do município. Fonte: Wikipédia.</p>
+
   </section>
 
   <!-- Rodapé -->
+
   <footer>
     <div class="footer-content container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 20px 0;">
       <div class="footer-info" style="flex: 1 1 300px;">
@@ -162,6 +144,7 @@
 </div>
 
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
 <script>
   new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
