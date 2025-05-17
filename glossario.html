@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Glossário – IPRESAL</title>
+  <title>Glossário - IPRESAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Estilo global -->
   <link rel="stylesheet" href="style.css">
@@ -13,28 +13,40 @@
 </head>
 <body>
 
-  <!-- WIDGET DE ACESSIBILIDADE -->
-  <div class="a11y-widget">
-    <button class="a11y-toggle" aria-label="Abrir menu de acessibilidade" aria-expanded="false">
-      <i class="fas fa-wheelchair"></i>
-    </button>
-    <div class="a11y-menu" aria-hidden="true">
-      <a href="mapa-site.html"><i class="fas fa-sitemap"></i> Mapa do site</a>
-      <a href="glossario.html"><i class="fas fa-book"></i> Glossário</a>
-      <button id="a11y-contrast"><i class="fas fa-adjust"></i> Alto contraste</button>
-      <button id="a11y-bw"><i class="fas fa-circle"></i> Preto e branco</button>
-      <button id="a11y-invert"><i class="fas fa-exchange-alt"></i> Inverter cores</button>
-      <button id="a11y-highlight"><i class="fas fa-link"></i> Destacar links</button>
-      <button id="a11y-font-up"><i class="fas fa-plus"></i> Aumentar fonte</button>
-      <button id="a11y-font-down"><i class="fas fa-minus"></i> Diminuir fonte</button>
-      <button id="a11y-font-regular"><i class="fas fa-font"></i> Fonte regular</button>
-      <button id="a11y-reset"><i class="fas fa-redo"></i> Redefinir</button>
+    <!-- WIDGET DE ACESSIBILIDADE -->
+    <div class="a11y-widget">
+      <button class="a11y-toggle" aria-label="Abrir menu de acessibilidade" aria-expanded="false">
+        <i class="fas fa-wheelchair"></i>
+      </button>
+      <div class="a11y-menu" aria-hidden="true">
+        <a href="mapa-site.html"><i class="fas fa-sitemap"></i> Mapa do site</a>
+        <a href="glossario.html"><i class="fas fa-book"></i> Glossário</a>
+        <button id="a11y-contrast"><i class="fas fa-adjust"></i> Alto contraste</button>
+        <button id="a11y-bw"><i class="fas fa-circle"></i> Preto e branco</button>
+        <button id="a11y-invert"><i class="fas fa-exchange-alt"></i> Inverter cores</button>
+        <button id="a11y-highlight"><i class="fas fa-link"></i> Destacar links</button>
+        <button id="a11y-font-up"><i class="fas fa-plus"></i> Aumentar fonte</button>
+        <button id="a11y-font-down"><i class="fas fa-minus"></i> Diminuir fonte</button>
+        <button id="a11y-font-regular"><i class="fas fa-font"></i> Fonte regular</button>
+        <button id="a11y-reset"><i class="fas fa-redo"></i> Redefinir</button>
+      </div>
+    </div>  
+
+    <!-- Cookie Banner -->
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-banner__content">
+    <p>
+      Utilizamos cookies essenciais para o funcionamento do site e cookies opcionais para melhorar sua experiência, como lembrar seus dados em formulários (por exemplo, seu e-mail de contato). Você pode aceitar ou recusar os cookies opcionais, ou clicar em “Saiba mais” para ver nossa Política de Privacidade e entender como os utilizamos.  
+      <a href="privacidade.html#cookies" class="cookie-banner__link">Saiba mais</a>.
+    </p>
+    <div class="cookie-banner__actions">
+      <button id="cookie-decline" class="btn btn--small">Recusar</button>
+      <button id="cookie-accept" class="btn btn--small btn--primary">Aceitar</button>
     </div>
   </div>
+</div>
 
-  <!-- Skip Link -->
-  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
-
+ 
   <!-- Topo com horário e telefone -->
   <header class="top-bar" role="banner">
     <div class="container">
@@ -54,6 +66,12 @@
   <!-- Menu de navegação -->
   <nav class="menu-bar" aria-label="Menu principal">
     <div class="container nav-container">
+<button class="hamburger" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <ul class="menu-list">
         <li><a href="index.html">Página Inicial</a></li>
         <li class="menu-dropdown">
@@ -81,15 +99,12 @@
       </ul>
       <div class="search-bar" role="search">
         <form action="search.html" method="get" aria-label="Busca no site" style="display:flex;">
-          <label for="navSearch" class="visually-hidden">Buscar no site</label>
+          <label for="navSearch" class="visually-hidden"></label>
           <input id="navSearch" name="q" type="text" placeholder="Buscar…" aria-required="false" />
-          <button id="navSearchBtn" type="submit" aria-label="Iniciar busca">
-            <i class="fas fa-search" aria-hidden="true"></i>
-          </button>
+          <button id="navSearchBtn" type="submit" aria-label="Iniciar busca"><i class="fas fa-search" aria-hidden="true"></i></button>
         </form>
       </div>
-    </div>
-  </nav>
+    </nav>
 
   <!-- Conteúdo Principal -->
   <main id="main-content" role="main">

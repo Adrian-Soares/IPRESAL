@@ -139,31 +139,32 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })();
 
-// drawer principal
-const hamb = document.querySelector('.hamburger');
-const menu = document.querySelector('.menu-list');
+document.addEventListener('DOMContentLoaded', () => {
+  const hamb = document.querySelector('.hamburger');
+  const menu = document.querySelector('.menu-list');
+  const dropdowns = document.querySelectorAll('.menu-dropdown');
 
-hamb.addEventListener('click', () => {
-  menu.classList.toggle('open');
-});
+  hamb.addEventListener('click', () => {
+    menu.classList.toggle('open');
+    hamb.classList.toggle('open');
+  });
 
-// fecha drawer ao clicar fora
-document.addEventListener('click', e => {
-  if (!menu.contains(e.target) && !hamb.contains(e.target)) {
-    menu.classList.remove('open');
-  }
-});
+  document.addEventListener('click', e => {
+    if (!menu.contains(e.target) && !hamb.contains(e.target)) {
+      menu.classList.remove('open');
+      hamb.classList.remove('open');
+      dropdowns.forEach(li => li.classList.remove('open'));
+    }
+  });
 
-// dropdowns profissionais
-document.querySelectorAll('.menu-dropdown').forEach(li => {
-  const anchor = li.querySelector('a');
-  anchor.addEventListener('click', e => {
-    e.preventDefault();
-    // fecha os outros dropdowns, se quiser exclusividade:
-    document.querySelectorAll('.menu-dropdown').forEach(other => {
-      if (other !== li) other.classList.remove('open');
+  dropdowns.forEach(li => {
+    const a = li.querySelector('a');
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      dropdowns.forEach(other => {
+        if (other !== li) other.classList.remove('open');
+      });
+      li.classList.toggle('open');
     });
-    // toggle deste dropdown
-    li.classList.toggle('open');
   });
 });

@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>IPRESAL - Transparência</title>
+  <title>IPRESAL - Transparência</Portal></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Estilo global -->
   <link rel="stylesheet" href="style.css">
@@ -13,45 +13,60 @@
 </head>
 <body>
 
-<!-- WIDGET DE ACESSIBILIDADE -->
-<div class="a11y-widget">
-  <button class="a11y-toggle" aria-label="Abrir menu de acessibilidade" aria-expanded="false">
-    <i class="fas fa-wheelchair"></i>
-  </button>
-  <div class="a11y-menu" aria-hidden="true">
-    <a href="mapa-site.html"><i class="fas fa-sitemap"></i> Mapa do site</a>
-    <a href="glossario.html"><i class="fas fa-book"></i> Glossário</a>
-    <button id="a11y-contrast"><i class="fas fa-adjust"></i> Alto contraste</button>
-    <button id="a11y-bw"><i class="fas fa-circle"></i> Preto e branco</button>
-    <button id="a11y-invert"><i class="fas fa-exchange-alt"></i> Inverter cores</button>
-    <button id="a11y-highlight"><i class="fas fa-link"></i> Destacar links</button>
-    <button id="a11y-font-up"><i class="fas fa-plus"></i> Aumentar fonte</button>
-    <button id="a11y-font-down"><i class="fas fa-minus"></i> Diminuir fonte</button>
-    <button id="a11y-font-regular"><i class="fas fa-font"></i> Fonte regular</button>
-    <button id="a11y-reset"><i class="fas fa-redo"></i> Redefinir</button>
+    <!-- WIDGET DE ACESSIBILIDADE -->
+    <div class="a11y-widget">
+      <button class="a11y-toggle" aria-label="Abrir menu de acessibilidade" aria-expanded="false">
+        <i class="fas fa-wheelchair"></i>
+      </button>
+      <div class="a11y-menu" aria-hidden="true">
+        <a href="mapa-site.html"><i class="fas fa-sitemap"></i> Mapa do site</a>
+        <a href="glossario.html"><i class="fas fa-book"></i> Glossário</a>
+        <button id="a11y-contrast"><i class="fas fa-adjust"></i> Alto contraste</button>
+        <button id="a11y-bw"><i class="fas fa-circle"></i> Preto e branco</button>
+        <button id="a11y-invert"><i class="fas fa-exchange-alt"></i> Inverter cores</button>
+        <button id="a11y-highlight"><i class="fas fa-link"></i> Destacar links</button>
+        <button id="a11y-font-up"><i class="fas fa-plus"></i> Aumentar fonte</button>
+        <button id="a11y-font-down"><i class="fas fa-minus"></i> Diminuir fonte</button>
+        <button id="a11y-font-regular"><i class="fas fa-font"></i> Fonte regular</button>
+        <button id="a11y-reset"><i class="fas fa-redo"></i> Redefinir</button>
+      </div>
+    </div>  
+
+    <!-- Cookie Banner -->
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-banner__content">
+    <p>
+      Utilizamos cookies essenciais para o funcionamento do site e cookies opcionais para melhorar sua experiência, como lembrar seus dados em formulários (por exemplo, seu e-mail de contato). Você pode aceitar ou recusar os cookies opcionais, ou clicar em “Saiba mais” para ver nossa Política de Privacidade e entender como os utilizamos.  
+      <a href="privacidade.html#cookies" class="cookie-banner__link">Saiba mais</a>.
+    </p>
+    <div class="cookie-banner__actions">
+      <button id="cookie-decline" class="btn btn--small">Recusar</button>
+      <button id="cookie-accept" class="btn btn--small btn--primary">Aceitar</button>
+    </div>
   </div>
 </div>
 
-  <!-- Topo -->
-  <div class="top-bar">
+ 
+  <!-- Topo com horário e telefone -->
+  <header class="top-bar" role="banner">
     <div class="container">
       <span>Telefone: (81) 3654-1156 | Horário: 08:00h às 13:00h, de segunda à sexta</span>
     </div>
-  </div>
+  </header>
 
-  <!-- Cabeçalho -->
-  <header class="header-main">
+  <!-- Cabeçalho com logo centralizada -->
+  <header class="header-main" role="banner">
     <div class="container header-flex">
       <div class="logo-area" style="text-align: center; width: 100%;">
-        <img src="IPRESAL.jpg" alt="Logo do IPRESAL">
+        <img src="IPRESAL.jpg" alt="Logotipo do IPRESAL">
       </div>
     </div>
   </header>
 
-  <!-- Menu -->
-  <nav class="menu-bar">
+  <!-- Menu de navegação -->
+  <nav class="menu-bar" aria-label="Menu principal">
     <div class="container nav-container">
-      <button class="hamburger" aria-label="Abrir menu">
+<button class="hamburger" aria-label="Abrir menu">
         <span></span>
         <span></span>
         <span></span>
@@ -60,8 +75,8 @@
       <ul class="menu-list">
         <li><a href="index.html">Página Inicial</a></li>
         <li class="menu-dropdown">
-          <a href="#">Institucional <i class="fas fa-chevron-down"></i></a>
-          <ul class="submenu">
+          <a href="#">Institucional <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+          <ul class="submenu" aria-label="Submenu Institucional">
             <li><a href="conheça-cidade.html">Conheça a Cidade</a></li>
             <li><a href="conheça-rpps.html">Conheça o RPPS</a></li>
             <li><a href="estrutura-administrativa.html">Estrutura Administrativa</a></li>
@@ -69,8 +84,8 @@
           </ul>
         </li>
         <li class="menu-dropdown">
-          <a href="#">Publicações Oficiais <i class="fas fa-chevron-down"></i></a>
-          <ul class="submenu">
+          <a href="#">Publicações Oficiais <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+          <ul class="submenu" aria-label="Submenu Publicações Oficiais">
             <li><a href="avaliação-aturial.html">Avaliação Atuarial</a></li>
             <li><a href="portarias.html">Portarias</a></li>
             <li><a href="contratos.html">Contratos</a></li>
@@ -79,16 +94,17 @@
             <li><a href="legislação.html">Legislação</a></li>
           </ul>
         </li>
+        <li><a href="transparência.html">Transparência</a></li>
         <li><a href="ouvidoria.html">Ouvidoria</a></li>
       </ul>
-      <div class="search-bar">
-        <form action="search.html" method="get" style="display:flex;">
-          <input name="q" type="text" placeholder="Buscar…" style="flex:1;padding:8px;">
-          <button type="submit"><i class="fas fa-search"></i></button>
+      <div class="search-bar" role="search">
+        <form action="search.html" method="get" aria-label="Busca no site" style="display:flex;">
+          <label for="navSearch" class="visually-hidden"></label>
+          <input id="navSearch" name="q" type="text" placeholder="Buscar…" aria-required="false" />
+          <button id="navSearchBtn" type="submit" aria-label="Iniciar busca"><i class="fas fa-search" aria-hidden="true"></i></button>
         </form>
       </div>
-    </div>
-  </nav>
+    </nav>
 
   <!-- Conteúdo do Portal de Transparência -->
   <section class="transparencia-section">
