@@ -43,10 +43,18 @@
     border: 0;
   }
   
-  /* =========================
-     TOPO E CABEÇALHO
-     ========================= */
-  .top-bar {
+  /* ======================================
+   Ajuste responsivo do logo no header
+   ====================================== */
+.header-main .header-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;    /* permite quebrar em linhas se necessário */
+  padding: 0 1rem;    /* evita colar nas bordas */
+}
+
+.top-bar {
     background-color: #002050;
     color: #fff;
     text-align: center;
@@ -57,14 +65,19 @@
     background-color: #fff;
     padding: 15px 0;
   }
-  .header-flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.header-main .logo-area img {
+  width: 100%;        /* escala para caber no container */
+  max-width: 500px;   /* mantém o limite original no desktop */
+  height: auto;       /* preserva proporção */
+}
+
+/* em telas muito estreitas, reduz ainda mais */
+@media (max-width: 400px) {
+  .header-main .logo-area img {
+    max-width: 300px;
   }
-  .logo-area img {
-    max-width: 500px;
-  }
+}
   
   /* =========================
      MENU DE NAVEGAÇÃO
@@ -1145,15 +1158,15 @@ html, body {
 
   /* em vez de gap, usamos margin entre os <li> */
   .menu-list li + li {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
   }
 
   /* botões principais */
   .menu-list li > a {
-    display: block;
+    display: flow-root;
     width: 100%;
     padding: 0.75rem 1rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
     color: #fff;
     border-radius: 12px;
@@ -1207,6 +1220,9 @@ html, body {
     display: none;
   }
 }
+
+
+
 
 
 
