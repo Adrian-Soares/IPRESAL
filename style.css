@@ -1187,7 +1187,7 @@ html, body {
     transition: max-height 0.3s ease;
   }
   .menu-dropdown.open .submenu {
-    max-height: 300px; /* ajuste conforme número de itens */
+    max-height: 400px; /* ajuste conforme número de itens */
   }
 
   /* links do submenu */
@@ -1279,4 +1279,42 @@ html, body {
     .result a:hover {
       text-decoration: underline;
     }
+
+    /* =============================
+   PAGINAÇÃO PARA TABELA
+   ============================= */
+.pagination-info {
+  font-size: 0.9em;
+  color: #333;
+  margin: 1rem 0 0.5rem;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9em;
+  margin-bottom: 2rem;
+}
+
+.pagination-controls button,
+.pagination-controls .page-number {
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #333;
+  padding: 0.3em 0.6em;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.pagination-controls .page-number.active {
+  background: #ddd;
+  font-weight: bold;
+}
+
   

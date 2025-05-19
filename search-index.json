@@ -62,13 +62,13 @@
     {
       "id": "legislacao",
       "title": "Legislação",
-      "url": "legislacao.html",
+      "url": "legislação.html",
       "content": "Leis, decretos e normas municipais que regem o IPRESAL e o RPPS, incluindo ementas, números, datas e links para os textos completos."
     },
     {
       "id": "transparencia",
       "title": "Transparência",
-      "url": "transparencia.html",
+      "url": "transparência.html",
       "content": "Acesso rápido a portais oficiais: Consulta Pública do TCE, CADPREV, comprovante de repasse, CRP e demonstrativo previdenciário, garantindo visibilidade dos dados públicos."
     },
     {
@@ -76,12 +76,6 @@
       "title": "Ouvidoria",
       "url": "ouvidoria.html",
       "content": "Formulário de manifestação (elogio, denúncia, reclamação, sugestão) com opção de envio normal ou anônimo e instruções para contato direto via e-mail."
-    },
-    {
-      "id": "termos-uso-privacidade",
-      "title": "Termos de Uso e Privacidade",
-      "url": "termos-uso-privacidade.html",
-      "content": "Regras de uso do site, direitos autorais, isenções de responsabilidade, coleta e tratamento de dados pessoais, políticas de cookies, compartilhamento, segurança, direitos dos usuários e legislação aplicável."
     },
     {
       "id": "politica-privacidade",

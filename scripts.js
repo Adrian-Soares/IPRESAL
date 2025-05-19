@@ -168,3 +168,60 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const tbody     = document.getElementById('tabela-legislacao');
+  const rows      = Array.from(tbody.querySelectorAll('tr'));
+  const infoEl    = document.getElementById('paginationInfo');
+  const controls  = document.getElementById('paginationControls');
+  const pageSize  = 25;
+  let currentPage = 1;
+  const total     = rows.length;
+  const pages     = Math.ceil(total / pageSize);
+
+  function render(page) {
+    currentPage = page;
+    const start = (page - 1) * pageSize;
+    const end   = Math.min(start + pageSize, total);
+
+    // mostra só as linhas da página
+    rows.forEach((tr, i) => {
+      tr.style.display = i >= start && i < end ? '' : 'none';
+    });
+
+    // sumário
+    infoEl.textContent = `Mostrando de ${start + 1} até ${end} de ${total} registros`;
+
+    // controles
+    controls.innerHTML = '';
+    // anterior
+    const prev = document.createElement('button');
+    prev.textContent = 'Anterior';
+    prev.disabled    = page === 1;
+    prev.addEventListener('click', () => render(page - 1));
+    controls.appendChild(prev);
+
+    // números de página
+    for (let p = 1; p <= pages; p++) {
+      const span = document.createElement('span');
+      span.textContent = p;
+      span.className   = 'page-number' + (p === page ? ' active' : '');
+      span.addEventListener('click', () => render(p));
+      controls.appendChild(span);
+    }
+
+    // próximo
+    const next = document.createElement('button');
+    next.textContent = 'Próximo';
+    next.disabled    = page === pages;
+    next.addEventListener('click', () => render(page + 1));
+    controls.appendChild(next);
+  }
+
+  // inicia
+  if (total > pageSize) {
+    render(1);
+  } else {
+    infoEl.textContent = `Mostrando de 1 até ${total} de ${total} registros`;
+  }
+});
