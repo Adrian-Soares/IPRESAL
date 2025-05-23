@@ -111,14 +111,18 @@
     <h1>Política de Investimentos</h1>
     <input type="text" id="filtro" placeholder="Buscar por ano ou descrição...">
 
-    <table>
-      <thead>
-        <tr>
-          <th>Ano</th>
-          <th>Descrição</th>
-          <th>Visualizar</th>
-        </tr>
-      </thead>
+        <table>
+  <thead>
+    <tr>
+      <th class="toggle-col"></th>
+      <th>Ano</th>
+      <th>Núm.</th>
+      <th>Tipo</th>
+      <th>Visualizar</th>
+      <th class="hide-on-mobile">Descrição</th>
+      <th class="hide-on-mobile">Visualizar</th>
+    </tr>
+  </thead>
       <tbody id="tabela-investimentos">
         <tr>
           <td>2024</td>
@@ -150,6 +154,14 @@
         <!-- Adicione mais linhas conforme necessário -->
       </tbody>
     </table>
+    
+    <!-- container para a versão mobile -->
+ <div id="mobileLegis" class="mobile-legis"></div>
+
+  <!-- comece aqui: resumo e controles de paginação -->
+  <div id="paginationInfo" class="pagination-info"></div>
+  <div id="paginationControls" class="pagination-controls"></div>
+  <!-- fim das marcações de paginação -->
   </section>
 
   <!-- Rodapé -->

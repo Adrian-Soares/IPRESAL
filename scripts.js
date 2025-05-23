@@ -273,3 +273,144 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Função genérica para transformar uma tabela em accordion mobile
+function initMobileTable(tableTbodyId, mobileDivId) {
+  const tbody     = document.getElementById(tableTbodyId);
+  const mobileDiv = document.getElementById(mobileDivId);
+  if (!tbody || !mobileDiv) return;
+
+  // Cabeçalho móvel fixo (Ano | Núm. | Tipo)
+  const header = document.createElement('div');
+  header.className = 'legis-header labels';
+  header.innerHTML = `
+    <div class="info">
+      <span>Ano</span>
+      <span>Núm.</span>
+      <span>Tipo</span>
+    </div>
+  `;
+  mobileDiv.appendChild(header);
+
+  // Converte cada linha
+  Array.from(tbody.querySelectorAll('tr')).forEach(tr => {
+    const [tdAno, tdNum, tdTipo, tdDesc, tdView] = Array.from(tr.children);
+    // extrai conteúdos
+    const ano     = tdAno.textContent.trim();
+    const num     = tdNum.textContent.trim();
+    const tipo    = tdTipo.textContent.trim();
+    const desc    = tdDesc.textContent.trim();
+    const linkEl  = tdView.querySelector('a');
+    const href    = linkEl ? linkEl.href : '#';
+    const viewTxt = linkEl ? linkEl.textContent.trim() : 'Visualizar';
+
+    // cria card mobile
+    const item = document.createElement('div');
+    item.className = 'legis-item';
+    item.innerHTML = `
+      <div class="legis-header">
+        <div class="info">
+          <span>${ano}</span>
+          <span>${num}</span>
+          <span>${tipo}</span>
+        </div>
+        <button type="button" class="toggle-btn">+</button>
+      </div>
+      <div class="legis-detail">
+        <div class="desc"><strong>Descrição:</strong> ${desc}</div>
+        <div class="view-link"><strong>Visualizar:</strong> <a href="${href}" target="_blank">${viewTxt}</a></div>
+      </div>
+    `;
+
+    // toggle
+    const btn    = item.querySelector('.toggle-btn');
+    const detail = item.querySelector('.legis-detail');
+    btn.addEventListener('click', () => {
+      const open = detail.style.display === 'block';
+      detail.style.display = open ? 'none' : 'block';
+      btn.textContent      = open ? '+' : '−';
+    });
+
+    mobileDiv.appendChild(item);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth > 767) return;
+
+  initMobileTable('tabela-legislacao',    'mobileLegis');
+  initMobileTable('tabela-atas',          'mobileAtas');
+  initMobileTable('tabela-contratos',     'mobileContratos');
+  initMobileTable('tabela-investimentos', 'mobileInvest');
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  // --- Só em mobile (≤767px) ---
+  if (window.innerWidth > 767) {
+    console.log('[Avaliação] largura > 767px, não inicializo o accordion.');
+    return;
+  }
+  console.log('[Avaliação] iniciando accordion mobile…');
+
+  const tbody     = document.getElementById('tabela-avaliacao');
+  const mobileDiv = document.getElementById('mobileAval');
+  console.log('[Avaliação] tbody:', tbody, 'mobileDiv:', mobileDiv);
+
+  if (!tbody || !mobileDiv) {
+    console.warn('[Avaliação] Não encontrei #tabela-avaliacao ou #mobileAval no DOM.');
+    return;
+  }
+
+  // 1) Cabeçalho fixo com Ano | Descrição | Visualizar
+  const header = document.createElement('div');
+  header.className = 'legis-header labels';
+  header.innerHTML = `
+    <div class="info">
+      <span>Ano</span>
+      <span>Descrição</span>
+      <span>Visualizar</span>
+    </div>
+  `;
+  mobileDiv.appendChild(header);
+
+  // 2) Monta um card para cada linha <tr>
+  Array.from(tbody.querySelectorAll('tr')).forEach((tr, idx) => {
+    const [tdAno, tdDesc, tdView] = Array.from(tr.children);
+    const ano   = tdAno?.textContent.trim()   || '';
+    const desc  = tdDesc?.textContent.trim()  || '';
+    const link  = tdView?.querySelector('a');
+    const href  = link?.href  || '#';
+    const txt   = link?.textContent.trim() || 'Visualizar';
+
+    console.log(`[Avaliação][linha ${idx}] ano=${ano}, desc="${desc.slice(0,20)}…"`);
+
+    const item = document.createElement('div');
+    item.className = 'legis-item';
+    item.innerHTML = `
+      <div class="legis-header">
+        <div class="info">
+          <span>${ano}</span>
+          <span>${desc.length > 25 ? desc.slice(0,25) + '…' : desc}</span>
+        </div>
+        <button type="button" class="toggle-btn">+</button>
+      </div>
+      <div class="legis-detail">
+        <div class="desc"><strong>Descrição:</strong> ${desc}</div>
+        <div class="view-link"><strong>Visualizar:</strong>
+          <a href="${href}" target="_blank">${txt}</a>
+        </div>
+      </div>
+    `;
+
+    const btn    = item.querySelector('.toggle-btn');
+    const detail = item.querySelector('.legis-detail');
+    btn.addEventListener('click', () => {
+      const open = detail.style.display === 'block';
+      detail.style.display  = open ? 'none' : 'block';
+      btn.textContent       = open ? '+'  : '−';
+    });
+
+    mobileDiv.appendChild(item);
+  });
+
+  console.log('[Avaliação] accordion mobile criado com sucesso.');
+});

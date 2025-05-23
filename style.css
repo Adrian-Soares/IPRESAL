@@ -1360,5 +1360,182 @@ html, body {
   }
 }
 
+/* ── desktop: mobile-legis escondido ── */
+@media (min-width: 768px) {
+  .mobile-legis { display: none; }
+}
+
+/* ── mobile: tabela escondida, mobile-legis visível ── */
+@media (max-width: 767px) {
+  /* esconde a table inteira */
+  .tabela-container table { display: none !important; }
+
+  /* exibe o container mobile */
+  .mobile-legis {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  /* cada item estilo cartão/linha */
+  .mobile-legis .legis-item {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+
+  /* cabeçalho mínimo: ano / num / tipo + botão */
+  .mobile-legis .legis-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f5f5f5;
+    padding: 0.5rem 1rem;
+  }
+  .mobile-legis .legis-header .info {
+    display: flex;
+    gap: 1rem;
+    font-weight: 500;
+  }
+  .mobile-legis .legis-header button {
+    background: #0055ff;
+    color: white;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  /* detalhe escondido por padrão */
+  .mobile-legis .legis-detail {
+    display: none;
+    padding: 0.75rem 1rem;
+    background: white;
+    font-size: 0.95rem;
+  }
+  .mobile-legis .legis-detail .desc {
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  .mobile-legis .legis-detail .view-link a {
+    text-decoration: none;
+    color: #0055ff;
+    font-weight: 500;
+  }
+}
+
+/* ─── Estilo dos cabeçalhos “sortable” ─── */
+.tabela-container table thead th.sortable {
+  background-color: #002050;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  position: relative;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.tabela-container table thead th.sortable i {
+  margin-left: 0.4rem;
+  font-size: 0.7rem;
+  vertical-align: middle;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.tabela-container table thead th.sortable:hover i {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* garante que a linha do cabeçalho fique fixa no topo se quiser */
+.tabela-container table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tabela-container table thead th {
+  border-bottom: 2px solid #fff;
+}
+
+/* =====================
+   Cabeçalho Mobile
+   ===================== */
+@media (max-width: 767px) {
+  .mobile-legis .labels {
+    background: #002050;
+    padding: 0.5rem 1rem;
+  }
+  .mobile-legis .labels .info {
+    display: flex;
+    gap: 1rem;
+    color: #fff;
+    font-weight: 600;
+  }
+  .mobile-legis .labels .info span {
+    flex: 1;           /* distribui uniformemente */
+    text-align: left;
+    font-size: 0.95rem;
+  }
+}
+
+
+/* ================
+   Tabela responsiva
+   =============== */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;              /* habilita rolagem horizontal */
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+}
+
+/* força min-width para que sempre role horizontal se preciso */
+.table-responsive table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;              /* ajuste o valor conforme sua largura de colunas */
+}
+
+/* células adaptáveis */
+.table-responsive th,
+.table-responsive td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  word-break: break-word;        /* quebra texto longo na coluna Descrição */
+}
+
+/* cabeçalho estilizado */
+.table-responsive thead th {
+  background: #002050;
+  color: #fff;
+  font-weight: 500;
+  position: sticky;
+  top: 0;                        /* mantém o cabeçalho no topo durante scroll */
+  z-index: 2;
+}
+
+/* linhas listradas */
+.table-responsive tbody tr:nth-child(odd) {
+  background: #f7f7f7;
+}
+
+/* ==========================
+   Força mostrar tabelas dentro de .table-responsive
+   no mobile, mesmo havendo aquela ocultação genérica
+   ========================== */
+@media (max-width: 767px) {
+  .table-responsive table {
+    display: table !important;
+  }
+}
+
+
+
+
 
   

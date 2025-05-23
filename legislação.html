@@ -111,15 +111,14 @@
     <h1>Legislação</h1>
     <input type="text" id="filtro" placeholder="Buscar por ano, tipo ou número...">
 
-    <table>
+   <table>
   <thead>
     <tr>
-      <th class="toggle-col"></th>
       <th>Ano</th>
       <th>Núm.</th>
       <th>Tipo</th>
-      <th class="hide-on-mobile">Descrição</th>
-      <th class="hide-on-mobile">Visualizar</th>
+      <th>Descrição</th>
+      <th>Visualizar</th>
     </tr>
   </thead>
   <tbody id="tabela-legislacao">
@@ -460,6 +459,9 @@ outras providências.</td>
         </tr>
       </tbody>
     </table>
+
+    <!-- container para a versão mobile -->
+ <div id="mobileLegis" class="mobile-legis"></div>
 
   <!-- comece aqui: resumo e controles de paginação -->
   <div id="paginationInfo" class="pagination-info"></div>
