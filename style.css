@@ -1317,4 +1317,48 @@ html, body {
   font-weight: bold;
 }
 
+/* === estilo desktop (mantém tudo igual) === */
+@media (min-width: 768px) {
+  .toggle-col,
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+/* === estilo mobile (<768px) === */
+@media (max-width: 767px) {
+  /* 1) oculta as colunas de descrição e visualizar */
+  .hide-on-mobile {
+    display: none !important;
+  }
+  /* 2) exibe a coluna de toggle (24px de largura) */
+  .toggle-col {
+    display: table-cell;
+    width: 40px;
+    text-align: center;
+  }
+  /* 3) botão +/− */
+  .toggle-btn {
+    background: #0055ff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+  }
+  /* 4) estilo da linha de detalhe */
+  .detail-row {
+    display: none;
+  }
+  .detail-row .detail-cell {
+    padding: 0.5rem 1rem;
+    background: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+
   

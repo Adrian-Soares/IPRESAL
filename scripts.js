@@ -225,3 +225,51 @@ document.addEventListener('DOMContentLoaded', () => {
     infoEl.textContent = `Mostrando de 1 até ${total} de ${total} registros`;
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // só rodar em mobile
+  if (window.innerWidth > 767) return;
+
+  const tbody = document.getElementById('tabela-legislacao');
+  const rows  = Array.from(tbody.querySelectorAll('tr'));
+
+  rows.forEach(row => {
+    // pega o conteúdo existente de Descrição e Visualizar
+    const descCell = row.querySelector('td:nth-child(5)');
+    const vizCell  = row.querySelector('td:nth-child(6)');
+    if (!descCell || !vizCell) return;
+
+    const descHtml = descCell.innerHTML;
+    const vizHtml  = vizCell.innerHTML;
+
+    // remove as colunas originais
+    descCell.remove();
+    vizCell.remove();
+
+    // cria a célula do toggle
+    const toggleCell = document.createElement('td');
+    toggleCell.className = 'toggle-col';
+    toggleCell.innerHTML = '<button class="toggle-btn">+</button>';
+    row.insertBefore(toggleCell, row.firstChild);
+
+    // cria a linha de detalhe
+    const detailRow = document.createElement('tr');
+    detailRow.className = 'detail-row';
+    detailRow.innerHTML = `
+      <td colspan="5" class="detail-cell">
+        <div><strong>Descrição:</strong> ${descHtml}</div>
+        <div><strong>Visualizar:</strong> ${vizHtml}</div>
+      </td>
+    `;
+    row.parentNode.insertBefore(detailRow, row.nextSibling);
+
+    // adiciona o evento de abrir/fechar
+    const btn = toggleCell.querySelector('.toggle-btn');
+    btn.addEventListener('click', () => {
+      const isOpen = detailRow.style.display === 'table-row';
+      detailRow.style.display = isOpen ? 'none' : 'table-row';
+      btn.textContent = isOpen ? '+' : '−';
+    });
+  });
+});
+
