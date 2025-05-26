@@ -226,60 +226,111 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  // só rodar em mobile
-  if (window.innerWidth > 767) return;
-
-  const tbody = document.getElementById('tabela-legislacao');
-  const rows  = Array.from(tbody.querySelectorAll('tr'));
-
-  rows.forEach(row => {
-    // pega o conteúdo existente de Descrição e Visualizar
-    const descCell = row.querySelector('td:nth-child(5)');
-    const vizCell  = row.querySelector('td:nth-child(6)');
-    if (!descCell || !vizCell) return;
-
-    const descHtml = descCell.innerHTML;
-    const vizHtml  = vizCell.innerHTML;
-
-    // remove as colunas originais
-    descCell.remove();
-    vizCell.remove();
-
-    // cria a célula do toggle
-    const toggleCell = document.createElement('td');
-    toggleCell.className = 'toggle-col';
-    toggleCell.innerHTML = '<button class="toggle-btn">+</button>';
-    row.insertBefore(toggleCell, row.firstChild);
-
-    // cria a linha de detalhe
-    const detailRow = document.createElement('tr');
-    detailRow.className = 'detail-row';
-    detailRow.innerHTML = `
-      <td colspan="5" class="detail-cell">
-        <div><strong>Descrição:</strong> ${descHtml}</div>
-        <div><strong>Visualizar:</strong> ${vizHtml}</div>
-      </td>
-    `;
-    row.parentNode.insertBefore(detailRow, row.nextSibling);
-
-    // adiciona o evento de abrir/fechar
-    const btn = toggleCell.querySelector('.toggle-btn');
-    btn.addEventListener('click', () => {
-      const isOpen = detailRow.style.display === 'table-row';
-      detailRow.style.display = isOpen ? 'none' : 'table-row';
-      btn.textContent = isOpen ? '+' : '−';
+// 1) filtro de linhas
+const filtro = document.getElementById('filtro');
+const tbody  = document.getElementById('tabela-legislacao');
+if (filtro && tbody) {
+  filtro.addEventListener('input', () => {
+    const termo = filtro.value.toLowerCase();
+    tbody.querySelectorAll('tr').forEach(row => {
+      row.style.display = row.textContent.toLowerCase().includes(termo) ? '' : 'none';
     });
   });
-});
+}
 
-// Função genérica para transformar uma tabela em accordion mobile
+// 2) paginação desktop
+(function() {
+  if (!tbody) return;
+  const rows     = Array.from(tbody.querySelectorAll('tr'));
+  const pageSize = 25;
+  const pages    = Math.ceil(rows.length / pageSize);
+  const info     = document.getElementById('paginationInfo');
+  const controls = document.getElementById('paginationControls');
+  
+  function render(page) {
+    const start = (page - 1) * pageSize;
+    const end   = start + pageSize;
+    rows.forEach((r,i) => r.style.display = (i>=start && i<end) ? '' : 'none');
+    info.textContent = `Mostrando ${start+1}–${Math.min(end, rows.length)} de ${rows.length}`;
+    
+    controls.innerHTML = '';
+    const prev = document.createElement('button');
+    prev.textContent = 'Anterior';
+    prev.disabled   = page === 1;
+    prev.onclick    = () => render(page-1);
+    controls.appendChild(prev);
+    
+    for (let p=1; p<=pages; p++) {
+      const span = document.createElement('span');
+      span.textContent = p;
+      span.className   = 'page-number' + (p === page ? ' active' : '');
+      span.onclick     = () => render(p);
+      controls.appendChild(span);
+    }
+    
+    const next = document.createElement('button');
+    next.textContent = 'Próximo';
+    next.disabled   = page === pages;
+    next.onclick    = () => render(page+1);
+    controls.appendChild(next);
+  }
+  
+  if (rows.length > pageSize) render(1);
+})();
+
+// 3) Accordion mobile
+function initLegisMobile() {
+  if (window.innerWidth > 767) return;
+  const mobileDiv = document.getElementById('mobileLegis');
+  if (!tbody || !mobileDiv) return;
+
+  Array.from(tbody.querySelectorAll('tr')).forEach(tr => {
+    const [tdAno, tdNum, tdTipo, tdDesc, tdView] = tr.children;
+    const ano   = tdAno.textContent.trim();
+    const num   = tdNum.textContent.trim();
+    const tipo  = tdTipo.textContent.trim();
+    const desc  = tdDesc.textContent.trim();
+    const a     = tdView.querySelector('a');
+    const href  = a ? a.href : '#';
+    const txt   = a ? a.textContent.trim() : 'Visualizar';
+
+    const item = document.createElement('div');
+    item.className = 'legis-item';
+    item.innerHTML = `
+      <div class="legis-header">
+        <div class="info">
+          <span>${ano}</span><span>${num}</span><span>${tipo}</span>
+        </div>
+        <button class="toggle-btn">+</button>
+      </div>
+      <div class="legis-detail">
+        <div class="desc"><strong>Descrição:</strong> ${desc}</div>
+        <div class="view-link"><strong>Visualizar:</strong> 
+          <a href="${href}" target="_blank">${txt}</a>
+        </div>
+      </div>
+    `;
+
+    const btn    = item.querySelector('.toggle-btn');
+    const detail = item.querySelector('.legis-detail');
+    btn.addEventListener('click', () => {
+      const open = detail.style.display === 'block';
+      detail.style.display = open ? 'none' : 'block';
+      btn.textContent      = open ? '+' : '−';
+    });
+
+    mobileDiv.appendChild(item);
+  });
+}
+window.addEventListener('DOMContentLoaded', initLegisMobile);
+
+// Função genérica de accordion mobile
 function initMobileTable(tableTbodyId, mobileDivId) {
   const tbody     = document.getElementById(tableTbodyId);
   const mobileDiv = document.getElementById(mobileDivId);
   if (!tbody || !mobileDiv) return;
 
-  // Cabeçalho móvel fixo (Ano | Núm. | Tipo)
+  // Cabeçalho mínimo: Ano / Núm. / Tipo
   const header = document.createElement('div');
   header.className = 'legis-header labels';
   header.innerHTML = `
@@ -291,19 +342,16 @@ function initMobileTable(tableTbodyId, mobileDivId) {
   `;
   mobileDiv.appendChild(header);
 
-  // Converte cada linha
+  // Cria um card para cada <tr>
   Array.from(tbody.querySelectorAll('tr')).forEach(tr => {
-    const [tdAno, tdNum, tdTipo, tdDesc, tdView] = Array.from(tr.children);
-    // extrai conteúdos
-    const ano     = tdAno.textContent.trim();
-    const num     = tdNum.textContent.trim();
-    const tipo    = tdTipo.textContent.trim();
-    const desc    = tdDesc.textContent.trim();
-    const linkEl  = tdView.querySelector('a');
-    const href    = linkEl ? linkEl.href : '#';
-    const viewTxt = linkEl ? linkEl.textContent.trim() : 'Visualizar';
+    const [tdAno, tdNum, tdTipo, tdView] = Array.from(tr.children);
+    const ano  = tdAno?.textContent.trim()  || '';
+    const num  = tdNum?.textContent.trim()  || '';
+    const tipo = tdTipo?.textContent.trim() || '';
+    const link = tdView?.querySelector('a');
+    const href = link?.href || '#';
+    const txt  = link?.textContent.trim() || 'Visualizar';
 
-    // cria card mobile
     const item = document.createElement('div');
     item.className = 'legis-item';
     item.innerHTML = `
@@ -316,12 +364,10 @@ function initMobileTable(tableTbodyId, mobileDivId) {
         <button type="button" class="toggle-btn">+</button>
       </div>
       <div class="legis-detail">
-        <div class="desc"><strong>Descrição:</strong> ${desc}</div>
-        <div class="view-link"><strong>Visualizar:</strong> <a href="${href}" target="_blank">${viewTxt}</a></div>
+        <div class="view-link"><strong>Visualizar:</strong> <a href="${href}" target="_blank">${txt}</a></div>
       </div>
     `;
 
-    // toggle
     const btn    = item.querySelector('.toggle-btn');
     const detail = item.querySelector('.legis-detail');
     btn.addEventListener('click', () => {
@@ -335,53 +381,45 @@ function initMobileTable(tableTbodyId, mobileDivId) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (window.innerWidth > 767) return;
-
-  initMobileTable('tabela-legislacao',    'mobileLegis');
-  initMobileTable('tabela-atas',          'mobileAtas');
-  initMobileTable('tabela-contratos',     'mobileContratos');
-  initMobileTable('tabela-investimentos', 'mobileInvest');
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  // --- Só em mobile (≤767px) ---
-  if (window.innerWidth > 767) {
-    console.log('[Avaliação] largura > 767px, não inicializo o accordion.');
+  // só roda em mobile e na página de Legislação
+  if (window.innerWidth > 767 || 
+      !document.body.classList.contains('page-legislacao')) {
+    console.log('>>> NÃO é página-legislacao em mobile, abortando accordion.');
     return;
   }
-  console.log('[Avaliação] iniciando accordion mobile…');
+  console.log('>>> Iniciando accordion Legislação em mobile.');
 
-  const tbody     = document.getElementById('tabela-avaliacao');
-  const mobileDiv = document.getElementById('mobileAval');
-  console.log('[Avaliação] tbody:', tbody, 'mobileDiv:', mobileDiv);
-
+  const tbody     = document.getElementById('tabela-legislacao');
+  const mobileDiv = document.getElementById('mobileLegis');
   if (!tbody || !mobileDiv) {
-    console.warn('[Avaliação] Não encontrei #tabela-avaliacao ou #mobileAval no DOM.');
+    console.warn('>>> tbody ou mobileLegis não encontrados:', tbody, mobileDiv);
     return;
   }
 
-  // 1) Cabeçalho fixo com Ano | Descrição | Visualizar
+  // 1) cabeçalho “Ano Num Tipo”
   const header = document.createElement('div');
   header.className = 'legis-header labels';
   header.innerHTML = `
     <div class="info">
       <span>Ano</span>
-      <span>Descrição</span>
-      <span>Visualizar</span>
+      <span>Núm.</span>
+      <span>Tipo</span>
     </div>
   `;
   mobileDiv.appendChild(header);
 
-  // 2) Monta um card para cada linha <tr>
+  // 2) cada <tr> vira um cartão
   Array.from(tbody.querySelectorAll('tr')).forEach((tr, idx) => {
-    const [tdAno, tdDesc, tdView] = Array.from(tr.children);
+    const [tdAno, tdNum, tdTipo, tdDesc, tdView] = tr.children;
     const ano   = tdAno?.textContent.trim()   || '';
+    const num   = tdNum?.textContent.trim()   || '';
+    const tipo  = tdTipo?.textContent.trim()  || '';
     const desc  = tdDesc?.textContent.trim()  || '';
-    const link  = tdView?.querySelector('a');
-    const href  = link?.href  || '#';
-    const txt   = link?.textContent.trim() || 'Visualizar';
+    const a     = tdView.querySelector('a');
+    const href  = a?.href  || '#';
+    const txt   = a?.textContent.trim() || 'Visualizar';
 
-    console.log(`[Avaliação][linha ${idx}] ano=${ano}, desc="${desc.slice(0,20)}…"`);
+    console.log(`Linha ${idx}:`, ano, num, tipo);
 
     const item = document.createElement('div');
     item.className = 'legis-item';
@@ -389,28 +427,81 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="legis-header">
         <div class="info">
           <span>${ano}</span>
-          <span>${desc.length > 25 ? desc.slice(0,25) + '…' : desc}</span>
+          <span>${num}</span>
+          <span>${tipo}</span>
         </div>
-        <button type="button" class="toggle-btn">+</button>
+        <button class="toggle-btn">+</button>
       </div>
       <div class="legis-detail">
         <div class="desc"><strong>Descrição:</strong> ${desc}</div>
-        <div class="view-link"><strong>Visualizar:</strong>
+        <div class="view-link">
+          <strong>Visualizar:</strong>
           <a href="${href}" target="_blank">${txt}</a>
         </div>
       </div>
     `;
+    mobileDiv.appendChild(item);
 
+    // toggle
     const btn    = item.querySelector('.toggle-btn');
     const detail = item.querySelector('.legis-detail');
     btn.addEventListener('click', () => {
-      const open = detail.style.display === 'block';
-      detail.style.display  = open ? 'none' : 'block';
-      btn.textContent       = open ? '+'  : '−';
+      const aberto = detail.style.display === 'block';
+      detail.style.display = aberto ? 'none' : 'block';
+      btn.textContent      = aberto ? '+' : '−';
     });
-
-    mobileDiv.appendChild(item);
   });
 
-  console.log('[Avaliação] accordion mobile criado com sucesso.');
+  console.log('>>> Accordion Legislação inicializado.');
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  // executa só em mobile e na página de Portarias
+  if (window.innerWidth > 767) return;
+  if (!document.body.classList.contains('page-portarias')) return;
+
+  const table     = document.getElementById('tabela-portarias');
+  const tbody     = table?.querySelector('tbody') || table;
+  const mobileDiv = document.getElementById('mobilePortarias');
+  if (!tbody || !mobileDiv) return;
+
+  // limpa qualquer conteúdo prévio
+  mobileDiv.innerHTML = '';
+
+  Array.from(tbody.querySelectorAll('tr')).forEach(tr => {
+    const [tdAno, tdNum, tdBen, , tdVis] = tr.children;
+    if (!tdAno || !tdNum || !tdBen) return;
+
+    const ano  = tdAno.textContent.trim();
+    const num  = tdNum.textContent.trim();
+    const ben  = tdBen.textContent.trim();
+    const link = tdVis?.querySelector('a');
+    const href = link?.href || '#';
+    const txt  = link?.textContent.trim() || '';
+
+    // monta o card
+    const item = document.createElement('div');
+    item.className = 'port-item';
+    item.innerHTML = `
+      <div class="port-header">
+        <div class="info">
+          <span>${ano}</span><span>${num}</span><span>${ben}</span>
+        </div>
+        <button class="toggle-btn">+</button>
+      </div>
+      <div class="port-detail">
+        <a href="${href}" target="_blank">${txt}</a>
+      </div>
+    `;
+    mobileDiv.appendChild(item);
+
+    // toggle do detalhe
+    const btn    = item.querySelector('.toggle-btn');
+    const detail = item.querySelector('.port-detail');
+    btn.addEventListener('click', () => {
+      const aberto = detail.style.display === 'block';
+      detail.style.display = aberto ? 'none' : 'block';
+      btn.textContent      = aberto ? '+' : '−';
+    });
+  });
 });

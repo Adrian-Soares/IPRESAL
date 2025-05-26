@@ -1483,59 +1483,294 @@ html, body {
 }
 
 
-/* ================
-   Tabela responsiva
-   =============== */
-.table-responsive {
-  width: 100%;
-  overflow-x: auto;              /* habilita rolagem horizontal */
-  -webkit-overflow-scrolling: touch;
-  margin-bottom: 1rem;
-}
-
-/* força min-width para que sempre role horizontal se preciso */
-.table-responsive table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 600px;              /* ajuste o valor conforme sua largura de colunas */
-}
-
-/* células adaptáveis */
-.table-responsive th,
-.table-responsive td {
-  padding: 0.75rem 1rem;
-  text-align: left;
-  vertical-align: top;
-  word-break: break-word;        /* quebra texto longo na coluna Descrição */
-}
-
-/* cabeçalho estilizado */
-.table-responsive thead th {
-  background: #002050;
-  color: #fff;
-  font-weight: 500;
-  position: sticky;
-  top: 0;                        /* mantém o cabeçalho no topo durante scroll */
-  z-index: 2;
-}
-
-/* linhas listradas */
-.table-responsive tbody tr:nth-child(odd) {
-  background: #f7f7f7;
-}
-
-/* ==========================
-   Força mostrar tabelas dentro de .table-responsive
-   no mobile, mesmo havendo aquela ocultação genérica
-   ========================== */
+/* ======================
+   Tabela Compacta no Mobile
+   ====================== */
 @media (max-width: 767px) {
+  .table-responsive {
+    overflow-x: hidden; /* sem scroll horizontal desnecessário */
+  }
+
+  /* Usa layout fixo para distribuir bem as colunas */
   .table-responsive table {
-    display: table !important;
+    table-layout: fixed !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Colunas com larguras proporcionais */
+  .table-responsive th:nth-child(1),
+  .table-responsive td:nth-child(1) {
+    width: 20%;
+  }
+  .table-responsive th:nth-child(2),
+  .table-responsive td:nth-child(2) {
+    width: 60%;
+  }
+  .table-responsive th:nth-child(3),
+  .table-responsive td:nth-child(3) {
+    width: 20%;
+  }
+
+  /* Reduce padding e fonte para caber melhor */
+  .table-responsive th,
+  .table-responsive td {
+    padding: 0.4rem 0.6rem !important;
+    font-size: 0.85rem !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Esconde ícones de ordenação no mobile */
+  .table-responsive th.sortable i {
+    display: none;
   }
 }
 
+@media (max-width: 767px) {
+  .tabela-container table {
+    font-size: 14px;
+    border-collapse: collapse;
+    width: 100%;
+  }
 
+  .tabela-container th,
+  .tabela-container td {
+    padding: 8px 6px;
+    word-break: break-word;
+  }
 
+  .tabela-container th {
+    font-size: 14px;
+  }
 
+  .tabela-container .visualizar-link {
+    font-size: 14px;
+  }
 
-  
+  /* remove rolagem horizontal se não quiser scroll */
+  .table-responsive {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .tabela-container table {
+    font-size: 14px;
+    border-collapse: collapse;
+    width: 100%;
+    display: table !important; /* força mostrar */
+  }
+
+  .tabela-container th,
+  .tabela-container td {
+    padding: 6px 4px;
+    word-break: break-word;
+    font-size: 13px;
+  }
+
+  .visualizar-link {
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   TABELAS FILTRÁVEIS (Legislação)
+   ========================= */
+.tabela-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.tabela-container h1 {
+  color: #004080;
+  margin-bottom: 20px;
+}
+.tabela-container input#filtro {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.tabela-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.tabela-container thead {
+  background-color: #001f4d;
+  color: #fff;
+}
+.tabela-container th,
+.tabela-container td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+.tabela-container tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.visualizar-link {
+  color: #004080;
+  font-weight: bold;
+}
+.visualizar-link i {
+  margin-right: 5px;
+  color: #e74c3c;
+}
+
+/* =========================
+   Accordion Mobile (Legislação)
+   ========================= */
+/* desktop: oculta o accordion */
+@media (min-width: 768px) {
+  .mobile-legis { display: none; }
+}
+
+/* mobile: esconde a tabela, exibe o accordion */
+@media (max-width: 767px) {
+  /* apenas na página de legislação */
+  body.page-legislacao .tabela-container table {
+    display: none !important;
+  }
+  body.page-legislacao #mobileLegis {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  /* cada cartão */
+  body.page-legislacao .mobile-legis .legis-item {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+
+  /* cabeçalho mínimo: Ano | Núm. | Tipo + botão */
+  body.page-legislacao .mobile-legis .legis-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f5f5f5;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+  }
+  body.page-legislacao .mobile-legis .legis-header .info {
+    display: flex;
+    gap: 1rem;
+  }
+  body.page-legislacao .mobile-legis .legis-header button {
+    background: #0055ff;
+    color: #fff;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  /* detalhe escondido */
+  body.page-legislacao .mobile-legis .legis-detail {
+    display: none;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    font-size: 0.95rem;
+  }
+  body.page-legislacao .mobile-legis .legis-detail .desc,
+  body.page-legislacao .mobile-legis .legis-detail .view-link {
+    margin-bottom: 0.5rem;
+  }
+  body.page-legislacao .mobile-legis .legis-detail a {
+    color: #0055ff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  /* ─── Cabeçalho fixo estilizado (labels) ─── */
+  body.page-legislacao #mobileLegis .labels {
+    background: #002050;
+    padding: 0.5rem 1rem;
+  }
+  body.page-legislacao #mobileLegis .labels .info {
+    display: flex;
+    gap: 1rem;
+    color: #fff;
+    font-weight: 600;
+  }
+  body.page-legislacao #mobileLegis .labels .info span {
+    flex: 1;
+    text-align: left;
+    font-size: 0.95rem;
+  }
+}
+
+/* ── PORTARIAS: accordion mobile only ── */
+body.page-portarias #tabela-portarias { display: table !important; }
+
+@media (max-width: 767px) {
+  /* esconde a tabela original */
+  body.page-portarias #tabela-portarias {
+    display: none !important;
+  }
+  /* mostra o container de cards */
+  body.page-portarias #mobilePortarias {
+    display: block;
+    margin: 1rem 0;
+  }
+  /* cada card */
+  body.page-portarias .mobile-portarias .port-item {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+  /* cabeçalho mínimo: Ano | Núm. | Beneficiário + botão */
+  body.page-portarias .mobile-portarias .port-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f5f5f5;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+  }
+  body.page-portarias .mobile-portarias .port-header .info {
+    display: flex;
+    gap: 1rem;
+  }
+  /* botão “+” */
+  body.page-portarias .mobile-portarias .toggle-btn {
+    width: 28px;
+    height: 28px;
+    background: #0055ff;
+    color: #fff;
+    border: none;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 18px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  /* detalhe (visualizar) */
+  body.page-portarias .mobile-portarias .port-detail {
+    display: none;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    font-size: 0.95rem;
+  }
+  body.page-portarias .mobile-portarias .port-detail a {
+    color: #0055ff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 768px) {
+  /* em desktop esconde o accordion */
+  body.page-portarias .mobile-portarias {
+    display: none !important;
+  }
+}
