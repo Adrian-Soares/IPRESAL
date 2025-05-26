@@ -510,3 +510,127 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // só roda em mobile e na página de CONTRATOS
+  if (window.innerWidth > 767) return;
+  if (!document.body.classList.contains('page-contratos')) return;
+
+  const table     = document.getElementById('tabela-contratos');
+  const tbody     = table.querySelector('tbody') || table;
+  const mobileDiv = document.getElementById('mobileContratos');
+  if (!tbody || !mobileDiv) return;
+
+  // 1) monta o cabeçalho fixo
+  mobileDiv.innerHTML = '';  // limpa
+  const header = document.createElement('div');
+  header.className = 'labels';
+  header.innerHTML = `
+    <div class="info">
+      <span>Ano</span>
+      <span>Núm.</span>
+      <span>Descrição</span>
+    </div>
+  `;
+  mobileDiv.appendChild(header);
+
+  // 2) para cada linha, cria um card
+  Array.from(tbody.querySelectorAll('tr')).forEach(tr => {
+    const [tdAno, tdNum, tdDesc, tdVis] = tr.children;
+    if (!tdAno || !tdNum || !tdDesc) return;
+
+    const ano  = tdAno.textContent.trim();
+    const num  = tdNum.textContent.trim();
+    const desc = tdDesc.textContent.trim();
+    const link = tdVis.querySelector('a');
+    const href = link?.href || '#';
+
+    const item = document.createElement('div');
+    item.className = 'contr-item';
+    item.innerHTML = `
+      <div class="contr-header">
+        <div class="info">
+          <span>${ano}</span>
+          <span>${num}</span>
+          <span>${desc}</span>
+        </div>
+        <button class="toggle-btn">+</button>
+      </div>
+      <div class="contr-detail">
+        <a href="${href}" target="_blank">Visualizar</a>
+      </div>
+    `;
+    mobileDiv.appendChild(item);
+
+    // toggle do detalhe
+    const btn    = item.querySelector('.toggle-btn');
+    const detail = item.querySelector('.contr-detail');
+    btn.addEventListener('click', () => {
+      const aberto = detail.style.display === 'block';
+      detail.style.display = aberto ? 'none' : 'block';
+      btn.textContent      = aberto ? '+'  : '−';
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  // só roda em mobile e na página de CONTRATOS
+  if (window.innerWidth > 767) return;
+  if (!document.body.classList.contains('page-contratos')) return;
+
+  const table     = document.getElementById('tabela-contratos');
+  const tbody     = table.querySelector('tbody') || table;
+  const mobileDiv = document.getElementById('mobileContratos');
+  if (!tbody || !mobileDiv) return;
+
+  // monta o cabeçalho fixo
+  mobileDiv.innerHTML = '';
+  const header = document.createElement('div');
+  header.className = 'labels';
+  header.innerHTML = `
+    <div class="info">
+      <span>Ano</span>
+      <span>Núm.</span>
+      <span>Descrição</span>
+    </div>
+  `;
+  mobileDiv.appendChild(header);
+
+  // cria um card para cada linha da tabela
+  Array.from(tbody.querySelectorAll('tr')).forEach(tr => {
+    const [tdAno, tdNum, tdDesc, tdVis] = tr.children;
+    if (!tdAno || !tdNum || !tdDesc) return;
+
+    const ano  = tdAno.textContent.trim();
+    const num  = tdNum.textContent.trim();
+    const desc = tdDesc.textContent.trim();
+    const link = tdVis.querySelector('a');
+    const href = link?.href || '#';
+
+    const item = document.createElement('div');
+    item.className = 'contr-item';
+    item.innerHTML = `
+      <div class="contr-header">
+        <div class="info">
+          <span>${ano}</span>
+          <span>${num}</span>
+          <span>${desc}</span>
+        </div>
+        <button class="toggle-btn">+</button>
+      </div>
+      <div class="contr-detail">
+        <a href="${href}" target="_blank">Visualizar</a>
+      </div>
+    `;
+    mobileDiv.appendChild(item);
+
+    // toggle do detalhe
+    const btn    = item.querySelector('.toggle-btn');
+    const detail = item.querySelector('.contr-detail');
+    btn.addEventListener('click', () => {
+      const aberto = detail.style.display === 'block';
+      detail.style.display = aberto ? 'none' : 'block';
+      btn.textContent      = aberto ? '+' : '−';
+    });
+  });
+});

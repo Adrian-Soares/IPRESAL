@@ -1852,3 +1852,237 @@ body.page-portarias .visualizar-link i {
     width: 100%;
   }
 }
+
+/* ======================================
+   CONTRATOS – Accordion Mobile
+   ====================================== */
+
+/* 1) desktop: esconde o accordion */
+@media (min-width: 768px) {
+  body.page-contratos .mobile-contratos {
+    display: none !important;
+  }
+}
+
+/* 2) mobile: esconde a tabela inteira e mostra o accordion */
+@media (max-width: 767px) {
+  /* 2.1) oculta a tabela original (thead+tbody) */
+  body.page-contratos #tabela-contratos {
+    display: none !important;
+  }
+
+  /* 2.2) exibe o container de cards */
+  body.page-contratos #mobileContratos {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  /* 3) cabeçalho fixo (Ano | Núm. | Descrição) */
+  body.page-contratos .mobile-contratos .labels {
+    background: #002050;
+    padding: 0.5rem 1rem;
+  }
+  body.page-contratos .mobile-contratos .labels .info {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;  /* centraliza as colunas */
+    color: #fff;
+    font-weight: 600;
+  }
+  /* largura fixa para ano e número, descrição flexível */
+  body.page-contratos .mobile-contratos .labels .info span:nth-child(1),
+  body.page-contratos .mobile-contratos .labels .info span:nth-child(2) {
+    flex: 0 0 20%;
+    text-align: left;
+  }
+  body.page-contratos .mobile-contratos .labels .info span:nth-child(3) {
+    flex: 1;
+    text-align: left;
+  }
+
+  /* 4) estilo dos cards */
+  body.page-contratos .mobile-contratos .contr-item {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    background: #fff;
+  }
+  body.page-contratos .mobile-contratos .contr-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: #f5f5f5;
+    font-weight: 500;
+  }
+  /* mesmo flex aplicado ao header */
+  body.page-contratos .mobile-contratos .contr-header .info {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+    justify-content: center;
+  }
+
+  /* 5) botão “+” redondinho */
+  body.page-contratos .mobile-contratos .toggle-btn {
+    width: 28px;
+    height: 28px;
+    background: #0055ff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+  body.page-contratos .mobile-contratos .toggle-btn:hover {
+    background: #0041cc;
+  }
+
+  /* 6) detalhe – só “Visualizar” e sem ícone */
+  body.page-contratos .mobile-contratos .contr-detail {
+    display: none;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    font-size: 0.95rem;
+  }
+  /* esconde o <i> do PDF, mantém só o texto */
+  body.page-contratos .mobile-contratos .contr-detail a i {
+    display: none;
+  }
+  body.page-contratos .mobile-contratos .contr-detail a {
+    color: #0055ff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+}
+
+/* ======================================
+   CONTRATOS – Accordion Mobile
+   ====================================== */
+
+body.page-contratos #mobileContratos {
+  display: none; /* esconde no desktop */
+}
+
+/* desktop: esconde o accordion */
+@media (min-width: 768px) {
+  body.page-contratos .mobile-contratos {
+    display: none !important;
+  }
+}
+
+/* mobile: esconde a tabela original e mostra o accordion */
+@media (max-width: 767px) {
+  /* 1) oculta a tabela (thead + tbody) */
+  body.page-contratos .tabela-container table {
+    display: none !important;
+  }
+
+  /* 2) mostra o container de cards */
+  body.page-contratos #mobileContratos {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  /* 3) cabeçalho fixo (Ano | Núm. | Descrição) */
+  body.page-contratos .mobile-contratos .labels {
+    background: #002050;
+    padding: 0.5rem 1rem;
+  }
+  body.page-contratos .mobile-contratos .labels .info {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;  /* centraliza as colunas */
+    color: #fff;
+    font-weight: 600;
+  }
+  /* largura fixa para Ano e Núm. */
+  body.page-contratos .mobile-contratos .labels .info span:nth-child(1),
+  body.page-contratos .mobile-contratos .labels .info span:nth-child(2) {
+    flex: 0 0 20%;
+    text-align: center;
+  }
+  /* Descrição ocupa o resto */
+  body.page-contratos .mobile-contratos .labels .info span:nth-child(3) {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* 4) estilo dos cards */
+  body.page-contratos .mobile-contratos .contr-item {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    background: #fff;
+    overflow: hidden;
+  }
+  body.page-contratos .mobile-contratos .contr-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: #f5f5f5;
+    font-weight: 500;
+  }
+  /* mesma distribuição de colunas do header */
+  body.page-contratos .mobile-contratos .contr-header .info {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+    justify-content: center;
+  }
+  body.page-contratos .mobile-contratos .contr-header .info span:nth-child(1),
+  body.page-contratos .mobile-contratos .contr-header .info span:nth-child(2) {
+    flex: 0 0 20%;
+    text-align: center;
+  }
+  body.page-contratos .mobile-contratos .contr-header .info span:nth-child(3) {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* 5) botão “+” perfeitamente redondo */
+  body.page-contratos .mobile-contratos .toggle-btn {
+    width: 28px;
+    height: 28px;
+    background: #0055ff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+  body.page-contratos .mobile-contratos .toggle-btn:hover {
+    background: #0041cc;
+  }
+
+  /* 6) detalhe “Visualizar” sem ícone */
+  body.page-contratos .mobile-contratos .contr-detail {
+    display: none;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    font-size: 0.95rem;
+  }
+  /* esconde apenas o <i> do PDF */
+  body.page-contratos .mobile-contratos .contr-detail a i {
+    display: none;
+  }
+  body.page-contratos .mobile-contratos .contr-detail a {
+    color: #0055ff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+}
