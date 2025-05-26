@@ -455,27 +455,30 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('>>> Accordion Legislação inicializado.');
 });
 
+// ===============================
+// PORTARIAS – Accordion Mobile
+// ===============================
 document.addEventListener('DOMContentLoaded', () => {
-  // executa só em mobile e na página de Portarias
+  // roda só em telas ≤767px e na página Portarias
   if (window.innerWidth > 767) return;
   if (!document.body.classList.contains('page-portarias')) return;
 
-  const table     = document.getElementById('tabela-portarias');
-  const tbody     = table?.querySelector('tbody') || table;
+  const tbody     = document.getElementById('tabela-portarias');
   const mobileDiv = document.getElementById('mobilePortarias');
   if (!tbody || !mobileDiv) return;
 
-  // limpa qualquer conteúdo prévio
+  // limpa qualquer conteúdo anterior
   mobileDiv.innerHTML = '';
 
+  // para cada linha da tabela, cria um card
   Array.from(tbody.querySelectorAll('tr')).forEach(tr => {
-    const [tdAno, tdNum, tdBen, , tdVis] = tr.children;
+    const [tdAno, tdNum, tdBen, tdVis] = tr.children;
     if (!tdAno || !tdNum || !tdBen) return;
 
     const ano  = tdAno.textContent.trim();
     const num  = tdNum.textContent.trim();
     const ben  = tdBen.textContent.trim();
-    const link = tdVis?.querySelector('a');
+    const link = tdVis.querySelector('a');
     const href = link?.href || '#';
     const txt  = link?.textContent.trim() || '';
 
@@ -485,9 +488,11 @@ document.addEventListener('DOMContentLoaded', () => {
     item.innerHTML = `
       <div class="port-header">
         <div class="info">
-          <span>${ano}</span><span>${num}</span><span>${ben}</span>
+          <span>${ano}</span>
+          <span>${num}</span>
+          <span>${ben}</span>
         </div>
-        <button class="toggle-btn">+</button>
+        <button type="button" class="toggle-btn">+</button>
       </div>
       <div class="port-detail">
         <a href="${href}" target="_blank">${txt}</a>
@@ -495,13 +500,13 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     mobileDiv.appendChild(item);
 
-    // toggle do detalhe
+    // comportamento de abrir/fechar
     const btn    = item.querySelector('.toggle-btn');
     const detail = item.querySelector('.port-detail');
     btn.addEventListener('click', () => {
-      const aberto = detail.style.display === 'block';
-      detail.style.display = aberto ? 'none' : 'block';
-      btn.textContent      = aberto ? '+' : '−';
+      const isOpen = detail.style.display === 'block';
+      detail.style.display = isOpen ? 'none' : 'block';
+      btn.textContent      = isOpen ? '+' : '−';
     });
   });
 });

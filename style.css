@@ -1705,15 +1705,67 @@ html, body {
   }
 }
 
-/* ── PORTARIAS: accordion mobile only ── */
-body.page-portarias #tabela-portarias { display: table !important; }
+/* ================================
+   PORTARIAS – estilos gerais
+   ================================ */
+body.page-portarias .tabela-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+body.page-portarias .tabela-container h1 {
+  color: #004080;
+  margin-bottom: 20px;
+}
+body.page-portarias .tabela-container input#filtro {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+body.page-portarias .tabela-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+body.page-portarias .tabela-container th,
+body.page-portarias .tabela-container td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+body.page-portarias .tabela-container thead {
+  background-color: #001f4d;
+  color: #fff;
+}
+body.page-portarias .tabela-container tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+body.page-portarias .visualizar-link {
+  color: #004080;
+  font-weight: bold;
+}
+body.page-portarias .visualizar-link i {
+  margin-right: 5px;
+  color: #e74c3c;
+}
 
+/* ================================
+   PORTARIAS – Accordion Mobile
+   ================================ */
+/* em desktop esconde o accordion */
+@media (min-width: 768px) {
+  body.page-portarias .mobile-portarias {
+    display: none !important;
+  }
+}
+/* em mobile oculta a tabela e mostra o accordion */
 @media (max-width: 767px) {
   /* esconde a tabela original */
   body.page-portarias #tabela-portarias {
     display: none !important;
   }
-  /* mostra o container de cards */
+  /* exibe o container de cards */
   body.page-portarias #mobilePortarias {
     display: block;
     margin: 1rem 0;
@@ -1725,36 +1777,47 @@ body.page-portarias #tabela-portarias { display: table !important; }
     margin-bottom: 0.75rem;
     overflow: hidden;
   }
-  /* cabeçalho mínimo: Ano | Núm. | Beneficiário + botão */
+  /* header mínimo com Ano | Núm. | Beneficiário + botão */
   body.page-portarias .mobile-portarias .port-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: #f5f5f5;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
     font-weight: 500;
   }
+  /* centralizar exatamente os três spans */
   body.page-portarias .mobile-portarias .port-header .info {
     display: flex;
+    flex: 1;
+    justify-content: center;
     gap: 1rem;
   }
-  /* botão “+” */
+  body.page-portarias .mobile-portarias .port-header .info span {
+    flex: 1;
+    text-align: center;
+  }
+  /* botão “+” perfeitamente circular */
   body.page-portarias .mobile-portarias .toggle-btn {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
     background: #0055ff;
     color: #fff;
     border: none;
-    padding: 0;
     border-radius: 50%;
-    font-size: 18px;
-    line-height: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 18px;
+    line-height: 1;
     cursor: pointer;
+    transition: background 0.2s;
   }
-  /* detalhe (visualizar) */
+  body.page-portarias .mobile-portarias .toggle-btn:hover {
+    background: #0041cc;
+  }
+  /* detalhe (link “Visualizar”) */
   body.page-portarias .mobile-portarias .port-detail {
     display: none;
     padding: 0.75rem 1rem;
@@ -1768,9 +1831,24 @@ body.page-portarias #tabela-portarias { display: table !important; }
   }
 }
 
-@media (min-width: 768px) {
-  /* em desktop esconde o accordion */
-  body.page-portarias .mobile-portarias {
+/* ================================
+   PORTARIAS – Esconder “Visualizar” na tabela mobile
+   e centralizar colunas
+   ================================ */
+@media (max-width: 767px) {
+  /* apenas oculta a 4ª coluna na tabela */
+  body.page-portarias .tabela-container table th:nth-child(4),
+  body.page-portarias .tabela-container table td:nth-child(4) {
     display: none !important;
+  }
+  /* centraliza texto das demais colunas */
+  body.page-portarias .tabela-container table th,
+  body.page-portarias .tabela-container table td {
+    text-align: center;
+  }
+  /* força layout fixo para distribuir bem as 3 colunas */
+  body.page-portarias .tabela-container table {
+    table-layout: fixed;
+    width: 100%;
   }
 }
