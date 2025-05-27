@@ -2086,3 +2086,211 @@ body.page-contratos #mobileContratos {
     font-weight: 500;
   }
 }
+
+/* ===============================
+   ATAS DE REUNIÕES – Accordion Mobile
+   =============================== */
+
+/* ── Desktop: esconde o accordion ── */
+@media (min-width: 768px) {
+  body.page-atas #mobileAtas {
+    display: none !important;
+  }
+}
+
+/* ── Mobile: oculta tabela e coluna “Visualizar”, exibe accordion ── */
+@media (max-width: 767px) {
+  /* 1) Oculta a tabela original inteira */
+  body.page-atas #tabela-atas {
+    display: none !important;
+  }
+  /* 2) Oculta também a coluna “Visualizar” caso ela ainda fique visível */
+  body.page-atas #tabela-atas th:nth-child(3),
+  body.page-atas #tabela-atas td:nth-child(3) {
+    display: none !important;
+  }
+
+  /* 3) Exibe o container de cards */
+  body.page-atas #mobileAtas {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  /* 4) Cabeçalho fixo “Data | Descrição” */
+  body.page-atas #mobileAtas .labels {
+    background: #002050;
+    color: #fff;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.75rem;
+  }
+  body.page-atas #mobileAtas .labels .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  body.page-atas #mobileAtas .labels .info span {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* 5) Cada cartão */
+  body.page-atas #mobileAtas .ata-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+  /* 6) Header do cartão: Data | Descrição + botão */
+  body.page-atas #mobileAtas .ata-header {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: #f5f5f5;
+  }
+  body.page-atas #mobileAtas .ata-header .info {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  body.page-atas #mobileAtas .ata-header .info span {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* 7) Botão “+” no estilo das outras páginas */
+  body.page-atas #mobileAtas .toggle-btn {
+    width: 28px;
+    height: 28px;
+    background: #0055ff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  body.page-atas #mobileAtas .toggle-btn:hover {
+    background: #0041cc;
+  }
+
+  /* 8) Detalhe “Visualizar” por trás do click */
+  body.page-atas #mobileAtas .ata-detail {
+    display: none;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    font-size: 0.95rem;
+  }
+  body.page-atas #mobileAtas .ata-detail a {
+    color: #0055ff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+}
+
+/* ── ATAS: esconder a tabela original por completo em mobile ── */
+@media (max-width: 767px) {
+  body.page-atas .tabela-container table {
+    display: none !important;
+  }
+
+  /* (A seguir, vêm todas as regras que você já tem para o accordion) */
+
+  /* 1) Oculta também a coluna “Visualizar” caso sobre algo */
+  body.page-atas #tabela-atas th:nth-child(3),
+  body.page-atas #tabela-atas td:nth-child(3) {
+    display: none !important;
+  }
+
+  /* 2) Exibe o accordion */
+  body.page-atas #mobileAtas {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  /* 3) Cabeçalho fixo “Data | Descrição” */
+  body.page-atas #mobileAtas .labels {
+    background: #002050;
+    color: #fff;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.75rem;
+  }
+  body.page-atas #mobileAtas .labels .info {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  body.page-atas #mobileAtas .labels .info span {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* 4) Cada cartão */
+  body.page-atas #mobileAtas .ata-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+  /* 5) Header do cartão */
+  body.page-atas #mobileAtas .ata-header {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: #f5f5f5;
+  }
+  body.page-atas #mobileAtas .ata-header .info {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  body.page-atas #mobileAtas .ata-header .info span {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* 6) Botão “+” */
+  body.page-atas #mobileAtas .toggle-btn {
+    width: 28px;
+    height: 28px;
+    background: #0055ff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  body.page-atas #mobileAtas .toggle-btn:hover {
+    background: #0041cc;
+  }
+
+  /* 7) Detalhe “Visualizar” */
+  body.page-atas #mobileAtas .ata-detail {
+    display: none;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    font-size: 0.95rem;
+  }
+  body.page-atas #mobileAtas .ata-detail a {
+    color: #0055ff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+}
+

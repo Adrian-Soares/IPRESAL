@@ -634,3 +634,65 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // roda só no mobile e na página de Atas de Reuniões
+  if (window.innerWidth > 767) return;
+  if (!document.body.classList.contains('page-atas')) return;
+
+  const table     = document.getElementById('tabela-atas');
+  const tbody     = table?.querySelector('tbody') || table;
+  const mobileDiv = document.getElementById('mobileAtas');
+  if (!tbody || !mobileDiv) return;
+
+  // limpa possíveis restos
+  mobileDiv.innerHTML = '';
+
+  // 1) Cabeçalho fixo
+  const header = document.createElement('div');
+  header.className = 'labels';
+  header.innerHTML = `
+    <div class="info">
+      <span>Data</span>
+      <span>Descrição</span>
+    </div>
+  `;
+  mobileDiv.appendChild(header);
+
+  // 2) Converte cada <tr> em um card
+  Array.from(tbody.querySelectorAll('tr')).forEach(tr => {
+    const [tdDate, tdDesc, tdVis] = tr.children;
+    if (!tdDate || !tdDesc) return;
+
+    const date   = tdDate.textContent.trim();
+    const desc   = tdDesc.textContent.trim();
+    const linkEl = tdVis?.querySelector('a');
+    const href   = linkEl?.href   || '#';
+    const txt    = linkEl?.textContent.trim() || 'Visualizar';
+
+    const item = document.createElement('div');
+    item.className = 'ata-item';
+    item.innerHTML = `
+      <div class="ata-header">
+        <div class="info">
+          <span>${date}</span>
+          <span>${desc}</span>
+        </div>
+        <button class="toggle-btn">+</button>
+      </div>
+      <div class="ata-detail">
+        <a href="${href}" target="_blank">${txt}</a>
+      </div>
+    `;
+    mobileDiv.appendChild(item);
+
+    // 3) Toggle do detalhe
+    const btn    = item.querySelector('.toggle-btn');
+    const detail = item.querySelector('.ata-detail');
+    btn.addEventListener('click', () => {
+      const aberto = detail.style.display === 'block';
+      detail.style.display = aberto ? 'none' : 'block';
+      btn.textContent      = aberto ? '+' : '−';
+    });
+  });
+});
