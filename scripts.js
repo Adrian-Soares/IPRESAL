@@ -696,3 +696,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// scripts.js (ou onde estiver seu JS)
+document.addEventListener('DOMContentLoaded', () => {
+  // só roda em mobile e na página de Investimentos
+  if (window.innerWidth > 767) return;
+  if (!document.body.classList.contains('page-investimentos')) return;
+
+  const table     = document.getElementById('tabela-investimentos');
+  const tbody     = table?.querySelector('tbody') || table;
+  const mobileDiv = document.getElementById('mobileInvest');
+  if (!tbody || !mobileDiv) return;
+
+  mobileDiv.innerHTML = '';
+
+  // cabeçalho fixo
+  const header = document.createElement('div');
+  header.className = 'inv-header';
+  header.innerHTML = `
+    <div class="info">
+      <span>Ano</span>
+      <span>Descrição</span>
+      <span>Visualizar</span>
+    </div>
+  `;
+  mobileDiv.appendChild(header);
+
+  // cards
+  Array.from(tbody.querySelectorAll('tr')).forEach(tr => {
+    const [tdAno, tdDesc, tdVis] = tr.children;
+    if (!tdAno || !tdDesc) return;
+
+    const ano  = tdAno.textContent.trim();
+    const desc = tdDesc.textContent.trim();
+    const link = tdVis.querySelector('a');
+    const href = link?.href || '#';
+
+    const item = document.createElement('div');
+    item.className = 'inv-item';
+    item.innerHTML = `
+  <div class="info">
+    <span>${ano}</span>
+    <span>${desc}</span>
+    <span>
+      <a href="${href}" target="_blank" class="visualizar-link">
+        <i class="fas fa-file-pdf"></i> Visualizar
+      </a>
+    </span>
+  </div>
+`;
+    mobileDiv.appendChild(item);
+  });
+});

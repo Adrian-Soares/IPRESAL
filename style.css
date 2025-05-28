@@ -668,7 +668,7 @@
     background-color: #002050;
     color: #fff;
     text-align: center;
-    padding: 15px 0;
+    padding: 30px 0;
     font-size: 0.9em;
   }
 
@@ -2294,3 +2294,156 @@ body.page-contratos #mobileContratos {
   }
 }
 
+/* ======================================
+   Política de Investimentos – Mobile Only
+   ====================================== */
+
+/* 1) Esconde a tabela original em telas pequenas */
+@media (max-width: 767px) {
+  body.page-investimentos .tabela-container table {
+    display: none !important;
+  }
+
+  /* 2) Exibe o container de cards */
+  body.page-investimentos #mobileInvest {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  /* 3) Cabeçalho fixo “Ano | Descrição | Visualizar” */
+  body.page-investimentos .mobile-invest .inv-header {
+    background: #002050;
+    color: #fff;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.75rem;
+  }
+  body.page-investimentos .mobile-invest .inv-header .info {
+    display: flex;
+  }
+  body.page-investimentos .mobile-invest .inv-header .info span {
+    flex: 1;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  /* 4) Cada “card” de investimento */
+  body.page-investimentos .mobile-invest .inv-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+  body.page-investimentos .mobile-invest .inv-item .info {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+  }
+  body.page-investimentos .mobile-invest .inv-item .info span {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* 4.1) Link “Visualizar” sem ícone PDF, igual ao desktop */
+  body.page-investimentos .mobile-invest .inv-item .info a.visualizar-link {
+    color: #004080;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+/* 5) Em desktop, esconde o accordion mobile */
+@media (min-width: 768px) {
+  body.page-investimentos .mobile-invest {
+    display: none !important;
+  }
+}
+
+/* =========================
+   Sitemap (Mapa do Site)
+   ========================= */
+.sitemap-section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.sitemap-section h1 {
+  font-size: 2em;
+  color: #004080;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sitemap-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sitemap-list > li {
+  margin: 12px 0;
+  font-weight: 500;
+  color: #333;
+}
+
+.sitemap-list li > a {
+  text-decoration: none;
+  color: #0066cc;
+  transition: color 0.2s;
+}
+
+.sitemap-list li > a:hover {
+  color: #ffcc00;
+}
+
+/* Sublistas (níveis internos) */
+.sitemap-list li ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.sitemap-list li ul li {
+  margin: 6px 0;
+  font-weight: normal;
+  color: #555;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .sitemap-section {
+    padding: 20px 10px;
+  }
+  .sitemap-section h1 {
+    font-size: 1.75em;
+  }
+  .sitemap-list > li {
+    margin: 10px 0;
+  }
+}
+
+/* ============================
+   RODAPÉ – Ajustes para Mobile
+   ============================ */
+@media (max-width: 767px) {
+  /* Faz todo o container do footer ficar em coluna e centralizado */
+  .footer-content.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;           /* distância entre os blocos de informações */
+    padding-bottom: 0rem;  /* espaço extra embaixo antes do copyright */
+  }
+
+  /* Centraliza o texto e afasta um pouco do logo */
+  .footer-content.container .footer-info {
+    margin-bottom: 0.1 rem; /* espaço entre texto e logo */
+    text-align: center;
+  }
+
+  /* Aproxima o logo do texto acima */
+  .footer-logo {
+    margin-top: 0.25rem;   /* ajuste finíssimo para ficar “grudadinho” */
+  }
+}
