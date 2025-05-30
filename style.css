@@ -2709,3 +2709,10 @@ body.page-acessibilidade code {
   color: #0055ff;
 }
 
+.empty-card .port-header .info span {
+  color: #666;
+}
+.empty-card .port-detail {
+  font-style: italic;
+  color: #666;
+}
