@@ -661,9 +661,6 @@
     color: #e74c3c;
   }
   
-  /* =========================
-     RODAPÉ
-     ========================= */
 /* ======================================
    Rodapé – Novo estilo inspirado no exemplo
    ====================================== */
@@ -786,9 +783,6 @@
   margin-top: 20px;
 }
 
-/* ======================================
-   Rodapé – Responsivo Mobile
-   ====================================== */
 /* ==========================
    Rodapé – ajustes mobile
    ========================== */
@@ -2701,3 +2695,17 @@ body.page-acessibilidade code {
     padding: 0.1em 0.3em;
   }
 }
+
+/* Tabela – estado vazio */
+.empty-state td {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  padding: 2rem 1rem;
+}
+
+.empty-state i {
+  margin-right: 0.5rem;
+  color: #0055ff;
+}
+
