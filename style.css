@@ -194,7 +194,7 @@
      ========================= */
   .hero-banner {
     position: relative;
-    background: url('Letreiro Saldinho.jpg') center/cover no-repeat;
+    background: url('banner.png') center/cover no-repeat;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -664,23 +664,202 @@
   /* =========================
      RODAPÉ
      ========================= */
-  footer {
-    background-color: #002050;
-    color: #fff;
-    text-align: center;
-    padding: 30px 0;
-    font-size: 0.9em;
-  }
+/* ======================================
+   Rodapé – Novo estilo inspirado no exemplo
+   ====================================== */
+.site-footer {
+  background: #002050;
+  color: #fff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding: 40px 1rem 20px;
+}
 
-  /* Logo do rodapé */
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.site-footer a:hover {
+  color: #ffcc00;
+}
+
+/* LINKS PRINCIPAIS – 3 colunas */
+.footer-site-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 160px;
+}
+
+.footer-col h4 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  position: relative;
+  padding-left: 1.2em;
+}
+
+/* adiciona o “›” antes de cada item */
+.footer-col li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* separador */
+.footer-separator {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin: 30px auto;
+  max-width: 1200px;
+}
+
+/* META (info + parceiro) */
+.footer-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.footer-info {
+  flex: 1;
+  min-width: 200px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-info p {
+  margin: 0.3rem 0;
+}
+
+.footer-logo {
+  text-align: center;
+  flex: 1;
+  min-width: 160px;
+}
+
+.footer-logo h4 {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
 .footer-logo img {
-  max-width: 150px;
-  width: 100%;
+  max-width: 140px;
   height: auto;
   display: block;
-  margin: 0 auto; /* centraliza */
+  margin: 0 auto;
 }
-  
+
+/* COPYRIGHT */
+.footer-copy {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 20px;
+}
+
+/* ======================================
+   Rodapé – Responsivo Mobile
+   ====================================== */
+/* ==========================
+   Rodapé – ajustes mobile
+   ========================== */
+@media (max-width: 767px) {
+  /* 1) Espaçamento interno do footer */
+  .site-footer {
+    padding: 2rem 1rem;
+  }
+
+  /* 2) Grid de 2 colunas para os links (Institucional | Publicações) e
+        “Transparência” se estende ocupando ambas as colunas */
+  .footer-site-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "inst pub"
+      "trans trans";
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .footer-site-links .footer-col:nth-child(1) { grid-area: inst; }
+  .footer-site-links .footer-col:nth-child(2) { grid-area: pub; }
+  .footer-site-links .footer-col:nth-child(3) { grid-area: trans; }
+
+  /* 3) Aproxima as setas e texto na lista “Transparência” */
+  .footer-site-links .footer-col:nth-child(3) ul {
+    padding-left: 0.75rem;       /* menos recuo esquerdo */
+    list-style-position: inside; /* marcador “›” fica junto ao texto */
+  }
+  .footer-site-links .footer-col:nth-child(3) ul li {
+    margin-left: 0.25rem; /* afina espaço entre seta e texto */
+  }
+
+  /* 4) Títulos das colunas */
+  .footer-site-links .footer-col h3 {
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  /* 5) Linha separadora */
+  .footer-separator {
+    width: 90%;
+    margin: 1.5rem auto;
+  }
+
+  /* 6) Metadados e parceiros empilhados e centralizados */
+  .footer-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .footer-info, .footer-logo {
+    text-align: center;
+  }
+  .footer-logo img {
+    max-width: 130px;
+    height: auto;
+  }
+
+  /* 7) Créditos – texto menor e centralizado */
+  .footer-copy {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #ccc;
+  }
+}
+
   /* =========================
      RESPONSIVO
      ========================= */
@@ -2445,5 +2624,80 @@ body.page-contratos #mobileContratos {
   /* Aproxima o logo do texto acima */
   .footer-logo {
     margin-top: 0.25rem;   /* ajuste finíssimo para ficar “grudadinho” */
+  }
+}
+
+/* ==================================================
+   Acessibilidade (page-acessibilidade)
+   ================================================== */
+body.page-acessibilidade {
+  background-color: #f4f4f4;
+  color: #002050;
+}
+
+body.page-acessibilidade .accessibility-page {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+body.page-acessibilidade .accessibility-page h1 {
+  font-size: 2em;
+  margin-bottom: 1rem;
+  color: #002050;
+  text-align: center;
+}
+
+body.page-acessibilidade .accessibility-page p {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+body.page-acessibilidade .access-keys-list {
+  list-style: disc inside;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+body.page-acessibilidade .access-keys-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+body.page-acessibilidade kbd {
+  display: inline-block;
+  padding: 0.1em 0.4em;
+  margin: 0 0.1em;
+  font-size: 0.9em;
+  font-family: monospace;
+  background: #e0e0e0;
+  border: 1px solid #b0b0b0;
+  border-radius: 4px;
+  box-shadow: inset 0 -1px 0 #b0b0b0;
+}
+
+body.page-acessibilidade code {
+  font-family: monospace;
+  background: #f0f0f0;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* Pequeno ajuste de responsividade */
+@media (max-width: 600px) {
+  body.page-acessibilidade .accessibility-page {
+    padding: 0 0.5rem;
+  }
+  body.page-acessibilidade .accessibility-page h1 {
+    font-size: 1.8em;
+  }
+  body.page-acessibilidade .accessibility-page p,
+  body.page-acessibilidade .access-keys-list li {
+    font-size: 0.95em;
+  }
+  body.page-acessibilidade kbd {
+    font-size: 0.8em;
+    padding: 0.1em 0.3em;
   }
 }

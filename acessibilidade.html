@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Mapa do Site - IPRESAL</title>
+  <title>Acessibilidade - IPRESAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Estilo global -->
   <link rel="stylesheet" href="style.css">
@@ -11,50 +11,37 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <script defer src="scripts.js"></script>
 </head>
-<body class="page-mapa-site">
+<body class="page-acessibilidade">
 
-  <!-- WIDGET DE ACESSIBILIDADE -->
-  <div class="a11y-widget">
-    <button class="a11y-toggle" aria-label="Abrir menu de acessibilidade" aria-expanded="false">
-      <i class="fas fa-wheelchair"></i>
-    </button>
-    <div class="a11y-menu" aria-hidden="true">
-      <a href="mapa-site.html"><i class="fas fa-sitemap"></i> Mapa do site</a>
-      <a href="acessibilidade.html"><i class="fas fa-universal-access"></i> Acessibilidade</a>
-      <a href="glossario.html"><i class="fas fa-book"></i> Glossário</a>
-      <button id="a11y-contrast"><i class="fas fa-adjust"></i> Alto contraste</button>
-      <button id="a11y-bw"><i class="fas fa-circle"></i> Preto e branco</button>
-      <button id="a11y-invert"><i class="fas fa-exchange-alt"></i> Inverter cores</button>
-      <button id="a11y-highlight"><i class="fas fa-link"></i> Destacar links</button>
-      <button id="a11y-font-up"><i class="fas fa-plus"></i> Aumentar fonte</button>
-      <button id="a11y-font-down"><i class="fas fa-minus"></i> Diminuir fonte</button>
-      <button id="a11y-font-regular"><i class="fas fa-font"></i> Fonte regular</button>
-      <button id="a11y-reset"><i class="fas fa-redo"></i> Redefinir</button>
-    </div>
-  </div><!-- fecha .a11y-widget -->
+     <!-- WIDGET DE ACESSIBILIDADE -->
+    <div class="a11y-widget">
+      <button class="a11y-toggle" aria-label="Abrir menu de acessibilidade" aria-expanded="false">
+        <i class="fas fa-wheelchair"></i>
+      </button>
+      <div class="a11y-menu" aria-hidden="true">
+        <a href="mapa-site.html"><i class="fas fa-sitemap"></i> Mapa do site</a>
+        <a href="acessibilidade.html"><i class="fas fa-universal-access"></i> Acessibilidade</a>
+        <a href="glossario.html"><i class="fas fa-book"></i> Glossário</a>
+        <button id="a11y-contrast"><i class="fas fa-adjust"></i> Alto contraste</button>
+        <button id="a11y-bw"><i class="fas fa-circle"></i> Preto e branco</button>
+        <button id="a11y-invert"><i class="fas fa-exchange-alt"></i> Inverter cores</button>
+        <button id="a11y-highlight"><i class="fas fa-link"></i> Destacar links</button>
+        <button id="a11y-font-up"><i class="fas fa-plus"></i> Aumentar fonte</button>
+        <button id="a11y-font-down"><i class="fas fa-minus"></i> Diminuir fonte</button>
+        <button id="a11y-font-regular"><i class="fas fa-font"></i> Fonte regular</button>
+        <button id="a11y-reset"><i class="fas fa-redo"></i> Redefinir</button>
+      </div>
+    </div> 
 
-  <!-- Cookie Banner -->
-<div id="cookie-banner" class="cookie-banner">
-  <div class="cookie-banner__content">
-    <p>
-      Utilizamos cookies essenciais para o funcionamento do site e cookies opcionais para melhorar sua experiência, como lembrar seus dados em formulários (por exemplo, seu e-mail de contato). Você pode aceitar ou recusar os cookies opcionais, ou clicar em “Saiba mais” para ver nossa Política de Privacidade e entender como os utilizamos.  
-      <a href="privacidade.html#cookies" class="cookie-banner__link">Saiba mais</a>.
-    </p>
-    <div class="cookie-banner__actions">
-      <button id="cookie-decline" class="btn btn--small">Recusar</button>
-      <button id="cookie-accept" class="btn btn--small btn--primary">Aceitar</button>
-    </div>
-  </div>
-</div>
-
-  <!-- Topo com horário e telefone -->
+  <!-- Header / Nav… (idêntico às outras páginas, agora com accesskeys) -->
+<!-- Topo com horário e telefone -->
   <header class="top-bar" role="banner">
     <div class="container">
       <span>Email: ouvidoria@ipresal.pe.gov.br | Horário: 08:00h às 13:00h, de segunda à sexta</span>
     </div>
   </header>
 
-  <!-- Cabeçalho com logo centralizada -->
+ <!-- Cabeçalho com logo centralizada -->
   <header class="header-main" role="banner">
     <div class="container header-flex">
       <div class="logo-area" style="text-align: center; width: 100%;">
@@ -63,7 +50,7 @@
     </div>
   </header>
 
-  <!-- Menu de navegação -->
+   <!-- Menu de navegação -->
   <nav class="menu-bar" aria-label="Menu principal">
     <div class="container nav-container">
 <button class="hamburger" aria-label="Abrir menu">
@@ -94,7 +81,7 @@
             <li><a href="legislação.html">Legislação</a></li>
           </ul>
         </li>
-         <li><a href="transparência.html">Transparência</a></li>
+        <li><a href="transparência.html">Transparência</a></li>
         <li><a href="ouvidoria.html">Ouvidoria</a></li>
       </ul>
       <div class="search-bar" role="search">
@@ -104,43 +91,28 @@
           <button id="navSearchBtn" type="submit" aria-label="Iniciar busca"><i class="fas fa-search" aria-hidden="true"></i></button>
         </form>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-  <!-- CONTEÚDO PRINCIPAL -->
-  <main>
-    <section class="sitemap-section">
-      <h1>Mapa do Site</h1>
-      <ul class="sitemap-list">
-        <li><a href="index.html">Página Inicial</a></li>
-        <li>
-          Institucional
-          <ul>
-            <li><a href="conheça-cidade.html">Conheça a Cidade</a></li>
-            <li><a href="conheça-rpps.html">Conheça o RPPS</a></li>
-            <li><a href="estrutura-administrativa.html">Estrutura Administrativa</a></li>
-            <li><a href="noticias.html">Notícias</a></li>
-          </ul>
-        </li>
-        <li>
-          Publicações Oficiais
-          <ul>
-            <li><a href="avaliação-aturial.html">Avaliação Atuarial</a></li>
-            <li><a href="portarias.html">Portarias</a></li>
-            <li><a href="contratos.html">Contratos</a></li>
-            <li><a href="atas-de-reuniões.html">Atas de Reuniões</a></li>
-            <li><a href="investimentos.html">Investimentos</a></li>
-            <li><a href="legislação.html">Legislação</a></li>
-          </ul>
-        </li>
-        <li><a href="transparência.html">Transparência</a></li>
-        <li><a href="ouvidoria.html">Ouvidoria</a></li>
-        <li><a href="glossario.html">Glossário</a></li>
-        <li><a href="privacidade.html">Política de Privacidade</a></li>
-      </ul>
-    </section>
+  <main class="accessibility-page container">
+    <h1>Acessibilidade</h1>
+    <p>Para auxiliar a navegação, foram inseridas algumas teclas de atalho (<code>accesskey</code>) em alguns links. São elas:</p>
+    <ul class="access-keys-list">
+      <li><kbd>Alt+1</kbd> — Voltar para a página inicial</li>
+      <li><kbd>Alt+2</kbd> — Ir para página “Institucional”</li>
+      <li><kbd>Alt+3</kbd> — Ir para página “Publicações Oficiais”</li>
+      <li><kbd>Alt+4</kbd> — Ir para página “Transparência”</li>
+      <li><kbd>Alt+5</kbd> — Ir para página “Portal da Transparência”</li>
+      <li><kbd>Alt+6</kbd> — Ir para página “Contato”</li>
+      <li><kbd>Alt+A</kbd> — Acessibilidade do Site</li>
+      <li><kbd>Alt+I</kbd> — Inverter as cores do site</li>
+      <li><kbd>Alt+M</kbd> — Visualizar mapa do site</li>
+    </ul>
+    <p>**Observação:** o uso exato de <kbd>Alt</kbd> ou <kbd>Alt+Shift</kbd> varia conforme o navegador.</p>
   </main>
 
- <footer class="site-footer">
+  <!-- Rodapé -->
+  <footer class="site-footer">
   <!-- LINKS PRINCIPAIS -->
   <div class="footer-site-links">
     <div class="footer-col">
@@ -196,14 +168,17 @@
   <p class="footer-copy">© 2025 IPRESAL – Todos os direitos reservados.</p>
 </footer>
 
-  <!-- VLibras -->
   <div vw class="enabled">
-    <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper></div>
-  </div>
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script>
-    new window.VLibras.Widget('https://vlibras.gov.br/app');
-  </script>
+  <!-- botão flutuante que aparece na tela -->
+  <div vw-access-button class="active"></div>
+  <!-- wrapper onde o widget vai renderizar o player -->
+  <div vw-plugin-wrapper></div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
 </body>
 </html>
